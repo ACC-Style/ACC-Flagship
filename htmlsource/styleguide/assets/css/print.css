@@ -1,0 +1,223 @@
+/*Hartija Css Print  Framework */
+/*http://code.google.com/p/hartija/ */
+/*Version: 0.8 (2008-03-10)	 */
+/* line 7, ../scss/print.scss */
+body {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
+  word-spacing: 1.1pt;
+  letter-spacing: 0.2pt;
+  font-family: Garamond, "Times New Roman", serif;
+  color: black;
+  background: none;
+  font-size: 15pt;
+  -webkit-print-color-adjust: exact;
+}
+
+/* line 21, ../scss/print.scss */
+h1, h2, h3, h4, h5, h6, header * {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 24, ../scss/print.scss */
+h1,
+.content-block-heading {
+  font-size: 19pt;
+}
+
+/* line 28, ../scss/print.scss */
+h2 {
+  font-size: 17pt;
+}
+
+/* line 31, ../scss/print.scss */
+h3 {
+  font-size: 15pt;
+}
+
+/* line 34, ../scss/print.scss */
+h4, h5, h6 {
+  font-size: 12pt;
+}
+
+/* line 37, ../scss/print.scss */
+code {
+  font: 10pt Courier, monospace;
+}
+
+/* line 40, ../scss/print.scss */
+blockquote {
+  margin: 1.3em;
+  padding: 1em;
+  font-size: 10pt;
+}
+
+/* line 45, ../scss/print.scss */
+hr {
+  background-color: #cccccc;
+}
+
+/* line 48, ../scss/print.scss */
+img {
+  float: left;
+  margin: 1em 1.5em 1.5em 0;
+}
+
+/* line 52, ../scss/print.scss */
+a img {
+  border: none;
+}
+
+/* line 55, ../scss/print.scss */
+a:link, a:visited {
+  background: transparent;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #333333;
+}
+
+/* line 61, ../scss/print.scss */
+table {
+  margin: 1px;
+  text-align: left;
+}
+
+/* line 65, ../scss/print.scss */
+th {
+  border-bottom: 1px solid #333333;
+  font-weight: bold;
+}
+
+/* line 69, ../scss/print.scss */
+td {
+  border-bottom: 1px solid #333333;
+}
+
+/* line 72, ../scss/print.scss */
+th, td {
+  padding: 4px 10px 4px 0;
+}
+
+/* line 75, ../scss/print.scss */
+tfoot {
+  font-style: italic;
+}
+
+/* line 78, ../scss/print.scss */
+caption {
+  background: white;
+  margin-bottom: 2em;
+  text-align: left;
+}
+
+/* line 83, ../scss/print.scss */
+thead {
+  display: table-header-group;
+}
+
+/* line 86, ../scss/print.scss */
+tr {
+  page-break-inside: avoid;
+}
+
+/* line 90, ../scss/print.scss */
+#scWebEditRibbon,
+#nav-utility-holder,
+#search-holder,
+#nav-primary-holder,
+#sidebar,
+.rating-block,
+.article-toolbar,
+.back-to-listing,
+#disqus_thread,
+#breadcrumbs,
+#footer,
+.footer-bottom-links,
+.divider,
+.profiler-results,
+.coveo-facet-column {
+  display: none !important;
+}
+
+/* line 107, ../scss/print.scss */
+#sidebar {
+  float: none;
+  width: 100%;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 1em 0;
+  margin: 0;
+}
+/* line 113, ../scss/print.scss */
+#sidebar .dart-ad {
+  float: right;
+  margin-left: 1em;
+}
+/* line 117, ../scss/print.scss */
+#sidebar .recommended-for-you {
+  width: 38%;
+  float: left;
+}
+/* line 120, ../scss/print.scss */
+#sidebar .recommended-for-you .content-block-heading {
+  padding: 0 0 .5em 0;
+  font-size: 17pt;
+}
+
+/* line 126, ../scss/print.scss */
+html,
+body,
+#layout,
+#site-header,
+#site-footer {
+  background-image: none !important;
+  background-color: #fff !important;
+}
+
+/* line 134, ../scss/print.scss */
+#lvl2-masthead {
+  padding: 0;
+}
+
+/* line 137, ../scss/print.scss */
+#main-container {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 140, ../scss/print.scss */
+#main-content {
+  margin: 0;
+  padding: 1em 0 0 0;
+}
+/* line 143, ../scss/print.scss */
+#main-content .main-content-inner {
+  margin: 0;
+}
+
+/* line 147, ../scss/print.scss */
+#header {
+  min-height: 0;
+  border-bottom: 2px #0564a7 solid !important;
+  padding-bottom: 1em;
+}
+
+/* line 152, ../scss/print.scss */
+#header-logo {
+  float: none;
+}
+/* line 154, ../scss/print.scss */
+#header-logo img {
+  margin: 0;
+  float: none;
+}
+
+/* line 159, ../scss/print.scss */
+#subfooter {
+  border-top: 2px #0564a7 solid !important;
+  background: #fff;
+  color: #000;
+}

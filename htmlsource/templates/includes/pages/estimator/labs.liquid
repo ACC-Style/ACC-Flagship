@@ -1,0 +1,89 @@
+<div class="small-12 column position-relative">
+    <h2 class="with-underline">Labs</h2>
+    <div class="unit-of-measure">
+        <div class="switch-input-space" style="width:100%">
+            <label class="switch-value" for="check-unit-type"  style="">Unit Type</label>
+            <div class="switch radius small value-switch switch-2x">
+                <input class="switch-input" id="check-unit-type" type="checkbox" name="unit-type" value="unit-type" data-bind="checked:Form().UnitOfMeasure">
+                <label class="switch-paddle" for="check-unit-type">
+                    <span class="show-for-sr">Unit of Measure</span>
+                    <span class="switch-active" aria-hidden="true">  US  </span>
+                    <span class="switch-inactive" aria-hidden="true"> SI </span>
+                </label>
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="question medium-4 small-12 column" data-bind="css: $root.totalCholesterolValidation().status ">
+    <div class="label-holder">
+        <label for="">
+            <span class="text">Total Cholesterol                 
+                <small data-bind="visible: !$root.Form().UnitOfMeasure() ">(mg/dL)</small>
+                <small data-bind="visible: $root.Form().UnitOfMeasure() ">(mmol/L)</small></span>
+            <span class="required-holder">
+<i class="fa fa-holder-dynamic"></i>
+</span>
+        </label>
+    </div>
+    <div class="input-holder">
+        <div class="input-spacer">
+            <input type="number" data-bind="value:Form().TotalCholesterolValue, valueUpdate: 'blur'"/>
+        </div>
+    </div>
+    <div class="message-holder">
+        <span data-bind="css: $root.totalCholesterolValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.totalCholesterolValidation().message"></span>
+        </span>    
+    </div>
+    <div class="hint" data-bind="visible: !$root.Form().UnitOfMeasure() ">Value must be between 130 - 320(mg/dL)</div> 
+    <div class="hint" data-bind="visible: $root.Form().UnitOfMeasure() ">Value must be between 3.367 - 8.288(mmol/L)</div>
+</div>
+<div class="question medium-4 small-12 column"  data-bind="css: $root.hdlValidation().status ">
+    <div class="label-holder">
+        <label for="">
+            <span class="text">HDL-Cholesterol
+                <small data-bind="visible: !$root.Form().UnitOfMeasure() ">(mg/dL)</small>
+                <small data-bind="visible: $root.Form().UnitOfMeasure() ">(mmol/L)</small>
+            </span>
+            <span class="required-holder">
+<i class="fa fa-holder-dynamic"></i>
+</span>
+        </label>
+    </div>
+    <div class="input-holder">
+        <div class="input-spacer">
+            <input type="number" data-bind="value:Form().HDLCholesterolValue, valueUpdate: 'blur'"/>
+        </div>
+    </div>
+    <div class="message-holder">
+        <span data-bind="css: $root.hdlValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.hdlValidation().message"></span>
+        </span>  
+    </div>
+    <div class="hint" data-bind="visible: !$root.Form().UnitOfMeasure() ">Value must be between 20 - 100(mg/dL)</div>
+    <div class="hint" data-bind="visible: $root.Form().UnitOfMeasure() ">Value must be between 0.518 - 2.59(mmol/L)</div>
+</div>
+<div class="question medium-4 small-12 column end"data-bind="css: $root.bloodPresureValidation().status ">
+    <div class="label-holder">
+        <label for="">
+            <span class="text">Systolic Blood Pressure</span>
+            <span class="required-holder">
+<i class="fa fa-holder-dynamic"></i>
+</span>
+        </label>
+    </div>
+    <div class="input-holder">
+        <div class="input-spacer">
+            <input type="number" data-bind="value:Form().BloodPressure, valueUpdate: 'blur'"/>
+        </div>
+    </div>
+    <div class="message-holder">
+        <span data-bind="css: $root.bloodPresureValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.bloodPresureValidation().message"></span>
+        </span>  
+    </div>
+    <div class="hint">Value must be between 90-200</div>
+</div>

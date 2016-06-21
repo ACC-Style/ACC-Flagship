@@ -1,0 +1,18 @@
+<div  data-bind="page: {id:'about',  afterShow:tabchange ,beforeShow:pageScrollTop}" class="page with-group-sections">
+    <div class="page-wrapper">
+        <section class="section group-section">
+            <div class="group-section-tab-holder">
+                <ul class="nav tabs">
+                    <li class="selected about-index-Tab">
+                        <a href="#!/content/about/about-index/"  onclick="gaWrapper('send', 'event', 'Navigate', 'Clicked tab', 'About')">About</a>
+                    </li>
+                    <li class="credit-Tab">
+                        <a href="#!/content/about/credit/" onclick="gaWrapper('send', 'event', 'Navigate', 'Clicked tab', 'Credits')">Credit</a>
+                    </li>
+                </ul>
+            </div>
+		{% include "pages/about/about-index"%}
+		{% include "pages/about/credit"%}
+        </section>
+    </div>
+</div>

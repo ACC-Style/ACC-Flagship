@@ -1,0 +1,39 @@
+/**
+*	Quiz Question:
+*	`question` - Question from a quiz in a clinical trial article.
+* 
+*		@example
+*		<section class="the-quiz" id="question">
+*		
+*				<h1>Given this scenario, which of the following statements describes the best treatment approach for this patient's coronary steal syndrome?</h1>
+*		
+*				
+*		<form action="javascript:;" method="post" class="ng-pristine ng-valid">                <ul class="answers">
+*								<li class="answer">
+*									<input id="61499e63-44fa-485f-bb28-d528823f9a8d" name="AnswerId" type="radio" value="61499e63-44fa-485f-bb28-d528823f9a8d">
+*									<label for="61499e63-44fa-485f-bb28-d528823f9a8d">A. Coiling of the LIMA graft.</label>
+*								</li>
+*								<li class="answer">
+*									<input id="d23e2a29-9c2f-4f84-84dd-be57d945e325" name="AnswerId" type="radio" value="d23e2a29-9c2f-4f84-84dd-be57d945e325">
+*									<label for="d23e2a29-9c2f-4f84-84dd-be57d945e325">B. Surgical revision of the carotid to subclavian bypass.</label>
+*								</li>
+*								<li class="answer">
+*									<input id="6bb28561-2b8c-4852-8813-76e6015bab62" name="AnswerId" type="radio" value="6bb28561-2b8c-4852-8813-76e6015bab62">
+*									<label for="6bb28561-2b8c-4852-8813-76e6015bab62">C. Percutaneous intervention to the subclavian artery to improve flow from the aortic arch.</label>
+*								</li>
+*								<li class="answer">
+*									<input id="4e11e874-7b5e-4b1a-8a51-8b39520db91d" name="AnswerId" type="radio" value="4e11e874-7b5e-4b1a-8a51-8b39520db91d">
+*									<label for="4e11e874-7b5e-4b1a-8a51-8b39520db91d">D. Aggressive medical management.</label>
+*								</li>
+*								<li class="answer">
+*									<input id="fd6495c6-ab35-41dd-8e61-7fbd0b7b07a6" name="AnswerId" type="radio" value="fd6495c6-ab35-41dd-8e61-7fbd0b7b07a6">
+*									<label for="fd6495c6-ab35-41dd-8e61-7fbd0b7b07a6">E. Axillary-axillary bypass to improve flow to the subclavian artery.</label>
+*								</li>
+*						</ul>
+*						<div class="validation-holder"><span class="field-validation-valid" data-valmsg-for="answerRequired" data-valmsg-replace="true"></span></div>
+*						<input type="submit" value="Answer">
+*		</form>        
+*		</section>
+*/
+
+

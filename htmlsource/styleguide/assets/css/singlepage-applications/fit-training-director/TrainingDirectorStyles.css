@@ -1,0 +1,888 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-smu1po");
+  src: url("fonts/icomoon.eot?#iefix-smu1po") format("embedded-opentype"), url("fonts/icomoon.woff?-smu1po") format("woff"), url("fonts/icomoon.ttf?-smu1po") format("truetype"), url("fonts/icomoon.svg?-smu1po#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, ../../../scss/singlepage-applications/fit-training-director/_icons.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 26, ../../../scss/singlepage-applications/fit-training-director/_icons.scss */
+.icon-cancel-circle:before {
+  content: "\e603";
+}
+
+/* line 29, ../../../scss/singlepage-applications/fit-training-director/_icons.scss */
+.icon-alert:before {
+  content: "\e600";
+}
+
+/* line 32, ../../../scss/singlepage-applications/fit-training-director/_icons.scss */
+.icon-checkbox-unchecked:before {
+  content: "\e602";
+}
+
+/* line 35, ../../../scss/singlepage-applications/fit-training-director/_icons.scss */
+.icon-checkbox-checked:before, .ui-selected .icon-checkbox-unchecked:before {
+  content: "\e601";
+}
+
+/* Basic Styles for Buttons */
+/* line 3, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors, .ui-dialog {
+  text-align: left;
+  font-size: 12px;
+}
+/* line 6, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors button, .training-directors .button, .ui-dialog button, .ui-dialog .button {
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.4em;
+  background-color: #004176;
+  border-color: #000910;
+  color: #fff;
+  display: inline-block;
+}
+/* line 23, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors button.secondary-btn, .training-directors .button.secondary-btn, .ui-dialog button.secondary-btn, .ui-dialog .button.secondary-btn {
+  background-color: #ccc;
+  border: #888 1px solid;
+  color: #333;
+}
+/* line 27, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors button.secondary-btn:hover, .training-directors .button.secondary-btn:hover, .ui-dialog button.secondary-btn:hover, .ui-dialog .button.secondary-btn:hover {
+  background-color: gray;
+  border-color: #3c3c3c;
+  color: #000;
+}
+/* line 33, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors button.radius, .training-directors .button.radius, .ui-dialog button.radius, .ui-dialog .button.radius {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 37, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors button:hover, .training-directors .button:hover, .ui-dialog button:hover, .ui-dialog .button:hover {
+  background-color: black;
+  border-color: black;
+}
+/* line 42, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors .button.tiny, .ui-dialog .button.tiny {
+  padding-top: 0.4375em;
+  padding-right: 0.875em;
+  padding-bottom: 0.5em;
+  padding-left: 0.875em;
+  font-size: 0.6875em;
+}
+/* line 49, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors .button.grey, .ui-dialog .button.grey {
+  background-color: #ccc;
+  border-color: #999999;
+  color: #666;
+  text-decoration: none;
+}
+/* line 54, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors .button.grey:hover, .ui-dialog .button.grey:hover {
+  background: #999999;
+  border-color: #666;
+  color: #222;
+}
+/* line 60, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors .prefix.button, .ui-dialog .prefix.button {
+  padding-bottom: 0;
+}
+/* line 63, ../../../scss/singlepage-applications/fit-training-director/_buttons.scss */
+.training-directors .icon, .ui-dialog .icon {
+  font-family: 'Arial Black', 'Arial',sans-serif;
+  font-size: 1.2em;
+}
+
+/* line 2, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program, .training-directors .admins {
+  margin-top: 5px;
+}
+/* line 4, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program .program-title, .training-directors .admins .program-title {
+  color: #004176;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+/* line 5, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program .admin-type-label, .training-directors .admins .admin-type-label {
+  color: #004176;
+  font-size: 1.2em;
+  margin-top: 0;
+}
+/* line 6, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program h3, .training-directors .program h4, .training-directors .admins h3, .training-directors .admins h4 {
+  color: #222;
+  font-family: arial, helvetica, sans-serif;
+  margin-bottom: 0;
+  position: relative;
+}
+/* line 7, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program h3 small, .training-directors .program h4 small, .training-directors .admins h3 small, .training-directors .admins h4 small {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+/* line 9, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program address, .training-directors .admins address {
+  font-style: normal;
+  line-height: 1.5em;
+}
+/* line 10, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program h3 + address, .training-directors .admins h3 + address {
+  margin-top: .5em;
+}
+/* line 11, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .program hr, .training-directors .admins hr {
+  color: #004176;
+  border-color: #004176;
+  margin: 0.25em 0 0.1875em;
+}
+/* line 13, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admin-group {
+  margin-bottom: 1em;
+}
+/* line 14, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admin a.button {
+  background: none;
+  border: none 0px;
+  color: #004176;
+  text-decoration: underline;
+  font-size: 8px;
+}
+/* line 14, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admin a.button:hover {
+  color: #000;
+}
+/* line 17, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group ul {
+  list-style: none;
+  margin: .25em 0em .5em;
+  padding: 0 0 0 7px;
+}
+/* line 18, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group ul ul {
+  margin-top: 0em;
+  padding: 0;
+  margin-bottom: .5em;
+  display: block;
+}
+/* line 24, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul > li {
+  clear: both;
+}
+/* line 25, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul .admin + li {
+  border-top: 1px solid #f2f2f2;
+}
+/* line 26, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul .admin + .alter-message {
+  border-top: 0px none;
+  margin-top: 1em;
+}
+/* line 27, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul li.admin ul li.associated-program {
+  float: left;
+  display: inline-block;
+  padding: 0 .25em 0 0;
+}
+/* line 28, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul .associated-program + .associated-program:before {
+  content: ' , ';
+}
+/* line 29, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .admins .admin-group > ul .associated-program + .last.associated-program:before {
+  content: ' & ';
+}
+/* line 32, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .alert-box.alert {
+  border: none;
+  background-color: #D6EFF2;
+  padding: .75em;
+  margin: 0px;
+}
+/* line 37, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .alert-box.alert .message {
+  margin: 0;
+  vertical-align: middle;
+  color: #000;
+}
+/* line 38, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .alert-box.alert .message * {
+  margin: 0;
+  padding: 0;
+}
+/* line 39, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .alert-box.alert .message a {
+  float: right;
+  color: #004176;
+  font-weight: 700;
+}
+/* line 44, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .alter-message * {
+  color: #004176;
+}
+/* line 45, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .addform-coordiantor, .training-directors .addform-chiefProctor, .training-directors .addform-assistantProctor {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bbb;
+  margin-bottom: 1.25em;
+  padding: .25em 1em .5em 1em;
+  background: #bcbcbc;
+}
+/* line 52, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .addform-coordiantor div *, .training-directors .addform-chiefProctor div *, .training-directors .addform-assistantProctor div * {
+  margin-bottom: .25em;
+}
+/* line 53, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .addform-coordiantor div input, .training-directors .addform-coordiantor div input.button, .training-directors .addform-chiefProctor div input, .training-directors .addform-chiefProctor div input.button, .training-directors .addform-assistantProctor div input, .training-directors .addform-assistantProctor div input.button {
+  width: 100%;
+}
+/* line 55, ../../../scss/singlepage-applications/fit-training-director/_add_admin_sidebar.scss */
+.training-directors .addform-coordiantor div input.button, .training-directors .addform-chiefProctor div input.button, .training-directors .addform-assistantProctor div input.button {
+  margin-top: 2px;
+}
+
+/* Base Typography  */
+/* line 7, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+div.body {
+  display: none;
+  visiblity: colapse;
+}
+
+/* line 8, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+div#TrainingProgram {
+  padding: 0 30px;
+}
+
+/* line 13, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-name h1 {
+  line-height: 1.25em;
+}
+/* line 15, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-name .button.grey {
+  background-color: #ccc;
+  border-color: #999999;
+  color: #666;
+}
+/* line 19, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-name .button.grey:hover {
+  background: #999999;
+  border-color: #666;
+  color: #222;
+}
+/* line 26, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .section-header, .training-directors .program-header {
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1.33333em 1.33333em .5em;
+  /*16/12*/
+}
+/* line 33, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .section-header h1, .training-directors .program-header h1 {
+  font-weight: 900;
+  font-size: 1.5em;
+  /* 30/12px */
+  padding: 0px;
+}
+/* line 39, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .section-header small, .training-directors .program-header small {
+  font-size: .7em;
+  font-weight: 100;
+  line-height: 1.3;
+}
+/* line 44, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .section-header a, .training-directors .program-header a {
+  text-decoration: underline;
+}
+/* line 46, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-header {
+  border-bottom: 4px solid #004176;
+  overflow: hidden;
+  margin-bottom: 1em;
+  padding-bottom: 0;
+  padding-right: 0;
+  vertical-align: bottom;
+}
+/* line 53, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-header h1 {
+  padding: 10px 0 0 0;
+}
+/* line 54, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .program-header .large-6.columns {
+  margin-bottom: -12px;
+}
+/* line 58, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .section-header {
+  border-top: 1px dashed #ccc;
+}
+/* line 61, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors select {
+  width: 100%;
+}
+/* line 64, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .right {
+  float: right;
+}
+/* line 67, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .button.large {
+  padding: 11px;
+  color: white;
+  border-radius: 5px;
+}
+/* line 73, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors h1 small, .training-directors h2 small, .training-directors h3 small {
+  font-size: .8em;
+  font-weight: 100;
+}
+/* line 1, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle {
+  float: right;
+  background-color: transparent;
+  border-radius: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 0;
+  padding: 4px;
+  list-style: none;
+  margin-bottom: -1em;
+}
+/* line 12, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle > li {
+  position: relative;
+  display: block;
+}
+/* line 16, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle > li > .button.large {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+  color: #666;
+  background-color: #f2f2f2;
+  border: 0 none transparent;
+  text-decoration: none;
+  margin: 3px;
+  border-radius: 4px;
+  padding-bottom: 14px;
+  white-space: nowrap;
+}
+/* line 28, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle > li > .button.large:hover, .training-directors .mode-toggle > li > .button.large:focus {
+  text-decoration: none;
+  background-color: #999999;
+  color: #fff;
+}
+/* line 34, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle.nav-pills > li {
+  float: left;
+  display: inline-block;
+}
+/* line 37, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle.nav-pills > li + li {
+  margin-left: 2px;
+}
+/* line 41, ../../../scss/singlepage-applications/fit-training-director/_toggleNav.scss */
+.training-directors .mode-toggle.nav-pills > li.active > .button.large,
+.training-directors .mode-toggle.nav-pills > li.active > .button.large:hover,
+.training-directors .mode-toggle.nav-pills > li.active > .button.large:focus {
+  color: #fff;
+  background-color: #004176;
+  border: 3px solid #fff;
+  margin: 0px;
+  border-radius: 8px;
+}
+
+/* Fit List Info Accordion And Pysdo Table  */
+/* line 86, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .addform-fit {
+  float: right;
+  display: table;
+}
+/* line 89, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .addform-fit > div.columns {
+  display: table-cell;
+  width: auto;
+}
+/* line 92, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .addform-fit > div.columns > input {
+  padding: .25em .75em;
+  font-size: 1em;
+  margin: 0;
+  float: left;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+/* line 103, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .addform-fit > div.columns > input.button {
+  padding: .45em .75em;
+  color: white;
+  font-weight: 700;
+}
+/* line 110, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .addform-fit h3 {
+  margin: 5px 1em 0 0;
+}
+/* line 114, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader div * {
+  margin-bottom: 0;
+}
+/* line 117, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitheader .action, .training-directors .fitheader .toggle {
+  visibility: hidden;
+}
+/* line 121, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist {
+  list-style: none;
+  padding: 0;
+}
+/* line 124, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit, .training-directors .fitlist > li {
+  clear: both;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+/* line 129, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit ul, .training-directors .fitlist > li ul {
+  list-style: none;
+  padding: .5em 0em .6em 0em;
+  height: 3em;
+}
+/* line 134, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit li, .training-directors .fitlist > li li {
+  list-style: none;
+  display: table-cell;
+  box-sizing: content-box;
+  padding: 9px 5px 3px;
+  height: auto;
+  vertical-align: top;
+  margin: 0;
+}
+/* line 142, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit li small.error-red, .training-directors .fitlist > li li small.error-red {
+  display: block;
+  color: #c32231;
+}
+/* line 144, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion-header, .training-directors .fitlist > li .accordion-header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: table;
+  list-style: none;
+  width: 100%;
+}
+/* line 151, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion, .training-directors .fitlist > li .accordion {
+  background-color: #d8edff;
+  padding: 1em;
+  border-top: #ddd 1px solid;
+}
+/* line 156, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl, .training-directors .fitlist > li .accordion dl {
+  margin: 0;
+}
+/* line 157, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.large-4, .training-directors .fitlist > li .accordion dl.large-4 {
+  padding: 0 2%;
+}
+/* line 161, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.inline dd, .training-directors .fitlist .fit .accordion dl.inline dt, .training-directors .fitlist > li .accordion dl.inline dd, .training-directors .fitlist > li .accordion dl.inline dt {
+  width: auto;
+  display: inline-block;
+  padding: 0 .5em;
+}
+/* line 168, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl dt, .training-directors .fitlist > li .accordion dl dt {
+  color: #000;
+  clear: left;
+  font-weight: 900;
+}
+/* line 173, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl dd, .training-directors .fitlist > li .accordion dl dd {
+  color: #666;
+  margin: 0;
+  padding-bottom: 1em;
+}
+/* line 177, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl dd pre, .training-directors .fitlist > li .accordion dl dd pre {
+  margin: 0;
+  font-family: arial;
+  line-height: 1.25em;
+  border: none 0px;
+  background: none;
+  padding: 0;
+}
+/* line 189, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.contact-method, .training-directors .fitlist > li .accordion dl.contact-method {
+  display: block;
+}
+/* line 191, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.contact-method dt, .training-directors .fitlist .fit .accordion dl.contact-method dd, .training-directors .fitlist > li .accordion dl.contact-method dt, .training-directors .fitlist > li .accordion dl.contact-method dd {
+  float: left;
+  display: block;
+}
+/* line 195, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.contact-method dt, .training-directors .fitlist > li .accordion dl.contact-method dt {
+  width: 30%;
+  clear: left;
+}
+/* line 199, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .accordion dl.contact-method dd, .training-directors .fitlist > li .accordion dl.contact-method dd {
+  width: 50%;
+}
+/* line 205, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .alert-icon, .training-directors .fitlist .fit .alert-icon-hidden, .training-directors .fitlist > li .alert-icon, .training-directors .fitlist > li .alert-icon-hidden {
+  text-align: center;
+  width: 3%;
+  background: #d07600;
+  color: white;
+  font-weight: 900;
+  font-family: 'Arial Black', sans-serif;
+  height: auto;
+}
+/* line 214, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .alert-icon-hidden, .training-directors .fitlist > li .alert-icon-hidden {
+  visibility: hidden;
+}
+/* line 217, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .name, .training-directors .fitlist > li .name {
+  width: 31%;
+  font-weight: bold;
+}
+/* line 221, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .email, .training-directors .fitlist > li .email {
+  width: 28%;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+/* line 226, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .end-date em, .training-directors .fitlist > li .end-date em {
+  color: #004176;
+}
+/* line 229, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit .action, .training-directors .fitlist > li .action {
+  text-align: right;
+  float: right;
+}
+/* line 234, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.header {
+  font-weight: 900;
+  border-top: 1px solid #004176;
+  border-bottom: 1px solid #004176;
+}
+/* line 238, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.header .toggle, .training-directors .fitlist .fit.header .action {
+  visibility: hidden;
+}
+/* line 242, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.odd {
+  background-color: #fff;
+}
+/* line 245, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.even {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+/* line 248, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.alert {
+  border: #004176 1px solid;
+}
+/* line 249, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.alert ul {
+  border-color: #004176;
+}
+/* line 254, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .fit.alert .alert-icon {
+  visibility: visible;
+}
+/* line 258, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .toggle {
+  width: 1em;
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Arial Black', sans-serif;
+}
+/* line 263, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .toggle a {
+  text-decoration: none;
+  color: #222;
+}
+/* line 266, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .toggle a:hover {
+  text-decoration: none;
+  color: black;
+}
+/* line 272, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist a.button {
+  background: #ccc;
+  border-color: #999999;
+  color: #666;
+}
+/* line 274, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist a.button:hover {
+  background: #999999;
+  border-color: #666;
+  color: #222;
+}
+/* line 278, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist a.button + a.button {
+  background-color: #004176;
+  border-color: #000910;
+  color: #fff;
+}
+/* line 280, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist a.button + a.button:hover {
+  background-color: #000910;
+  border-color: black;
+  color: #fff;
+}
+/* line 284, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .end-date + .action > a.button {
+  background-color: #004176;
+  border-color: #000910;
+  color: #fff;
+}
+/* line 286, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.training-directors .fitlist .end-date + .action > a.button:hover {
+  background-color: #000910;
+  border-color: black;
+  color: #fff;
+}
+
+/* Fit Registration  */
+/* line 296, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .unregistered {
+  background-color: #fafafa;
+  border-bottom: 1px solid #004176;
+  border-top: 1px solid #004176;
+  position: relative;
+  width: 100%;
+}
+/* line 302, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .unregistered .cancel-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+/* line 307, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .unregistered .reveal-header {
+  padding: 1em;
+  padding-left: 2em;
+}
+/* line 311, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .unregistered .reveal-footer {
+  padding: 1em;
+}
+/* line 315, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list {
+  padding: 0em;
+  margin: 1em;
+  list-style: none;
+}
+/* line 319, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list li {
+  clear: left;
+  display: block;
+  height: 3.3em;
+}
+/* line 324, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list li + li {
+  border-top: 1px solid #004176;
+}
+/* line 327, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .registrant {
+  background-color: #f5f5f5;
+}
+/* line 329, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .registrant .default-selection {
+  background-color: #f0f0f0;
+}
+/* line 331, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .registrant .error-red {
+  display: block;
+  color: #c32231;
+}
+/* line 334, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .registrant:nth-child(even) {
+  background-color: #e5e5e5;
+}
+/* line 337, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .registrant:nth-child(even) .default-selection {
+  background-color: #e0e0e0;
+}
+/* line 340, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .name, .fit-registration .registration-list .exam, .fit-registration .registration-list .exam-selection {
+  height: 3em;
+  display: inline-block;
+  float: left;
+}
+/* line 345, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .name {
+  width: 40%;
+  padding: .75em .5em;
+  line-height: 1;
+}
+/* line 350, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .exam {
+  width: 12%;
+  margin: 0 1%;
+  height: inherit;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+/* line 358, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .exam-selection {
+  width: 60%;
+}
+/* line 360, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .exam-selection .exam {
+  width: 25%;
+  margin: 0;
+  padding: 1em 0;
+  height: inherit;
+}
+/* line 367, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .header {
+  height: 3em;
+}
+/* line 369, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+.fit-registration .registration-list .header .name, .fit-registration .registration-list .header .exam {
+  font-weight: 900;
+  height: inherit;
+  veritcal-align: top;
+  padding-top: .75em;
+}
+
+/* Fit Registered Table  */
+/* line 380, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* line 384, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .alert select {
+  color: #c32231;
+  font-weight: 900;
+}
+/* line 388, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .alert option {
+  color: #222;
+}
+/* line 390, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .alert option.missing-alert {
+  color: #c32231;
+}
+/* line 395, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram td, table.fitprogram th {
+  border: 0 none;
+  border-collapse: collapse;
+  padding: 6px 8px 0 8px;
+}
+/* line 400, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th {
+  font-weight: 900;
+  border-bottom: 2px solid #004176;
+  vertical-align: top;
+  background-color: #ccc;
+  margin: 0;
+}
+/* line 406, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th small {
+  color: #004176;
+}
+/* line 409, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th.alert-icon {
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background: #888;
+  padding: 6px 4px 0 4px;
+}
+/* line 416, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th.ADA {
+  width: 16%;
+}
+/* line 419, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th.TimeFactor {
+  width: 10%;
+}
+/* line 422, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram th.name {
+  width: 30%;
+}
+/* line 427, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr {
+  height: 3.5em;
+}
+/* line 429, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr.alert {
+  font-weight: 900;
+  color: #c32231;
+}
+/* line 433, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: grey 1px solid;
+  border-bottom: grey 1px solid;
+}
+/* line 438, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr td.seperator {
+  font-size: 125%;
+  font-weight: 900;
+  background-color: #b1dcff;
+}
+/* line 443, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr td.alert-icon {
+  color: #888;
+  text-align: center;
+  vertical-align: middle;
+  background: #888;
+  padding: 6px 4px 0 4px;
+}
+/* line 450, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram tr.alert td.alert-icon {
+  background: #d07600;
+  color: white;
+}
+/* line 454, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .rowactions {
+  text-align: right;
+}
+/* line 456, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .rowactions a {
+  display: inline-block;
+  width: 60%;
+}
+/* line 460, ../../../scss/singlepage-applications/fit-training-director/TrainingDirectorStyles.scss */
+table.fitprogram .rowactions a + a {
+  width: 35%;
+}
+
+/* Fit List Info Accordion And Pysdo Table  */

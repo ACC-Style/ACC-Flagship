@@ -1,0 +1,14 @@
+<div class="content-padding">
+	<h1  class="with-underline">Common Cardiovascular Terms <span class="sub-line">Alphabetical Glossary</span></h1>
+<input placeholder="Search" type="search" data-bind="value: glossaryQuery, valueUpdate: 'keyup'"><ul class="no-bullet" data-bind="template: {name:'glossaryItem', foreach:$root.glossaryItems}"></ul>
+<script type="text/html" id="glossaryItem">
+  <li class="group-divide-auto">
+    <h4 data-bind="html: label"></h4> 
+    <p data-bind="html: definition"></p> 
+  </li>
+</script>
+
+<p class="quiet"><a class="link" href="https://www.cardiosmart.org/AZ-Topics">For additional cardiovascular terms visit www.cardiosmart.org</a>
+</p>
+
+</div>

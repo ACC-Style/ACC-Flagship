@@ -1,0 +1,53 @@
+.mode-toggle{
+	float: right;
+	background-color: transparent;
+	border-radius: 5px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border: 0;
+	padding: 4px;
+	list-style: none;
+    margin-bottom:-1em;
+
+	 > li {
+		position: relative;
+		display: block;
+	}
+	 > li > .button.large {
+		position: relative;
+		display: block;
+		padding: 10px 10px;
+		color: $darkgrey;
+		background-color:$lightgrey;
+		border:0 none transparent;
+		text-decoration: none;
+		margin:3px;
+		border-radius: 4px;
+		padding-bottom:14px;
+        white-space:nowrap;
+		&:hover, &:focus {
+			text-decoration: none;
+			background-color: mix($darkgrey,$midgrey);
+			color:#fff;
+			}
+		}
+	&.nav-pills > li {
+		float: left;
+		display:inline-block;
+		 + li {
+			margin-left: 2px;
+			}
+		 &.active{
+	 		 > .button.large, 
+			 > .button.large:hover,
+			 > .button.large:focus {
+		 		color: #fff;
+		 		background-color:$blue;
+				border:3px solid #fff;
+				margin: 0px;
+				border-radius: 8px;
+			} 
+		}
+	}
+
+ }

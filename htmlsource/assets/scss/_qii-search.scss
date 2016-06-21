@@ -1,0 +1,85 @@
+.wrapper{
+    font-family: "Open Sans", verdana, helvetica, arial, sans-serif;
+    *{
+        @include box-sizing(border-box);
+    }
+    > h1{  
+        padding: 10px 0 5px 15px;      
+        font-weight: 400;
+        font-size: 1em;
+        font-family: "Open Sans", verdana, helvetica, arial, sans-serif;
+    }
+}
+.CoveoSearchInterface{
+    min-height: 800px;
+    font-family: "Open Sans", verdana, helvetica, arial, sans-serif;
+    font-size: 12px;
+    .CoveoSearchButton {
+        background: #004176;
+        border-color: #004176;
+    }
+    .coveo-search-section{
+        float: none;
+        height: auto;
+        padding: 0;
+        .coveo-searchBox-column{
+            height: auto;
+            padding: 5px 0 0 10px;
+        }
+    }    
+    .coveo-results-section{
+        .coveo-results-column{
+             padding-top: 0;
+            .coveo-results-header{
+                float: none;
+                width: auto;
+                background: #fff;
+                padding: 1em;
+                margin: 1em 0 1em 10px;
+                border-top: 1px solid #a8a8a8;
+                border-bottom: 1px solid #a8a8a8;
+                position: relative;
+                line-height: 1;
+            }
+
+        }
+        .coveo-facet-column{
+            background: transparent;
+            padding-top: 0;
+            border: none;         
+        }
+    }
+    .CoveoResult{
+        margin-left: 10px;
+        border: none;
+        .coveo-title{
+            padding:0;
+            font-family: "Roboto Slab", helvetica, arial, serif;
+            font-weight: 400;
+            a{
+                color:#198dae;                
+            }
+        }
+        .coveo-excerpt{
+            padding-top: 0;
+            font-size: 1.2em;
+            color: #444;
+        }
+    }
+    .CoveoFacet{
+        border: 1px #a8a8a8 solid;
+        padding: .5em 1em;
+        margin-bottom: 1em;
+        position: relative;
+        @include box-sizing(border-box);
+        background: #fff;
+        .coveo-header{
+            > .coveo-icon{
+                display: none;
+            }
+            .coveo-title{
+                font-weight: 400;
+            }
+        }
+    }
+} 

@@ -1,0 +1,30 @@
+{
+  "name": "Base-Styles",
+  "version": "0.0.0",
+  "authors": [
+    "Matt Watier"
+  ],
+  "license": "MIT",
+  "homepage": "acc.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4",
+    "underscore": "~1.8.3",
+    "bootstrap":"~v4.0.0-alpha.2",
+    "knockout": "~3.4.0",
+    "waypoints": "~4.0.0",
+    "pagerjs": "~1.0.1",
+    "animate.css": "~3.5.1"
+  },
+  "description": "ACC Flagship Website Design",
+  "main": "",
+  "moduleType": [
+    "node"
+  ]
+}

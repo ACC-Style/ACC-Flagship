@@ -1,0 +1,70 @@
+<div class="page with-group-sections fill-page-height"  data-bind="page: {id:'clinician',  afterShow:tabchange ,beforeShow:pageScrollTop}">
+    <div class="page-wrapper">
+        <section class="section group-section">
+            <h1>Clinician Resources</h1>
+            <nav class="nav-list">
+                <ul>
+                    {% for documents in global.clinician-resources %}
+                        <li>
+                            <a href="#!/content/clinician-split-layout/{{documents.file}}"><span class="text">{{documents.name}}</span><i class="fa fa-holder-dynamic"></i></a>
+                         </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+    </div>
+
+</div>
+<div  data-bind="page: {id:'clinician-split-layout'}">
+    <div class="medium split-layout fill-page-height">
+        <div class="split-sidebar">
+            <h3 class="content-padding">Clinician Resources</h3>
+            <nav class="nav-list small">
+                <ul>
+                    {% for documents in global.clinician-resources %}
+                        <li>
+                            <a href="#!/content/clinician-split-layout/{{documents.file}}"><span class="text">{{documents.name}}</span><i class="fa fa-holder-dynamic"></i></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="split-content page with-group-sections">
+            <div class="section-nav back hide-for-medium">
+                <a  data-bind="page-href: '../clinician'">
+                    <div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+                    <div class="text">Back to Guidlines &amp; Resources</div>
+                </a>
+            </div>
+            <div class="page-wrapper">
+                <div data-bind="page: {id:'clinical_understanding',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/clinical_understanding' %}
+                </div>
+                 <div data-bind="page: {id:'clinical_lifestyle',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/clinical_lifestyle' %}
+                 </div>
+                 <div data-bind="page: {id:'statin',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/statin' %}
+                 </div>
+                 <div data-bind="page: {id:'summary_recommendations',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/summary_recommendations' %}
+                 </div>
+                 <div data-bind="page: {id:'guideline_flowchart',afterShow: listchange, beforeShow: panzoom}" class="group-section flow-chart">
+                    {% include 'pages/clinician/guideline_flowchart' %}
+                 </div>
+                 <div data-bind="page: {id:'statin_dose',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/statin_dose' %}
+                 </div>
+                 <div data-bind="page: {id:'monitor_flowchart',afterShow: listchange, beforeShow: panzoom}" class="group-section flow-chart">
+                    {% include 'pages/clinician/monitor_flowchart' %}
+                 </div>
+                 <div data-bind="page: {id:'clinical_reference_safety_recomendations',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/clinical_reference_safety_recomendations' %}
+                 </div>
+                 <div data-bind="page: {id:'reference_external_links',afterShow: listchange}" class="group-section">
+                    {% include 'pages/clinician/reference_external_links' %}
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

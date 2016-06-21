@@ -1,0 +1,61 @@
+<div class="page with-group-sections fill-page-height"  data-bind="page: {id:'patient',  afterShow:tabchange ,beforeShow:pageScrollTop}">
+    <div class="page-wrapper">
+        <section class="section group-section">
+            <h1>Patient Resources</h1>
+            <nav class="nav-list">
+                <ul>
+                    {% for documents in global.patient-resources %}
+                        <li>
+                            <a href="#!/content/patient-split-layout/{{documents.file}}"><span class="text">{{documents.name}}</span><i class="fa fa-holder-dynamic"></i></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+    </div>
+
+</div>
+<div  data-bind="page: {id:'patient-split-layout'}">
+    <div class="medium split-layout fill-page-height">
+        <div class="split-sidebar">
+        <h3 class="content-padding">Patient Resources</h3>
+            <nav class="nav-list small">
+                <ul>
+                    {% for documents in global.patient-resources %}
+                        <li>
+                            <a href="#!/content/patient-split-layout/{{documents.file}}"><span class="text">{{documents.name}}</span><i class="fa fa-holder-dynamic"></i></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="split-content page with-group-sections">
+            <div class="section-nav back hide-for-medium">
+                <a  data-bind="page-href: '../patient'">
+                    <div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+                    <div class="text">Back to Guidlines &amp; Resources</div>
+                </a>
+            </div>
+            <div class="page-wrapper">
+                <div data-bind="page: {id:'patient_risk',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/patient_risk" %}
+                </div>
+                <div data-bind="page: {id:'patient_lifestyle',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/patient_lifestyle" %}
+                </div>
+                <div data-bind="page: {id:'patient_obesity',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/patient_obesity" %}
+                </div>
+                <div data-bind="page: {id:'patient_cholesterol',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/patient_cholesterol" %}
+                </div>
+                <div data-bind="page: {id:'statin_infographic',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/statin_infographic" %}
+                </div>
+                <div data-bind="page: {id:'patient_reference_definition',afterShow: listchange}" class="group-section">
+                    {% include "pages/patient/patient_reference_definition" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

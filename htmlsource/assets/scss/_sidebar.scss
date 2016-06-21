@@ -1,0 +1,45 @@
+/**
+*	Sidebar:
+*	`id sidebar` - Side information and links.
+*
+*		@example
+*		<div id="body"style="overflow: hidden;"><div id="main-container" class="layout-sidebarright"><div id="sidebar">
+*			            <div class="main-div" valign="top" align="left">
+*			            <h2 class="sidebar-header">NEW | All ACC Apps and Mobile Optimized Resources, All in One Place</h2>
+*			            <p class="sidebar-paragraph">Visit <em>ACC.org's</em> <strong><a href="/tools-and-practice-support/mobile-resources">Mobile Resources</a></strong> page to find an up-to-date list of ACC mobile applications and other resources  optimized for use on smart phones and tablets.</p>
+*			            <p class="sidebar-paragraph">
+*							<a href="/tools-and-practice-support/mobile-resources"><img class="sidebar-image-link" alt="ACC Guidelines" src="http://placehold.it/80x80/9df8ff"></a> 
+*							<img class="sidebar-image-link" src="http://placehold.it/80x80/cccccc" alt="ACC Advocacy Action"> 
+*							<a href="/tools-and-practice-support/mobile-resources"><img  class="sidebar-image-link" src="http://placehold.it/80x80/e19dff" alt="ACC Connect"></a></p>
+*			            </div>
+*		</div></div></div>
+*/
+
+/**	
+* Sidebar Box:
+* `.sidebar-box` - Side information and links.
+*
+*		@example
+*		<div id="body"style="overflow: hidden;"><div id="main-container" class="layout-sidebarright"><div id="sidebar"><div class="sidebar-box">
+*		    <h1>Products and Resources</h1>
+*			<p>Learn more about products and resources from the ACC.</p>
+*			<div class="sidebar-box-link-div">
+*				<a class="no-text-decor" href="/education-and-meetings/products-and-resources">
+*				<input type="Button" class="rounded-button" onmousedown="this.className='down';" value="Go to Products and Resources" onclick="this.value='Go to Products and Resources'" class="down"></a>
+*			</div>
+*		</div></div></div></div>
+*/
+
+/**	
+* Sidebar Box (Featured Person):
+* `.sidebar-box.featured-person` - Side information and links.
+*
+*		@example
+*		<div id="body"style="overflow: hidden;"><div id="main-container" class="layout-sidebarright"><div id="sidebar"><article class="sidebar-box featured-person">
+*		    <h1>Editor-in-Chief, ACC.org</h1>
+*			<span class="profile-icon"><img class="sidebar-image-link" src="http://placehold.it/80x80/cccccc" alt="ACC Advocacy Action"> </span>
+*			<p class="person"><a href="http://www.acc.org/membership/person?id=afe63535-9978-4036-9070-2f05c44268bc">Kim A. Eagle, M.D., MACC</a></p>
+*			<p class="description"> Professor of Medicine and Director<br> <em>Frankel Cardiovascular Center University of Michigan</em> 
+*			</p>
+*		</article></div></div></div>
+*/

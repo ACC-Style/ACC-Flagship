@@ -1,0 +1,103 @@
+@mixin clearfix{
+	/* For modern browsers */
+	&:before,
+	&:after {
+		content:"";
+		display:table;
+	}
+	&:after {
+		clear:both;
+	}
+	/* For IE 6/7 (trigger hasLayout) */
+	*zoom:1;
+}
+@mixin user-select($select-value){
+	-webkit-touch-callout: $select-value;
+	-webkit-user-select: $select-value;
+	-khtml-user-select: $select-value;
+	-moz-user-select: $select-value;
+	-ms-user-select: $select-value;
+	user-select: $select-value;
+}
+
+@mixin transparent($color, $alpha) {
+	$rgba: rgba($color, $alpha);
+	$ie-hex-str: ie-hex-str($rgba);
+	background-color: transparent;
+	background-color: $rgba;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+	zoom: 1;
+}
+
+@mixin colcount($count) {
+	float: left;
+	width: ((100 / $count) * 1%);//turn the column count into a percentage width
+	&:nth-of-type(#{$count}n+#{($count+1)}){//clear the first item of each row to the left
+		clear: left;
+	}
+	//The rest of this is just for IE8 and lower which does not support the nth-of-type pseudoclass
+	@if $count == 6{
+		&.item-7,
+		&.item-13,
+		&.item-18,
+		&.item-23{
+			clear: left;
+		}
+	}
+	@else if $count == 5{
+		&.item-6,
+		&.item-11,
+		&.item-16,
+		&.item-21,
+		&.item-26{
+			clear: left;
+		}
+	}
+	@else if $count == 4{
+		&.item-5,
+		&.item-10,
+		&.item-15,
+		&.item-20,
+		&.item-25{
+			clear: left;
+		}
+	}
+	@else if $count == 3{
+		&.item-4,
+		&.item-7,
+		&.item-10,
+		&.item-13,
+		&.item-16,
+		&.item-19,
+		&.item-22,
+		&.item-25{
+			clear: left;
+		}
+	}
+	@else if $count == 2{
+		&.item-3,
+		&.item-5,
+		&.item-7,
+		&.item-9,
+		&.item-11,
+		&.item-13,
+		&.item-15,
+		&.item-17,
+		&.item-19,
+		&.item-21,
+		&.item-23{
+			clear: left;
+		}
+	}
+	@else if $count == 1{
+		width: 100%;
+		clear: both;
+		float: none;
+	}
+	@else {
+		width: 100%;
+	}
+}
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}

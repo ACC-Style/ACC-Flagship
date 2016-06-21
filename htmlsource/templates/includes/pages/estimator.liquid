@@ -1,0 +1,31 @@
+<div  data-bind="page: {id:'estimator', role: 'start',  afterShow:tabchange ,beforeShow:pageScrollTop}" class="page with-group-sections fill-page-height">
+    <div class="data-display" id="scorebar">
+        {% include "layouts/header-score-bar" %}
+    </div>
+    <div class="page-wrapper">
+        <div class="row relative-position">
+            <h1>ASCVD Risk Estimator<sup>*</sup></h1>
+            <a class="button secondary small reset-button expanded" data-bind="click:$root.resetAll"><i class="fa fa-repeat"></i>&nbsp;Reset All</a>
+        </div>
+        <div class="row group-section shrink-waypoint">
+            {% include 'pages/estimator/demographics' %}
+        </div>
+        <div class="row group-section">
+        {% include 'pages/estimator/labs'%}</div>
+        <div class="row group-section">
+            {% include 'pages/estimator/compoundfactors' %}
+        </div>
+
+        <div class="row">
+            <div class="column large-2 large-push-10 medium-6 medium-push-6 small-12">
+                <a class="expanded button" href="#!/calulate/recommendation/" onclick="gaRecordRecommendation()" data-bind="visible:$root.recommendationUnlock()">Recommendation</a>
+                <a class="button expanded secondary"  data-open="requiredModal"data-bind="visible:!$root.recommendationUnlock(),click:function(){validate(true)}" onclick="gaRecordMissingRecommendation()" >Calculate</a>
+            </div>
+            <div class="column large-10 large-pull-2 medium-6 medium-pull-6 small-12">
+                <p class="subtle text-left" style="color:#217289;">*Intended for use if there is not ASCVD, patient is not already on a statin, and the LDL-cholesterol is &lt;190 mg/dL (4.92 mmol/L)</p>
+            </div>
+            
+        </div>
+    </div>
+   
+</div>

@@ -1,0 +1,103 @@
+/**
+*	Footer:
+*	`.footer-wrap .breadcrumbs + .footer + .subfooter` - ...
+*								
+*		@example
+*		<div id="footer-wrap">
+*			<!-- ********************************** breadcrumbs ********************************** -->
+*			<div id="breadcrumbs">
+*		    <b>YOU ARE HERE: </b> <a href="http://www.acc.org/">Location1</a> &gt; <a href="http://www.acc.org/clinical-topics">Location2</a> &gt; Location3</div>
+*			<div id="footer" role="contentinfo">
+*				<div class="column">
+*					<h2>
+*						<a href="/jacc-journals?w_nav=FN">H2 Header</a>
+*					</h2>
+*						<ul>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*						</ul>
+*					<h2>
+*						<a href="/jacc-journals?w_nav=FN">H2 Header</a>
+*					</h2>
+*						<ul>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*						</ul>
+*			</div>
+*			<div class="column">
+*					<h2>
+*						<a href="/clinical-topics?w_nav=FN">Header</a>
+*					</h2>
+*						<ul>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*						</ul>
+*			</div>
+*			<div class="column">
+*					<h2>
+*						<a href="/clinical-topics?w_nav=FN">Header</a>
+*					</h2>
+*						<ul>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*								<li><a href="#">Reasonably sized link name</a></li>
+*						</ul>
+*			</div>
+*		<div class="column">
+*		<ul class="acc-social">
+*			<li><a href="https://www.youtube.com/user/ACCinTouch" target="_blank"><img src="http://www.acc.org/~/media/Images/Icons/YouTube4.png" alt="YouTube"></a></li>
+*			<li><a href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr" target="_blank"><img src="http://www.acc.org/~/media/Images/Icons/LinkedIn.png" alt="LinkedIn"></a*></li>
+*			<li><a href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank"><img src="http://www.acc.org/~/media/Images/Icons/Facebook.png" alt="Facebook"></a></li>
+*			<li><a href="https://twitter.com/accintouch" target="_blank"><img src="http://www.acc.org/~/media/Images/Icons/Twitter.png" alt="Twitter"></a></li>
+*		</ul>
+*		<ul class="acc-properties">
+*			<li><a href="http://umbrella.onlinejacc.org/journals.aspx" class="new-window-icon" target="_blank">ul.acc-properties li a.new-window-icon</a></li>
+*			<li><a href="http://cvquality.acc.org/" class="new-window-icon" target="_blank">a.new-window-icon</a></li>
+*			<li><a href="https://www.ncdr.com/webncdr/" class="new-window-icon" target="_blank">a.new-window-icon</a></li>
+*		</ul>
+*		<dl class="address">
+*			<dt>Heart House</dt>
+*			<dd>2400 N Street NW</dd>
+*			<dd>Washington DC, 20037</dd>
+*		</dl>
+*		<dl class="contact-numbers">
+*			<dt>Phone:</dt>
+*			<dd><a href="tel://1-800-253-4636">(800) 253-4636</a>, ext. 5603 or<br> <a href="tel://1-202-375-6000">(202) 375-6000</a>, ext. 5603</dd>
+*			<dt>E-mail:</dt>
+*			<dd><a href="mailto:resource@acc.org">resource@acc.org</a></dd>
+*			<dt>Fax:</dt>
+*			<dd>(202) 375-7000</dd>
+*		</dl>
+*					<p id="logo-footer">
+*			<a href="/">
+*				<img src="http://www.acc.org/~/media/Images/Logos/UPDATED OCT 3 2014/ACC-Footer.png" width="142" height="45" alt="ACC Logo Footer">
+*			</a>
+*		</p>
+*		</div>
+*		</div><!-- / footer -->
+*		<div id="subfooter">
+*			<ul class="footer-bottom-links">
+*					<li><a href="">#subfooter ul.footer-bottom-link li a</a></li>
+*					<li><a href="-guide">link</a></li>
+*					<li><a href="-sponsorship-policy">link</a></li>
+*					<li><a href="/sitemap-acc.xml">Site Map</a></li>
+*			</ul><!-- /footer-bottom-links -->
+*			<p class="legal">&copy; 2015 American College of Cardiology Foundation. All rights reserved.</p>
+*		</div><!-- /subfooter -->
+*		</div>
+*/

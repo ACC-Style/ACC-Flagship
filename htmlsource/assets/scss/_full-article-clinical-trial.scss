@@ -1,0 +1,59 @@
+/**
+*	Clinical Trial Article:
+*	`full-article clinical-trial` - ...
+*								
+*		@example
+*		<article class="full-article clinical-trial">
+*			<h1>Article Header</h1>
+*		
+*			<div class="article-meta">
+*				<b class="date">
+*					Month dd, yyyy
+*		
+*		&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Firstname Lastname, Credentials</a>; <a href="">Firstname Lastname, Credentials</a>        </b>
+*		
+*		
+*		
+*		
+*		
+*		<div class="article-toolbar" ng-modules="SaveToLib">
+*			<!-- share section -->
+*			<div class="share-tools">
+*				Share via:
+*				<span class="st_facebook" st_processed="yes"><span class="stButton share-option"><span class="chicklets facebook">&nbsp;</span></span></span>
+*				<span class="st_twitter" st_via="ACCinTouch" st_processed="yes"><span class="stButton share-option"><span class="chicklets twitter">&nbsp;</span></span></span>
+*				<span class="st_linkedin" st_processed="yes"><span class="stButton share-option"><span class="chicklets linkedin">&nbsp;</span></span></span>
+*				<span class="st_email" st_processed="yes"><span class="stButton share-option"><span class="chicklets email">&nbsp;</span></span></span>
+*			</div>
+*		
+*			<ul class="article-tools ng-scope" ng-controller="SaveToLibraryCtrl">
+*				<li class="print"><button id="print-page" class="print-icon">Print</button></li>
+*			</ul>
+*			<dl id="font-resizer">
+*				<dt>Font Size</dt>
+*				<dd class="font-normal">A</dd> 
+*				<dd class="font-medium">A</dd> 
+*				<dd class="font-large">A</dd>
+*			</dl>
+*		</div>
+*			</div>
+*				<div class="the-text">
+*					<p>Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. </p>
+*		<p>Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. Article Paragraph Text. </p>
+*		<h3><strong>References</strong></h3>
+*		<ol>
+*		<li>Name, Name, Name, et al. Reference Title. <em>Emphasized Text</em> 2001;103:2928-34.</li>
+*		<li>Name, Name, Name, et al. Reference Title. <em>Emphasized Text</em> 2001;103:2928-34.</li>
+*		<li>Name, Name, Name, et al. Reference Title. <em>Emphasized Text</em> 2001;103:2928-34.</li>		
+*		</ol>
+*			<p class="topics-list"><b>Clinical Topics:</b> <a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic, </a><a href="">Clinical Topic </a></p>
+*			<p class="keywords-list"><b>Keywords:</b> <i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword, </i><i>Keyword </i></p>
+*					<br>
+*					<a href="#" id="backToListings" class="parent back-to-listing">&lt; Back to Listings</a>
+*					<br>
+*					<!-- subcontent -->
+*					<!-- /subcontent -->
+*		<!-- /comment box -->
+*				</div><!-- the-text -->
+*		</article>
+*/

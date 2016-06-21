@@ -1,0 +1,59 @@
+
+    <h1 class="with-underline">Understanding Cardiovascular Risk</h1>
+    <div data-bind="ui-accordion: {}" class="accordion">
+        <div>
+            <h2 class="toggle"><i class="fa fa-holder"></i><span class="text">10-Year ASCVD Risk</span></h2>
+            <div class="collapsable-panel ">
+                <div class="bar close">
+                    <a class="action-btn close" data-bind="click:panelHide">
+                    <i class="fa fa-holder"></i>close</a>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>The 10-year calculated ASCVD risk is a quantitative estimation of absolute risk based upon data from representative population samples. </li>
+                        <li>The 10-year risk estimate for "optimal risk factors" is represented by the following specific risk factor numbers for an individual of the same age, sex and race: Total cholesterol of 170 mg/dL, HDL-cholesterol of 50 mg/dL, untreated systolic blood pressure of 110 mm Hg, no diabetes history, and not a current smoker.</li>
+                        <li>While the risk estimate is applied to individuals, it is based on group averages.  </li>
+                        <li>Just because two individuals have the same estimated risk does not mean that they will or will not have the same event of interest. </li>
+                        <li>Example: If the 10-year ASCVD risk estimate is 10%, this indicates that among 100 patients with the entered risk factor profile, 10 would be expected to have a heart attack or stroke in the next 10 years.</li>
+                    </ul>
+                </div>
+                <div class="bar jumpToTop">
+                    <a class="action-btn top" data-bind="click:panelScrollTop">
+                    <i class="fa fa-holder"></i>top</a>
+                </div>
+            </div>
+        </div>
+    <div>
+        <h2 class="toggle"><i class="fa fa-holder"></i><span class="text">Lifetime ASCVD Risk</span></h2>
+            <div class="collapsable-panel ">
+                <div class="bar close">
+                    <a class="action-btn close" data-bind="click:panelHide">
+                    <i class="fa fa-holder"></i>close</a>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>The lifetime calculated ASCVD risk represents a quantitative estimation of absolute risk for a 50 year old man or woman with the same risk profile.</li>
+                        <li>This estimation of risk is based on the grouping of risk factor levels into 5 strata.
+                            <ul>
+                                <li>All risk factors are optimal*</li>
+                                <li>&ge;1 risk factors are not optimal&dagger;</li>
+                                <li>&ge;1 risk factors are elevated&Dagger;</li>
+                                <li>1 major risk factor&sect;</li>
+                                <li>&ge;2 major risk factors&sect;</li>
+                            </ul>
+                        </li>
+                        <li>The division of lifetime risk by these 5 strata leads to thresholds in the data with large apparent changes in lifetime risk estimates.</li>
+                        <li>Example: An individual that has all optimal risk factors except for a systolic blood pressure of 119 mm Hg has a lifetime ASCVD risk of 5%.  In contrast, a similar individual that has all optimal risk factors except for a systolic blood pressure of 120 mm Hg has a lifetime ASCVD risk of 36%.  This substantial difference in lifetime risk is due to the fact that they are in different stratum.</li>
+                    </ul>
+                    <p class="quiet">*Optimal risk levels for lifetime risk are represented by the simultaneous presence of all of the following: Untreated total cholesterol &lt;180 mg/dL, untreated blood pressure &lt;120/&lt;80 mm Hg, no diabetes history, and not a current smoker</p>
+                    <p class="quiet">&dagger;Nonoptimal risk levels for lifetime risk are represented by 1 or more of the following: Untreated total cholesterol of 180 to 199 mg/dL, untreated systolic blood pressure of 120 to 139 mm Hg or diastolic&nbsp;blood pressure of 80 to 89 mm Hg, and no diabetes history and not a current smoker</p>
+                    <p class="quiet">&Dagger;Elevated risk levels for lifetime risk are represented by 1 or more of the following: Untreated total cholesterol of 200 to 239 mg/dL, untreated systolic blood pressure of 140 to 159 mm Hg or diastolic&nbsp;blood pressure of 90 to 99 mm Hg, and no diabetes history and not a current smoker</p>
+                    <p class="quiet">&sect;Major risk levels for lifetime risk are represented by any of the following: Total cholesterol &ge;240 mg/dL or treated, systolic blood pressure &ge;160 mm Hg or diastolic&nbsp;blood pressure &ge;100 mm Hg or treated, or diabetes, or current smoker</p>
+            </div>
+            <div class="bar jumpToTop">
+                <a class="action-btn top" data-bind="click:panelScrollTop">
+                <i class="fa fa-holder"></i>top</a>
+            </div>
+        </div>
+    </div>
+</div>

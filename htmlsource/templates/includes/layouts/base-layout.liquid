@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>
+            ASCVD Risk Estimator
+        </title>
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png"/>
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png"/>
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
+        <link rel="manifest" href="/manifest.json"/>
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="assets/css/normalize.min.css"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300"/>
+        <link rel="stylesheet" href="assets/css/foundation-sites.min.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/ascvd.min.css"/>
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" href="assets/css/broswerFIX/Fallback-IE9.css"/>
+        <![endif]-->
+    </head>
+    <body style="position: static; background-color:white;">
+        {% include "layouts/browser-warning" %}
+        <div  data-bind="page: {id:'calulate', role: 'start',beforeShow:remakeSticky()}" class="">
+            {% include "pages/estimator" %}
+            {% include "pages/recomendation" %}
+        </div>
+        <div  data-bind="page: {id:'content'}" >
+            {% include "sections/header-tabs" %}
+            {% include "pages/credit"%}
+            {% include "pages/aboutapp"%}
+            {% include "pages/disclaimer"%}
+            {% include "pages/resources" %}
+            {% include "pages/clinician"%}
+            {% include "pages/patient"%}
+        </div>
+        <div class="reveal warning" id="requiredModal" data-reveal>
+            <h1 class="with-underline">
+                Cannot Calculate Risk
+            </h1>
+            <p class="lead">
+                There is information that is either missing or outside acceptable limits. We cannot properly calculate risk and give you a recommendation until information is correct.
+            </p>
+            <p>
+                Below is a list of information that is either missing or have errors
+            </p>
+            <ul class="inputList">
+                <li data-bind="css: $root.sexValidation().status,text: $root.sexValidation().message"></li>
+                <li data-bind="css: $root.ageValidation().status,text: $root.ageValidation().message">
+                    ">Age <span class="warning">Missing   </span><span class="error">Error</span></li><li data-bind="css: $root.raceValidation().status,text: $root.raceValidation().message">">
+                    Race
+                    <span class="warning">
+                        Missing
+                    </span>
+                    <span class="error">
+                        Error
+                    </span>
+                </li>
+                <li data-bind="css: $root.hdlValidation().status,text: $root.hdlValidation().message">
+                    ">HDL - Cholesterol <span class="warning">Missing </span><span class="error">Error</span></li><li data-bind="css: $root.totalCholesterolValidation().status,text: $root.totalCholesterolValidation().message">">
+                    Total Cholesterol
+                    <span class="warning">
+                        Missing
+                    </span>
+                    <span class="error">
+                        Error
+                    </span>
+                </li>
+                <li data-bind="css: $root.bloodPresureValidation().status,text: $root.bloodPresureValidation().message">
+                    ">Systolic Blood Pressure <span class="warning">Missing   </span><span class="error">Error</span></li></ul><button class="button small expanded" data-close aria-label="Close reveal" type="button">Close</button><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>{% include "layouts/footer" %}{% include "scripts" %}
+                </body>
+            </html>

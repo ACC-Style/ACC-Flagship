@@ -1,0 +1,84 @@
+/*
+
+    Zebra_DatePicker: a lightweight jQuery date picker plugin
+
+    Default theme
+
+    copyright (c) 2011 - 2013 Stefan Gabos
+    http://stefangabos.ro/jquery/zebra-datepicker/
+
+*/
+$background-color: $main-menu-bg-color;
+$cell-background-color: $main-bg-color;
+.Zebra_DatePicker *,
+.Zebra_DatePicker *:after,
+.Zebra_DatePicker *:before  { -moz-box-sizing: content-box !important; -webkit-box-sizing: content-box !important; box-sizing: content-box !important }
+.Zebra_DatePicker *         { margin: 0; padding: 0; color: #000; background: transparent; border: none }
+.Zebra_DatePicker{
+	position: absolute; 
+	background: $background-color; 
+	border: 3px solid $background-color; 
+	display: none; 
+	z-index: 100; 
+	//GLOBALS
+	table                      { border-collapse: collapse; border-spacing: 0 }
+	td,
+	th                         { text-align: center; padding: 5px 0 }
+	td                         { cursor: pointer }
+	.dp_daypicker,
+	.dp_monthpicker,
+	.dp_yearpicker             { margin-top: 3px }
+	.dp_daypicker td,
+	.dp_daypicker th,
+	.dp_monthpicker td,
+	.dp_yearpicker td         { background: $cell-background-color; width: 30px; border: 1px solid $background-color }
+	.Zebra_DatePicker,
+	.dp_header .dp_hover,
+	.dp_footer .dp_hover { -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px }
+	//HEADER
+	.dp_header td             { color: #FFF }
+	.dp_header .dp_previous,
+	.dp_header .dp_next       { width: 30px; font-size: 2.5em; }
+	.dp_header .dp_caption    { font-weight: bold }
+	.dp_header .dp_hover      { background: mix($background-color,#000,75%); color: #FFF }
+	.dp_header .dp_blocked    { color: #888; cursor: default }
+	//DATEPICKER
+	.dp_daypicker th              { background: #FFCC33 }
+	td.dp_not_in_month            { background: #F3F3F3; color: #CDCDCD; cursor: default }
+	td.dp_not_in_month_selectable { background: #F3F3F3; color: #CDCDCD; cursor: pointer }
+	td.dp_weekend                 { background: #D8D8D8 }
+	td.dp_weekend_disabled        { color: #CCC; cursor: default }
+	td.dp_selected                { background: mix($background-color,#000,50%); color: #FFF !important }
+	td.dp_week_number             { background: #FFCC33; color: #555; cursor: text; font-style: italic }
+	//MONTHPICKER
+	.dp_monthpicker td    { width: 33% }
+	//YEARPICKER
+	.dp_yearpicker td     { width: 33% }
+	//FOOTER
+	.dp_footer            { margin-top: 3px }
+	.dp_footer .dp_hover  { background:  mix($background-color,#000,75%); color: #FFF }
+	//SELECT CURRENT DAY
+	.dp_today { color: #FFF; padding: 3px }
+	//CLEAR DATE
+	.dp_clear { color: #FFF; padding: 3px }
+	// SOME MORE GLOBALS (MUST BE LAST IN ORDER TO OVERWRITE PREVIOUS PROPERTIES)
+	td.dp_current             { color: #C40000 }
+	td.dp_disabled_current    { color: #E38585 }
+	td.dp_disabled            { background: #F3F3F3; color: #CDCDCD; cursor: default }
+	td.dp_hover               { background:mix($cell-background-color,#000,50%); color: #FFF }
+}
+//ICON
+button.Zebra_DatePicker_Icon                { display: block; position: absolute; width: 16px; height: 16px; background: url('../images/icon-datepicker.png') no-repeat left top; text-indent: -9000px; border: none; cursor: pointer; padding: 0; line-height: 0; vertical-align: top }
+button.Zebra_DatePicker_Icon_Disabled       { background-image: url('../images/icon-datepicker-disabled.png') }
+//don't set vertical margins!
+button.Zebra_DatePicker_Icon                { margin: 0 0 0 3px }
+button.Zebra_DatePicker_Icon_Inside         { margin: 0 3px 0 0 }
+//Beaconfire Fixes
+.Zebra_DatePicker_Icon_Wrapper{
+    display: inline-block !important;
+}
+button.Zebra_DatePicker_Icon_Inside{
+    right: 0 !important;
+    top: 4px !important;
+    left: auto !important;//have to kill the way zebra does this because not responsive
+}

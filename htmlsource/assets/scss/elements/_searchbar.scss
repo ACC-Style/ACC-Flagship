@@ -1,0 +1,37 @@
+/**
+*   Search Bar:
+*   `.search-holder .search-bar` - Header search bar used on the ACC.org.
+*
+*        @example
+*        <div id="search-holder" role="search">
+*            <img id="header-search-trigger" src="/images/mobile-search-2x.png" alt="">
+*            <div class="search-bar">
+*                <div id="mainSearchBox" class="CoveoSearchInterface Coveostate CoveoComponentState CoveoComponentOptions CoveoQueryController CoveoDebug" style="display: block;">
+*                    <label id="nav-search-label" for="searchDropdownBox">Search</label>
+*                    <span class="nav-facade-active" id="nav-search-in" style="width: auto;">
+*                        <span data-value="search-alias=aps" id="nav-search-in-content">
+*                            All Types
+*                        </span>
+*                        <span class="nav-down-arrow nav-sprite"></span>
+*                        <select title="Search in" class="searchSelect" id="searchDropdownBox" name="books_category">
+*                            <option value="" title="All Types">All Types</option>
+*                            <option value="Articles and Stories" title="Articles &amp; Stories">Articles &amp; Stories</option>
+*                            <option value="JACC Journals" title="JACC Journals">JACC Journals</option>
+*                            <option value="Educational Activities" title="Educational Activities">Educational Activities</option>
+*                            <option value="Images and Slides" title="Images &amp; Slides">Images &amp; Slides</option>
+*                            <option value="Guidelines" title="Guidelines">Guidelines</option>
+*                            <option value="Meetings" title="Meetings">Meetings</option>
+*                            <option value="Other" title="Other">Other</option>
+*                        </select>
+*                    </span>
+*                    <div class="nav-searchfield-outer nav-sprite coveo-search-box-wrapper">
+*                        <input type="text" name="field-keywords" placeholder="Search" title="Search For" id="twotabsearchtextbox" class="CoveoOmniBox CoveoQueryBox" form="coveo-dummy-form"><div class="coveo-omnibox" style="display: none;"></div><span class="coveo-query-box-clear" style="display: none;"><span class="coveo-icon"></span></span>
+*                        <span class="CoveoTopFieldSuggestions" data-field="@ftopictermsearchvalues86069" data-header-title="Topics &amp; Keywords" data-number-of-suggestions="30"></span>
+*                    </div>
+*                    <div class="nav-submit-button">
+*                        <button id="globalSearchBoxButton" class="CoveoSearchButton  nav-submit-input">Search</button>
+*                    </div>
+*                </div>
+*            </div>
+*        </div>
+*/

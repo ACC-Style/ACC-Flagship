@@ -1,0 +1,93 @@
+
+<div class="column small-12"><h2 class="with-underline">Demographics</h2></div>
+<div class="question small-12 medium-4 column" data-bind="css: $root.sexValidation().status ">
+    <div class="label-holder">
+        <label for="inputSex">
+            <span class="text">Sex</span>
+<span class="required-holder">
+<i class="fa fa-holder-dynamic"></i>
+</span>
+              </label>
+    </div>
+    <div class="input-holder">
+        <div class="input-spacer">
+            <div class="button-group selectable small radius" data-bind="foreach:$root.FormData.sex">
+                <a href="" style="white-space: nowrap;" class="button small" data-bind="text:label,click:function(){appmodel.Form().Sex(label)},css:{'selected':$root.Form().Sex() == label}" ></a>
+            </div>
+{% comment %}            <select name="inputSex" id="inputSex" data-bind="
+                options:$root.FormData.sex,
+                optionsText:'label',
+                optionsValue:'label',
+                optionsCaption:'Select',
+                value:$root.Form().Sex
+                ">
+            </select>{% endcomment %}
+        </div>
+    </div>
+    <div class="message-holder">
+        <span data-bind="css: $root.sexValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.sexValidation().message"></span>
+        </span>
+    </div>
+    <div class="hint"></div>
+</div>
+<div class="question small-12 medium-3 column" data-bind="css: $root.ageValidation().status ">
+    <div class="label-holder">
+        <label for="">
+            <span class="text">Age</span>
+            <span class="required-holder">
+            <i class="fa fa-holder-dynamic"></i>
+            </span>
+        </label>
+    </div>
+    <div class="input-holder">
+        <div class="input-spacer">
+            <input type="number" data-bind="value:Form().Age, valueUpdate: 'blur'"/>
+        </div>
+    </div>
+    <div class="message-holder">
+        <span data-bind="css: $root.ageValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.ageValidation().message"></span>
+        </span>
+    </div>
+    <div class="hint">Age must be between 20-79</div>
+</div>
+<div class="question small-12 medium-5 column"  data-bind="css: $root.raceValidation().status ">
+    <div class="label-holder">
+        <label for="inputRace">
+            <span class="text">Race</span>
+            <span class="required-holder">
+<i class="fa fa-holder-dynamic"></i>
+</span>
+        </label>
+    </div>
+    <div class="input-holder">
+            <div class="button-group selectable small radius race--group-button" data-bind="foreach:$root.FormData.race">
+                <a href="" class="button small" data-bind="text:label,click:function(){appmodel.Form().Race(label)},css:{'selected':$root.Form().Race() == label}" ></a>
+            </div>
+{% comment %}        <select name="inputRace" id="inputRace" data-bind="
+                options:$root.FormData.race,
+                optionsText:'label',
+                optionsValue:'label',
+                optionsCaption:'Select',
+                value:$root.Form().Race
+                ">
+        </select>{% endcomment %}
+    </div>
+    <div class="hint"></div>
+    <div class="message-holder">
+   
+        <span data-bind="css: $root.raceValidation().status">
+             <i class="fa fa-holder"></i>
+             <span class="text" data-bind="text: $root.raceValidation().message"></span>
+        </span>
+    </div>
+</div>
+<div class="column small-12" data-bind=" visible:isRaceOther"> 
+    <div class="callout highlighted">
+        <span class="bold">Note:</span> These estimates may underestimate the 10-year and lifetime risk  for persons from some race/ethnic groups, especially American Indians, some Asian Americans (e.g., of south Asian ancestry), and some Hispanics (e.g., Puerto Ricans), and may overestimate the risk for others, including some Asian Americans (e.g., of east Asian ancestry) and some Hispanics (e.g., Mexican Americans).
+        Because the primary use of these risk estimates is to facilitate the very important discussion regarding risk reduction through lifestyle change, the imprecision introduced is small enough to justify proceeding with lifestyle change counseling informed by these results.
+    </div>
+ </div>

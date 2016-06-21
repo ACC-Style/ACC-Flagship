@@ -1,0 +1,323 @@
+/**
+*	Coveo Facet Column:
+*	`coveo-facet-column` - ...
+*							   
+*		@example
+*		<div class="coveo-facet-column" id="filter-holder">
+*		    <div class="coveo-topSpace">
+*		    </div>
+*		    <div class="CoveoFacet" data-title="Filter by Topic" data-field="@ftopictermsearchvalues86069" data-number-of-values="1" data-id="TopicSearchFacet" data-enable-collapse="True" data-enable-more-less="False" data-enable-settings="False" data-lookup-field="" data-sort-criteria="occurrences" data-is-multi-value-field="True" data-show-icon="False" data-computed-field="" data-computed-field-operation="" data-computed-field-format="" data-computed-field-caption="" data-include-in-breadcrumb="True" data-number-of-values-in-breadcrumb="5" data-include-in-omnibox="True" data-enable-facet-search="True" data-facet-number-of-values-in-facet-search="25" data-allow-toggling-operator="False" data-use-and="False" data-page-size="10" data-injection-depth="1000" data-available-sorts="">
+*		        <div class="coveo-header">
+*		            <div class="coveo-icon ftopictermsearchvalues86069">
+*		            </div>
+*		            <div class="coveo-wait-animation display-none">
+*		            </div>
+*		            <div title="Collapse" class="coveo-collapse">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div title="Expand" class="coveo-expand display-none">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div class="coveo-or coveo-operator display-none" title="Switch to AND">
+*		            </div>
+*		            <div title="Clear Filter by Topic" class="coveo-eraser display-none">
+*		                <span>
+*		                    show all
+*		                </span>
+*		            </div>
+*		            <div class="coveo-title">
+*		                Filter by Topic
+*		                <span class="help-holder">
+*		                    <img src="/images/icon-question-gray.png" alt="Filter by Topic to refine the listing" data-placement="right" data-toggle="tooltip" data-original-title="Filter by Topic to refine the listing" class="question-circle"/>
+*		                </span>
+*		            </div>
+*		        </div>
+*		        <div class="coveo-search">
+*		            <div class="coveo-magnifier">
+*		            </div>
+*		            <div class="coveo-wait-animation display-none">
+*		            </div>
+*		            <div title="Clear Search" class="coveo-clear display-none">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div class="coveo-middle">
+*		                <input type="text" autocapitalize="off" autocorrect="off" placeholder="Enter a topic to filter results" form="coveo-dummy-form"/>
+*		            </div>
+*		        </div>
+*		        <ul class="coveo-values">
+*		        </ul>
+*		    </div>
+*		    <!-- CoveoFacet -->
+*		    <div class="CoveoFacet" data-title="Media Types" data-field="@fmediaz32xtype86069" data-number-of-values="5" data-id="" data-enable-collapse="True" data-enable-more-less="True" data-enable-settings="False" data-lookup-field="" data-sort-criteria="occurrences" data-is-multi-value-field="False" data-show-icon="False" data-computed-field="" data-computed-field-operation="" data-computed-field-format="" data-computed-field-caption="" data-include-in-breadcrumb="False" data-number-of-values-in-breadcrumb="5" data-include-in-omnibox="False" data-enable-facet-search="False" data-facet-number-of-values-in-facet-search="15" data-allow-toggling-operator="False" data-use-and="False" data-page-size="10" data-injection-depth="1000" data-available-sorts="">
+*		        <div class="coveo-header">
+*		            <div class="coveo-icon fmediaz32xtype86069">
+*		            </div>
+*		            <div class="coveo-wait-animation display-none">
+*		            </div>
+*		            <div title="Collapse" class="coveo-collapse">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div title="Expand" class="coveo-expand display-none">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div class="coveo-or coveo-operator display-none" title="Switch to AND">
+*		            </div>
+*		            <div title="Clear Media Types" class="coveo-eraser display-none">
+*		                <span>
+*		                    show all
+*		                </span>
+*		            </div>
+*		            <div class="coveo-title">
+*		                Media Types
+*		                <span class="help-holder">
+*		                    <img src="/images/icon-question-gray.png" alt="Media Types to refine the listing" data-placement="right" data-toggle="tooltip" data-original-title="Media Types to refine the listing" class="question-circle"/>
+*		                </span>
+*		            </div>
+*		        </div>
+*		        <ul class="coveo-values">
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude Image" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            Image
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            18,657
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude Slides" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            Slides
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            1,480
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude Video" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            Video
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            1,283
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude File" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            File
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            1,061
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		        </ul>
+*		        <div class="coveo-footer">
+*		            <a class="coveo-more" href="javascript:">
+*		                More
+*		            </a>
+*		            <a class="coveo-less display-none" href="javascript:">
+*		                Fewer
+*		            </a>
+*		        </div>
+*		    </div>
+*		    <!-- CoveoFacet -->
+*		    <div class="CoveoFacet" data-title="File Type" data-field="@fez120xtension86069" data-number-of-values="5" data-id="" data-enable-collapse="True" data-enable-more-less="True" data-enable-settings="False" data-lookup-field="" data-sort-criteria="occurrences" data-is-multi-value-field="False" data-show-icon="False" data-computed-field="" data-computed-field-operation="" data-computed-field-format="" data-computed-field-caption="" data-include-in-breadcrumb="True" data-number-of-values-in-breadcrumb="5" data-include-in-omnibox="True" data-enable-facet-search="False" data-facet-number-of-values-in-facet-search="15" data-allow-toggling-operator="False" data-use-and="False" data-page-size="10" data-injection-depth="1000" data-available-sorts="">
+*		        <div class="coveo-header">
+*		            <div class="coveo-icon fez120xtension86069">
+*		            </div>
+*		            <div class="coveo-wait-animation display-none">
+*		            </div>
+*		            <div title="Collapse" class="coveo-collapse">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div title="Expand" class="coveo-expand display-none">
+*		                <span class="coveo-icon">
+*		                </span>
+*		            </div>
+*		            <div class="coveo-or coveo-operator display-none" title="Switch to AND">
+*		            </div>
+*		            <div title="Clear File Type" class="coveo-eraser display-none">
+*		                <span>
+*		                    show all
+*		                </span>
+*		            </div>
+*		            <div class="coveo-title">
+*		                File Type
+*		                <span class="help-holder">
+*		                    <img src="/images/icon-question-gray.png" alt="File Type to refine the listing" data-placement="right" data-toggle="tooltip" data-original-title="File Type to refine the listing" class="question-circle"/>
+*		                </span>
+*		            </div>
+*		        </div>
+*		        <ul class="coveo-values">
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude gif" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            gif
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            15,753
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude jpg" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            jpg
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            2,757
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude pptx" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            pptx
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            1,139
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude ppt" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            ppt
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            1,138
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		            <li class="coveo-value coveo-selectable">
+*		                <div title="Exclude mpg" class="coveo-exclude">
+*		                </div>
+*		                <label>
+*		                    <div class="coveo-label">
+*		                        <input type="checkbox" form="coveo-dummy-form"/>
+*		                        <div class="coveo-checkbox">
+*		                            <span>
+*		                            </span>
+*		                        </div>
+*		                        <span class="coveo-caption">
+*		                            mpg
+*		                        </span>
+*		                        <span class="coveo-count">
+*		                            562
+*		                        </span>
+*		                    </div>
+*		                </label>
+*		            </li>
+*		        </ul>
+*		        <div class="coveo-footer">
+*		            <a class="coveo-more coveo-active" href="javascript:">
+*		                More
+*		            </a>
+*		            <a class="coveo-less display-none" href="javascript:">
+*		                Fewer
+*		            </a>
+*		        </div>
+*		    </div>
+*		    <!-- CoveoFacet -->
+*		    <div id="Adslot-0" class="dart-ad">
+*		        <div class="border-none frame" id="google_ads_iframe_/5138829/CardioSource_Adslot_300x250_0__container__">
+*		            <iframe id="google_ads_iframe_/5138829/CardioSource_Adslot_300x250_0" name="google_ads_iframe_/5138829/CardioSource_Adslot_300x250_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;  <html> <body class="background-transparent"> </body> </html> &quot;">
+*		            </iframe>
+*		        </div>
+*		        <iframe class="frame hidden" id="google_ads_iframe_/5138829/CardioSource_Adslot_300x250_0__hidden__" name="google_ads_iframe_/5138829/CardioSource_Adslot_300x250_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;  <html> <body class="background-transparent"> </body> </html> &quot;">
+*		        </iframe>
+*		    </div>
+*		    <div id="Adslot-1" class="dart-ad">
+*		        <div class="border-none frame" id="google_ads_iframe_/5138829/CardioSource_SecondaryAdslot_300x250_0__container__">
+*		            <iframe id="google_ads_iframe_/5138829/CardioSource_SecondaryAdslot_300x250_0" name="google_ads_iframe_/5138829/CardioSource_SecondaryAdslot_300x250_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;  <html> <body class="background-transparent"> </body> </html> &quot;">
+*		            </iframe>
+*		        </div>
+*		    </div>
+*		    <div class="coveo-bottomSpace">
+*		    </div>
+*		</div>
+*/
+

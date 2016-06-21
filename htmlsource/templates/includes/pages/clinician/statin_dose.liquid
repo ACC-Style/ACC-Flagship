@@ -1,0 +1,133 @@
+<h1 class="with-underline">Intensities of Statin Therapy</h1>
+
+    <div class="row">
+        <div class="column large-4">
+            <h3>
+                Low-Intensity 
+            </h3>
+            <p>
+                Daily dose lowers LDL-C, on average by approximately &lt;30%
+            </p>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                            <small>
+                                dose
+                            </small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ko foreach: Statins() -->
+                    <tr>
+                        <!-- ko foreach: dose -->
+                        <!-- ko if: type == 'doselow' -->
+                        <!-- ko if: htmlText != '--' -->
+                        <td data-bind="html:$parent.name">
+                        </td>
+                        <td data-bind="html: htmlText" class="text-right">
+                        </td>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <!-- /ko -->
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+        <div class="column large-4">
+            <h3>
+                Moderate-Intensity 
+            </h3>
+            <p>
+                Daily dose lowers LDL-C, on average by approximately 30% to &lt;50%
+            </p>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                            <small>
+                                dose
+                            </small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ko foreach: Statins() -->
+                    <tr>
+                        <!-- ko foreach: dose -->
+                        <!-- ko if: type == 'dosemedium' -->
+                        <!-- ko if: htmlText != '--' -->
+                        <td data-bind="html:$parent.name">
+                        </td>
+                        <td data-bind="html: htmlText" class="text-right">
+                        </td>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <!-- /ko -->
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+        <div class="column large-4">
+            <h3>
+                High-Intensity 
+            </h3>
+            <p>
+                Daily dose lowers LDL-C, on average by approximately &ge;50%
+            </p>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                            <small>
+                                dose
+                            </small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ko foreach: Statins() -->
+                    <tr>
+                        <!-- ko foreach: dose -->
+                        <!-- ko if: type == 'dosehigh' -->
+                        <!-- ko if: htmlText != '--' -->
+                        <td data-bind="html:$parent.name">
+                        </td>
+                        <td data-bind="html: htmlText" class="text-right">
+                        </td>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <!-- /ko -->
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <p class="quiet">
+            Statins and doses that are approved by the U.S. FDA but were not tested in the RCTs reviewed are listed in parentheses
+        </p>
+        <p class="quiet">
+            <strong>
+                *
+            </strong>
+            Evidence from 1 RCT (down-titration if unable to tolerate atorvastatin 80 mg)
+        </p>
+        <p class="quiet">
+            <strong>
+                **
+            </strong>
+            Initiation of or titration to simvastatin 80 mg is not recommended by the FDA due to increased risk of myopathy, including rhabdomyolysis
+        </p>
+ 
+</div>

@@ -1,0 +1,66 @@
+{
+	"version": "5",
+	"clinician-resources":[{
+			"file":"clinical_understanding",
+			"path":"pages/clinician/clinical_understanding",
+			"name":"Understanding Cardiovascular Risk"
+			},{
+			"file":"clinical_lifestyle",
+			"path":"pages/clinician/clinical_lifestyle",
+			"name":"Lifestyle Recommendations"
+			},{
+			"file":"statin",
+			"path":"pages/clinician/statin",
+			"name":"Groups that Benefit from Statin Therapy"
+			},{
+			"file":"summary_recommendations",
+			"path":"pages/clinician/summary_recommendations",
+			"name":"Blood Cholesterol Recommendation Summary"
+			},{
+			"file":"guideline_flowchart",
+			"path":"pages/clinician/guideline_flowchart",
+			"name":"Recommendations for Initiation of Statin Therapy"
+			},{
+			"file":"statin_dose",
+			"path":"pages/clinician/statin_dose",
+			"name":"Intensities of Statin Therapy"
+			},{
+			"file":"monitor_flowchart",
+			"path":"pages/clinician/monitor_flowchart",
+			"name":"Recommendations to Monitor Response to Statin Therapy"
+			},{
+			"file":"clinical_reference_safety_recomendations",
+			"path":"pages/clinician/clinical_reference_safety_recomendations",
+			"name":"Statin Safety Recommendations"
+			},{
+			"file":"reference_external_links",
+			"path":"pages/clinician/reference_external_links",
+			"name":"External Links to Full Guidelines &amp; More Information"
+			}],
+	"patient-resources":[{
+			"file":"patient_risk",
+			"path":"pages/clinician/patient_risk",
+			"name":"Understanding My Cardiovascular Risk"
+			},{
+			"file":"patient_lifestyle",
+			"path":"pages/clinician/patient_lifestyle",
+			"name":"Diet and Physical Activity"
+			},{
+			"file":"patient_obesity",
+			"path":"pages/clinician/patient_obesity",
+			"name":"Weight Management Recommendations"
+			},{
+			"file":"patient_cholesterol",
+			"path":"pages/clinician/patient_cholesterol",
+			"name":"Blood Cholesterol Management Recommendations"
+			},{
+			"file":"statin_infographic",
+			"path":"pages/clinician/statin_infographic",
+			"name":"Groups that Benefit from Statin Therapy Infographic"
+			},{
+			"file":"patient_reference_definition",
+			"path":"pages/clinician/patient_reference_definition",
+			"name":"Common Cardiovascular Terms"
+			}]
+}
+

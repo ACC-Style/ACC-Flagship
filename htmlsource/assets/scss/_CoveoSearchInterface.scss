@@ -1,0 +1,239 @@
+/**
+*	Coveo Search Interface:
+*	`CoveoSearchInterface` - ...
+*								
+*		@example
+*		<div id="searchLatest" class="CoveoSearchInterface content-block-content tab-content Coveostate CoveoComponentState CoveoComponentOptions CoveoQueryController CoveoHistoryController *CoveoDebug 		active" data-enable-history="True" data-results-per-page="6" data-excerpt-length="200" data-hide-until-first-query="True" data-auto-trigger-query="True">
+*		
+*						<div class="CoveoAnalytics" data-endpoint="/coveo/rest/v6/analytics" data-send-to-cloud="false"></div>
+*					<span id="latestOriginalPostedDateSort" class="CoveoSort coveo-selected" data-sort-criteria="@foriginalz32xpostedz32xdate86069 descending"></span>
+*					<div class="coveo-results-section" ng-modules="SaveToLib">
+*						<div class="coveo-results-column">
+*							<div class="coveo-search-section"></div>
+*							<div class="coveo-results-header"></div>
+*							<div class="CoveoHiddenQuery" style="display: none;"></div>
+*							<div class="CoveoResultList" data-wait-animation="fade" data-enable-infinite-scroll="False" data-infinite-scroll-page-size="10">
+*		
+*								<script class="result-template" type="text/x-underscore-template">
+*									<article class="article-tease">
+*										{{ if (raw.fauthorimage86069) { }}
+*										<div class="main-image">
+*											<img src="{{=raw.fauthorimage86069}}" height="110" width="110">
+*										</div><!-- main-image -->
+*										{{ } else if (raw.fthumbnailimageurl86069) { }}
+*										<div class="main-image">
+*											{{=image(raw.fthumbnailimageurl86069)}}
+*										</div><!-- main-image -->
+*										{{ } else if ('/~/media/Non-Clinical/Images/System Images/Default/Listing.jpg') { }}
+*										<div class="main-image">
+*											<img src="/~/media/Non-Clinical/Images/System Images/Default/Listing.jpg" height="110" width="110" />
+*										</div><!-- main-image -->
+*										{{ } }}
+*										<div class="article-content">
+*											<h1 class='coveo-title'>
+*												{{ if (raw.fcontentsourcetype86069 == "External") { }}
+*												{{=anchor(raw.fcontenturl86069, { text : raw.fcontenttitle86069, class : 'CoveoResultLink external-link', target: '_blank'})}}
+*												{{ } else { }}
+*												{{=anchor(raw.fcontenturl86069 + '?w_nav=Tab', { text : raw.fcontenttitle86069, class : 'CoveoResultLink'})}}
+*												{{ } }}
+*											</h1>
+*											{{ if (raw.fauthorattribution86069) { }}
+*											<p class="date">{{=date(raw.foriginalz32xpostedz32xdate86069, { predefinedFormat: "MMM dd, yyyy" })}} &nbsp;&nbsp;|&nbsp;&nbsp;{{=raw.		*fauthorattribution86069}}</p>
+*											{{ } else { }}
+*											<p class="date">{{=date(raw.foriginalz32xpostedz32xdate86069, { predefinedFormat: "MMM dd, yyyy" })}}</p>
+*											{{ } }}
+*											{{ if (raw.farticletypecomputed86069) { }}
+*											<h2 class="journal-title">{{-raw.farticletypecomputed86069}}</h2>
+*											{{ } }}
+*											<div class="article-tools" ng-controller="SaveToLibraryCtrl">
+*												{{ if (raw.feditorsz32xpick86069==1) { }}
+*												<span class="editors-pick-icon">Editors' Pick</span>
+*												{{ } }}
+*											</div><!-- article-tools -->
+*											<p class="coveo-excerpt">{{=shorten(raw.fcontentsummary86069, 250)}}</p>
+*											{{ if (raw.fclinicaltopiccomputedlinks86069) { }}
+*											<p class="topics-list"><b>Clinical Topics:</b> {{=raw.fclinicaltopiccomputedlinks86069}} </p>
+*											{{ } }}
+*											{{ if (raw.fmeshtermsvalues86069) { }}
+*											<p class="keywords-list"><b>Keywords:</b> {{=raw.fmeshtermsvalues86069}} </p>
+*											{{ } }}
+*										</div><!-- article-content -->
+*									</article>
+*								</script>
+*							<div class=""><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/images/articles/cswni/07-08_2015.jpg">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/articles/2015/06/24/11/58/gre8t-debates-eight-current-controversies-in-interventional-cardiology?w_nav=Tab" 		*class="CoveoResultLink">Gre8t Debates: Eight Current Controversies in Interventional Cardiology </a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jul 01, 2015</p>
+*											
+*											
+*											<h2 class="journal-title">CardioSource WorldNews Interventions</h2>
+*											
+*											<!-- article-tools -->
+*											<p class="coveo-excerpt">Cover Story | See a patient with a non-ST elevation MI and you act—but is your invasive strategy better early or later? *What about 		single; no, dual; no, triple antiplatelet/antithrombotic therapy—and for how long and when? What about PCI:...</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/anticoagulation-management">Anticoagulation Management, </a><a href="/clinical-topics/arrhythmias-and-clinical-ep">*Arrhythmias and 		Clinical EP, </a><a href="/clinical-topics/cardiac-surgery">Cardiac Surgery, </a><a href="/clinical-topics/heart-failure-and-*cardiomyopathies">Heart Failure 		and Cardiomyopathies, </a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-intervention">*Invasive Cardiovascular Angiography and 		Intervention, </a><a href="/clinical-topics/noninvasive-imaging">Noninvasive Imaging, </a><a *href="/clinical-topics/vascular-medicine">Vascular Medicine, </a		><a href="/clinical-topics/acute-coronary-syndromes/acs-and-cardiac-*biomarkers">ACS and Cardiac Biomarkers, </a><a href="/clinical-topics/anticoagulation-		management/anticoagulation-management-and-acs">*Anticoagulation Management and ACS, </a><a href="/clinical-topics/anticoagulation-management/anticoagulation-		management-and-atrial-*fibrillation">Anticoagulation Management and Atrial Fibrillation, </a><a href="/clinical-topics/arrhythmias-and-clinical-ep/atrial-		*fibrillation-supraventricular-arrhythmias">Atrial Fibrillation/Supraventricular Arrhythmias, </a><a href="/clinical-topics/cardiac-surgery/aortic-*surgery">		Aortic Surgery, </a><a href="/clinical-topics/cardiac-surgery/cardiac-surgery-and-arrhythmias">Cardiac Surgery and Arrhythmias, </a><a *href="/clinical-		topics/cardiac-surgery/cardiac-surgery-and-heart-failure">Cardiac Surgery and Heart Failure, </a><a href="/clinical-*topics/dyslipidemia/novel-agents">Novel 		Agents, </a><a href="/clinical-topics/heart-failure-and-cardiomyopathies/acute-heart-failure">Acute *Heart Failure, </a><a href="/clinical-topics/heart-		failure-and-cardiomyopathies/heart-failure-and-cardiac-biomarkers">Heart Failure and Cardiac *Biomarkers, </a><a href="/clinical-topics/heart-failure-and-		cardiomyopathies/mechanical-circulatory-support">Mechanical Circulatory Support , *</a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-		intervention/interventions-and-acs">Interventions and ACS, </a><a *href="/clinical-topics/invasive-cardiovascular-angiography-and-intervention/interventions-		and-coronary-artery-disease">Interventions and *Coronary Artery Disease, </a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-		intervention/interventions-and-imaging">*Interventions and Imaging, </a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-		intervention/interventions-and-vascular-*medicine">Interventions and Vascular Medicine, </a><a href="/clinical-topics/noninvasive-imaging/angiography">		Angiography, </a><a *href="/clinical-topics/noninvasive-imaging/nuclear-imaging">Nuclear Imaging</a> <button class="button-as-link more-link">more</button></p		>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>CardioSource WorldNews Interventions, </i><i>Acute Coronary Syndrome, </i><i>*Adenosine, </i><		i>Algorithms, </i><i>Antibodies, Monoclonal, </i><i>Anticoagulants, </i><i>Arteries, </i><i>Aspirin, </i><i>Atrial *Fibrillation, </i><i>Benzimidazoles, </i><		i>Cardiomyopathies, </i><i>Catheterization, </i><i>Comorbidity, </i><i>Composite Resins, </i><i>*Confidence Intervals, </i><i>Coronary Angiography, </i><i>		Coronary Artery Disease, </i><i>Coronary Stenosis, </i><i>Cost of Illness, </i><i>*Counterpulsation, </i><i>Diabetes Mellitus, </i><i>Drug-Eluting Stents, </i		><i>Euphoria, </i><i>Fibrinolytic Agents, </i><i>Heparin, </i><i>*Hirudins, </i><i>Homeostasis, </i><i>Hyperemia, </i><i>Hypotension, </i><i>Immunoglobulin 		Fab Fragments, </i><i>Inpatients, </i><i>Intervention *Studies, </i><i>Microcirculation, </i><i>Microvessels, </i><i>Morpholines, </i><i>Myocardium, </i><i>		Outcome Assessment (Health Care), </i><i>*Peptide Fragments, </i><i>Peptides, </i><i>Percutaneous Coronary Intervention, </i><i>Peripheral Vascular Diseases, 		</i><i>Piperazines, </i><i*>Platelet Membrane Glycoprotein IIb, </i><i>Protestantism, </i><i>Pyrazoles, </i><i>Pyridones, </i><i>Renal Insufficiency, 		Chronic, </i><i>*Reoperation, </i><i>Sepsis, </i><i>Sequoia, </i><i>Shock, Cardiogenic, </i><i>Sirolimus, </i><i>Stroke, </i><i>Thienopyridines, </i><i>		*Thiophenes, </i><i>Thrombosis, </i><i>Ticlopidine, </i><i>Tomography, </i><i>Troponin, </i><i>Troponin, </i><i>Troponin T, </i><i>Tyrosine, </i><i>*Warfarin, 		</i><i>Intervention Studies, </i><i>CardioSource WorldNews Interventions</i> <button class="button-as-link more-link">more</button><*/p>
+*											
+*										</div><!-- article-content -->
+*									</article><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/non-clinical/images/system images/profile images/m/mukherjee_debabrata.png" height="110" width="110">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/ten-points-to-remember/2015/06/29/14/04/cardiac-arrest-a-treatment-algorithm-for-emergent-invasive-cardiac-		*procedures?w_nav=Tab" class="CoveoResultLink">Cardiac Arrest Treatment Algorithm | Five Points to Remember</a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jun 29, 2015 &nbsp;&nbsp;|&nbsp;&nbsp;Debabrata Mukherjee, MD, F.A.C.C.</p>
+*											
+*											
+*											<h2 class="journal-title">Ten Points to Remember</h2>
+*											
+*											<!-- article-tools -->
+*											<p class="coveo-excerpt">The following are five points to remember from the American College of Cardiology’s Interventional Council regarding a *treatment 		algorithm for emergent invasive cardiac procedures in the resuscitated comatose patient.</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/arrhythmias-and-clinical-ep">Arrhythmias and Clinical EP, </a><a href="/clinical-topics/invasive-cardiovascular-*angiography-and-		intervention">Invasive Cardiovascular Angiography and Intervention, </a><a href="/clinical-topics/noninvasive-imaging">*Noninvasive Imaging, </a><a 		href="/clinical-topics/arrhythmias-and-clinical-ep/implantable-devices">Implantable Devices, </a><a href="/clinical-*topics/arrhythmias-and-clinical-ep/scd-		ventricular-arrhythmias">SCD/Ventricular Arrhythmias, </a><a href="/clinical-topics/arrhythmias-and-*clinical-ep/atrial-fibrillation-supraventricular-		arrhythmias">Atrial Fibrillation/Supraventricular Arrhythmias, </a><a href="/clinical-*topics/invasive-cardiovascular-angiography-and-		intervention/interventions-and-acs">Interventions and ACS, </a><a href="/clinical-*topics/invasive-cardiovascular-angiography-and-intervention/interventions-		and-imaging">Interventions and Imaging, </a><a href="/clinical-*topics/noninvasive-imaging/angiography">Angiography, </a><a href="/clinical-topics/noninvasive		-imaging/nuclear-imaging">Nuclear Imaging</a> <*button class="button-as-link more-link">more</button></p>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>Acute Coronary Syndrome, </i><i>Algorithms, </i><i>Arrhythmias, Cardiac, </i><i>	*	Cardiopulmonary Resuscitation, </i><i>Catheterization, </i><i>Coma, </i><i>Coronary Angiography, </i><i>Heart Arrest, </i><i>Out-of-Hospital *Cardiac Arrest, 		</i><i>Heart Conduction System, </i><i>Hypothermia, Induced, </i><i>Percutaneous Coronary Intervention, </i><i>Referral and *Consultation, </i><i>		Resuscitation</i> <button class="button-as-link more-link">more</button></p>
+*											
+*										</div><!-- article-content -->
+*									</article><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/non-clinical/images/system images/profile images/e/engwenyu_l.jpg" height="110" width="110">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/articles/2015/06/18/09/05/thrombotic-complications-associated-with-early-and-late-nonadherence-to-dual-*antiplatelet-		therapy?w_nav=Tab" class="CoveoResultLink">Thrombotic Complications Associated With Early and Late Nonadherence to Dual *Antiplatelet Therapy </a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jun 18, 2015 &nbsp;&nbsp;|&nbsp;&nbsp;Lydia R. Engwenyu, MD</p>
+*											
+*											
+*											<h2 class="journal-title">Article Review</h2>
+*											
+*											<div class="article-tools ng-scope" ng-controller="SaveToLibraryCtrl">
+*												
+*												<span class="editors-pick-icon">Editors' Pick</span>
+*												
+*											</div><!-- article-tools -->
+*											<p class="coveo-excerpt">Introduction
+*		
+*		The ACC/AHA 2007 guidelines recommend 12 months of dual antiplatelet therapy (DAPT) after placement of a drug-eluting stent (DES)1 based on the increased risk of stent thrombosis *observed in 		first generation DESs as compared to bare...</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/anticoagulation-management">Anticoagulation Management, </a><a href="/clinical-topics/heart-failure-and-*cardiomyopathies">Heart 		Failure and Cardiomyopathies, </a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-intervention">*Invasive Cardiovascular Angiography and 		Intervention, </a><a href="/clinical-topics/vascular-medicine">Vascular Medicine, </a><a *href="/clinical-topics/anticoagulation-management/anticoagulation-		management-and-acs">Anticoagulation Management and ACS, </a><a href="/clinical*-topics/heart-failure-and-cardiomyopathies/acute-heart-failure">Acute Heart 		Failure, </a><a href="/clinical-topics/invasive-cardiovascular-*angiography-and-intervention/interventions-and-acs">Interventions and ACS, </a><a 		href="/clinical-topics/invasive-cardiovascular-angiography-*and-intervention/interventions-and-vascular-medicine">Interventions and Vascular Medicine</a> <		button class="button-as-link more-link">more<*/button></p>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>Acute Coronary Syndrome, </i><i>Diabetes Mellitus, </i><i>Drug-Eluting Stents, </i><i*>Heart 		Failure, </i><i>Hemorrhage, </i><i>Myocardial Infarction, </i><i>Patient Selection, </i><i>Peripheral Vascular Diseases, </i><i>*Platelet Aggregation 		Inhibitors, </i><i>Prevalence, </i><i>Prospective Studies, </i><i>Random Allocation, </i><i>Registries, </i><i>Selection *Bias, </i><i>Sirolimus, </i><i>		Stroke, </i><i>Thrombosis, </i><i>Warfarin</i> <button class="button-as-link more-link">more</button></p>
+*											
+*										</div><!-- article-content -->
+*									</article><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/non-clinical/images/system images/profile images/n/nguyen_lisa.jpg" height="110" width="110">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/articles/2015/06/16/08/40/new-insomnia-drugs-in-the-context-of-cardiovascular-disease?w_nav=Tab" *class="CoveoResultLink">		New Insomnia Drugs in the Context of Cardiovascular Disease</a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jun 16, 2015 &nbsp;&nbsp;|&nbsp;&nbsp;Lisa Nguyen, PHARMD</p>
+*											
+*											
+*											<h2 class="journal-title">Expert Analysis</h2>
+*											
+*											<!-- article-tools -->
+*											<p class="coveo-excerpt">Background
+*		The American Academy of Sleep Medicine (AASM) guidelines for chronic insomnia recommend the use of short-intermediate acting benzodiazepine-receptor agonists, the melatonin receptor *agonist 		ramelteon, sedating antidepressants if...</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/anticoagulation-management">Anticoagulation Management, </a><a href="/clinical-topics/arrhythmias-and-clinical-ep">*Arrhythmias and 		Clinical EP, </a><a href="/clinical-topics/diabetes-and-cardiometabolic-disease">Diabetes and Cardiometabolic Disease, </a><a *href="/clinical-		topics/dyslipidemia">Dyslipidemia, </a><a href="/clinical-topics/geriatric-cardiology">Geriatric Cardiology, </a><a *href="/clinical-topics/heart-failure-and-		cardiomyopathies">Heart Failure and Cardiomyopathies, </a><a href="/clinical-topics/sleep-apnea">*Sleep Apnea, </a><a href="/clinical-topics/vascular-		medicine">Vascular Medicine, </a><a href="/clinical-topics/anticoagulation-*management/anticoagulation-management-and-acs">Anticoagulation Management and 		ACS, </a><a href="/clinical-topics/arrhythmias-and-clinical-*ep/ep-basic-science">EP Basic Science, </a><a href="/clinical-topics/arrhythmias-and-clinical-		ep/scd-ventricular-arrhythmias">SCD/Ventricular *Arrhythmias, </a><a href="/clinical-topics/arrhythmias-and-clinical-ep/atrial-fibrillation-supraventricular-		arrhythmias">Atrial *Fibrillation/Supraventricular Arrhythmias, </a><a href="/clinical-topics/dyslipidemia/lipid-metabolism">Lipid Metabolism, </a><a 		*href="/clinical-topics/dyslipidemia/nonstatins">Nonstatins, </a><a href="/clinical-topics/dyslipidemia/novel-agents">Novel Agents, </a><a *href="/clinical-		topics/dyslipidemia/statins">Statins, </a><a href="/clinical-topics/heart-failure-and-cardiomyopathies/acute-heart-failure">*Acute Heart Failure</a> <button 		class="button-as-link more-link">more</button></p>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>Acetamides, </i><i>Acute Coronary Syndrome, </i><i>Aged, </i><i>Amnesia, </i><i>*Angina, 		Unstable, </i><i>Anticoagulants, </i><i>Antidepressive Agents, </i><i>Anxiety, </i><i>Azabicyclo Compounds, </i><i>Azepines, </i><i>*Benzodiazepines, </i><i>		Benzofurans, </i><i>Blood Pressure, </i><i>Bundle-Branch Block, </i><i>Cardiomyopathies, </i><i>Cardiovascular *Agents, </i><i>Cataplexy, </i><i>Cholesterol, 		</i><i>Circadian Rhythm, </i><i>Clonidine, </i><i>Cognition, </i><i>Controlled Substances, </i><*i>Cytochrome P-450 CYP2D6, </i><i>Cytochrome P-450 CYP3A, </i		><i>Depression, </i><i>Digoxin, </i><i>Diltiazem, </i><i>Double-Blind Method, </i*><i>Doxepin, </i><i>Drug Interactions, </i><i>Dyspnea, </i><i>Half-Life, </i		><i>Hallucinations, </i><i>Heart Failure, </i><i>Heart Rate, </i><*i>Histamine Antagonists, </i><i>Hypertension, </i><i>Hypnotics and Sedatives, </i><i>		Hypotension, Orthostatic, </i><i>Hypothalamic Area, *Lateral, </i><i>Indenes, </i><i>Injections, Spinal, </i><i>International Normalized Ratio, </i><i>		Intracellular Signaling Peptides and *Proteins, </i><i>Melatonin, </i><i>Mianserin, </i><i>Mutation, </i><i>Narcolepsy, </i><i>Neurons, </i><i>Neuropeptides, 		</i><i>Off-Label Use, *</i><i>Orphan Drug Production, </i><i>P-Glycoprotein, </i><i>Pharmaceutical Preparations, </i><i>Piperazines, </i><i>Polysomnography, <		/i><i>*Prescription Drugs, </i><i>Prevalence, </i><i>Product Labeling, </i><i>Pyridines, </i><i>Pyrimidines, </i><i>Quinidine, </i><i>Rare Diseases, </i><i>*		Receptors, GABA-A, </i><i>Receptors, Melatonin, </i><i>Respiratory Tract Infections, </i><i>Ritonavir, </i><i>Sleep Disorders, </i><i>Sleep *Initiation and 		Maintenance Disorders, </i><i>Sleep Paralysis, </i><i>Substance Withdrawal Syndrome, </i><i>Substance-Related Disorders, </i><i>*Suicidal Ideation, </i><i>		Syncope, </i><i>Tablets, </i><i>Tachycardia, </i><i>Temazepam, </i><i>Trazodone, </i><i>Triazoles, </i><i>*Triglycerides, </i><i>Verapamil, </i><i>		Wakefulness, </i><i>Warfarin, </i><i>Sleep Apnea Syndromes</i> <button class="button-as-link more-link"*>more</button></p>
+*											
+*										</div><!-- article-content -->
+*									</article><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/non-clinical/images/system images/profile images/m/mukherjee_debabrata.png" height="110" width="110">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/journal-scans/2015/06/15/13/57/the-24-month-prognosis-of-patients-with-positive-or-intermediate?w_nav=Tab" 		*class="CoveoResultLink">Prognostic Value of Intracoronary Ergonovine Provocation Test | Journal Scan</a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jun 15, 2015 &nbsp;&nbsp;|&nbsp;&nbsp;Debabrata Mukherjee, MD, F.A.C.C.</p>
+*											
+*											
+*											<h2 class="journal-title">Journal Scan</h2>
+*											
+*											<!-- article-tools -->
+*											<p class="coveo-excerpt">What are the clinical characteristics and 24-month prognosis of patients who undergo intracoronary ergonovine provocation *tests?</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/arrhythmias-and-clinical-ep">Arrhythmias and Clinical EP, </a><a href="/clinical-topics/diabetes-and-cardiometabolic-*disease">		Diabetes and Cardiometabolic Disease, </a><a href="/clinical-topics/chronic-angina">Chronic Angina, </a><a href="/clinical-*topics/dyslipidemia">		Dyslipidemia, </a><a href="/clinical-topics/invasive-cardiovascular-angiography-and-intervention">Invasive *Cardiovascular Angiography and Intervention, </a><		a href="/clinical-topics/prevention">Prevention, </a><a href="/clinical-topics/stable-*ischemic-heart-disease">Stable Ischemic Heart Disease, </a><a 		href="/clinical-topics/acute-coronary-syndromes/acs-and-cardiac-biomarkers">*ACS and Cardiac Biomarkers, </a><a href="/clinical-topics/arrhythmias-and-		clinical-ep/implantable-devices">Implantable Devices, </a><a *href="/clinical-topics/arrhythmias-and-clinical-ep/scd-ventricular-arrhythmias">SCD/Ventricular 		Arrhythmias, </a><a href="/clinical-*topics/arrhythmias-and-clinical-ep/atrial-fibrillation-supraventricular-arrhythmias">Atrial 		Fibrillation/Supraventricular Arrhythmias, </a><*a href="/clinical-topics/dyslipidemia/lipid-metabolism">Lipid Metabolism, </a><a href="/clinical-		topics/invasive-cardiovascular-angiography-*and-intervention/interventions-and-acs">Interventions and ACS, </a><a href="/clinical-topics/invasive-		cardiovascular-angiography-and-*intervention/interventions-and-imaging">Interventions and Imaging, </a><a href="/clinical-topics/noninvasive-		imaging/angiography">*Angiography, </a><a href="/clinical-topics/noninvasive-imaging/nuclear-imaging">Nuclear Imaging, </a><a href="/clinical-		*topics/prevention/smoking">Smoking</a> <button class="button-as-link more-link">more</button></p>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>Acute Coronary Syndrome, </i><i>Angina Pectoris, </i><i>Angina Pectoris, Variant, </i*><i>		Angiography, </i><i>Arrhythmias, Cardiac, </i><i>C-Reactive Protein, </i><i>Coronary Vasospasm, </i><i>Ergonovine, </i><i>Incidence, </i><*i>Prognosis, </i><i		>Registries, </i><i>Risk Factors, </i><i>Smoking, </i><i>Spasm, </i><i>Triglycerides</i> <button class="button-as-link more*-link">more</button></p>
+*											
+*										</div><!-- article-content -->
+*									</article><article class="article-tease CoveoResult">
+*										
+*										<div class="main-image">
+*											<img src="/~/media/images/articles/cswn/06_2015.jpg">
+*										</div><!-- main-image -->
+*										
+*										<div class="article-content">
+*											<h1 class="coveo-title">
+*												
+*												<a href="/latest-in-cardiology/articles/2015/06/24/11/57/remnants-of-residual-risk-triglycerides-predict-recurrent-events?w_nav=Tab" 		*class="CoveoResultLink">Remnants of Residual Risk: Triglycerides Predict Recurrent Events </a>
+*												
+*											</h1>
+*											
+*											<p class="date">Jun 15, 2015</p>
+*											
+*											
+*											<h2 class="journal-title">CardioSource WorldNews</h2>
+*											
+*											<!-- article-tools -->
+*											<p class="coveo-excerpt">JACC in a Flash | Among patients with acute coronary syndrome (ACS) treated effectively with statins, fasting triglycerides *may 		predict long-term and short-term cardiovascular risk, according to a study published May 27 in JACC.
+*		 
+*		The study, based...</p>
+*											
+*											<p class="topics-list more-toggle-active"><b>Clinical Topics:</b> <a href="/clinical-topics/acute-coronary-syndromes">Acute Coronary Syndromes, </a><*a 		href="/clinical-topics/diabetes-and-cardiometabolic-disease">Diabetes and Cardiometabolic Disease, </a><a href="/clinical-topics/dyslipidemia"*>Dyslipidemia, 		</a><a href="/clinical-topics/prevention">Prevention, </a><a href="/clinical-topics/dyslipidemia/lipid-metabolism">Lipid *Metabolism</a> <button class="button		-as-link more-link">more</button></p>
+*											
+*											
+*											<p class="keywords-list more-toggle-active"><b>Keywords:</b> <i>CardioSource WorldNews, </i><i>ACC Publications, </i><i>Acute Coronary Syndrome, </i>*<i>		Cardiovascular Diseases, </i><i>Risk, </i><i>Risk Factors, </i><i>Triglycerides</i> <button class="button-as-link more-link">more</button>*</p>
+*											
+*										</div><!-- article-content -->
+*									</article></div></div>
+*							<p id="viewAllLinkLatest" class="view-all"><a href="/latest-in-cardiology#f:TopicSearchFacet=[Acute Coronary Syndromes]">View More Articles and Stories in Acute *Coronary 		Syndromes &gt;</a></p>
+*						</div><!--coveo-results-column-->
+*					</div><!--coveo-results-section-->
+*				</div>
+*/

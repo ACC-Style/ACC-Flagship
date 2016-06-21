@@ -1,0 +1,551 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-smu1po");
+  src: url("fonts/icomoon.eot?#iefix-smu1po") format("embedded-opentype"), url("fonts/icomoon.woff?-smu1po") format("woff"), url("fonts/icomoon.ttf?-smu1po") format("truetype"), url("fonts/icomoon.svg?-smu1po#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-cancel-circle:before {
+  content: "\e603"; }
+
+.icon-alert:before {
+  content: "\e600"; }
+
+.icon-checkbox-unchecked:before {
+  content: "\e602"; }
+
+.icon-checkbox-checked:before, .ui-selected .icon-checkbox-unchecked:before {
+  content: "\e601"; }
+
+/* Basic Styles for Buttons */
+.training-directors, .ui-dialog {
+  text-align: left;
+  font-size: 12px; }
+  .training-directors button, .training-directors .button, .ui-dialog button, .ui-dialog .button {
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.4em;
+    background-color: #004176;
+    border-color: #000910;
+    color: #fff;
+    display: inline-block; }
+    .training-directors button.secondary-btn, .training-directors .button.secondary-btn, .ui-dialog button.secondary-btn, .ui-dialog .button.secondary-btn {
+      background-color: #ccc;
+      border: #888 1px solid;
+      color: #333; }
+      .training-directors button.secondary-btn:hover, .training-directors .button.secondary-btn:hover, .ui-dialog button.secondary-btn:hover, .ui-dialog .button.secondary-btn:hover {
+        background-color: gray;
+        border-color: #3c3c3c;
+        color: #000; }
+    .training-directors button.radius, .training-directors .button.radius, .ui-dialog button.radius, .ui-dialog .button.radius {
+      -webkit-border-radius: 3px;
+      border-radius: 3px; }
+    .training-directors button:hover, .training-directors .button:hover, .ui-dialog button:hover, .ui-dialog .button:hover {
+      background-color: black;
+      border-color: black; }
+  .training-directors .button.tiny, .ui-dialog .button.tiny {
+    padding-top: 0.4375em;
+    padding-right: 0.875em;
+    padding-bottom: 0.5em;
+    padding-left: 0.875em;
+    font-size: 0.6875em; }
+  .training-directors .prefix.button, .ui-dialog .prefix.button {
+    padding-bottom: 0; }
+  .training-directors .icon, .ui-dialog .icon {
+    font-family: 'Arial Black', 'Arial',sans-serif;
+    font-size: 1.2em; }
+
+.training-directors .program, .training-directors .admins {
+  margin-top: 5px; }
+  .training-directors .program .program-title, .training-directors .admins .program-title {
+    color: #004176;
+    font-weight: 900;
+    font-size: 1.5em; }
+  .training-directors .program .admin-type-label, .training-directors .admins .admin-type-label {
+    color: #004176;
+    font-size: 1.2em;
+    margin-top: 0; }
+  .training-directors .program h3, .training-directors .program h4, .training-directors .admins h3, .training-directors .admins h4 {
+    color: #222222;
+    font-family: arial, helvetica, sans-serif;
+    margin-bottom: 0;
+    position: relative; }
+    .training-directors .program h3 small, .training-directors .program h4 small, .training-directors .admins h3 small, .training-directors .admins h4 small {
+      position: absolute;
+      bottom: 1em;
+      right: 1em; }
+  .training-directors .program address, .training-directors .admins address {
+    font-style: normal;
+    line-height: 1.5em; }
+  .training-directors .program h3 + address, .training-directors .admins h3 + address {
+    margin-top: .5em; }
+  .training-directors .program hr, .training-directors .admins hr {
+    color: #004176;
+    border-color: #004176;
+    margin: 0.25em 0 0.1875em; }
+.training-directors .admin-group {
+  margin-bottom: 1em; }
+.training-directors .admin a.button {
+  background: none;
+  border: none 0px;
+  color: #004176;
+  text-decoration: underline;
+  font-size: 8px; }
+  .training-directors .admin a.button:hover {
+    color: #000; }
+.training-directors .admins .admin-group ul {
+  list-style: none;
+  margin: .25em 0em .5em;
+  padding: 0 0 0 7px; }
+.training-directors .admins .admin-group ul ul {
+  margin-top: 0em;
+  padding: 0;
+  margin-bottom: .5em;
+  display: block; }
+.training-directors .admins .admin-group > ul > li {
+  clear: both; }
+.training-directors .admins .admin-group > ul .admin + li {
+  border-top: 1px solid #f2f2f2; }
+.training-directors .admins .admin-group > ul .admin + .alter-message {
+  border-top: 0px none;
+  margin-top: 1em; }
+.training-directors .admins .admin-group > ul li.admin ul li.associated-program {
+  float: left;
+  display: inline-block;
+  padding: 0 .25em 0 0; }
+.training-directors .admins .admin-group > ul .associated-program + .associated-program:before {
+  content: ' , '; }
+.training-directors .admins .admin-group > ul .associated-program + .last.associated-program:before {
+  content: ' & '; }
+.training-directors .alert-box.alert {
+  border: none;
+  background-color: #ace0e7;
+  padding: .75em;
+  margin: 0px; }
+  .training-directors .alert-box.alert .message {
+    margin: 0;
+    vertical-align: middle; }
+    .training-directors .alert-box.alert .message * {
+      margin: 0;
+      padding: 0; }
+    .training-directors .alert-box.alert .message a {
+      float: right;
+      color: #004176;
+      font-weight: 700; }
+.training-directors .alter-message * {
+  color: #004176; }
+.training-directors .addform-coordiantor, .training-directors .addform-chiefProctor, .training-directors .addform-assistantProctor {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bbb;
+  margin-bottom: 1.25em;
+  padding: .25em 1em .5em 1em;
+  background: #bcbcbc; }
+  .training-directors .addform-coordiantor div *, .training-directors .addform-chiefProctor div *, .training-directors .addform-assistantProctor div * {
+    margin-bottom: .25em; }
+  .training-directors .addform-coordiantor div input, .training-directors .addform-coordiantor div input.button, .training-directors .addform-chiefProctor div input, .training-directors .addform-chiefProctor div input.button, .training-directors .addform-assistantProctor div input, .training-directors .addform-assistantProctor div input.button {
+    width: 100%; }
+  .training-directors .addform-coordiantor div input.button, .training-directors .addform-chiefProctor div input.button, .training-directors .addform-assistantProctor div input.button {
+    margin-top: 2px; }
+
+/* Base Typography  */
+div.body {
+  display: none;
+  visiblity: colapse; }
+
+div#TrainingProgram {
+  padding: 0 30px; }
+
+.training-directors .program-name {
+  width: 50%;
+  margin-bottom: -4em; }
+  .training-directors .program-name h1 {
+    line-height: 1.25em; }
+.training-directors .section-header, .training-directors .program-header {
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1.33333em 1.33333em .5em;
+  /*16/12*/ }
+  .training-directors .section-header h1, .training-directors .program-header h1 {
+    font-weight: 900;
+    font-size: 1.5em;
+    /* 30/12px */
+    padding: 0px; }
+  .training-directors .section-header small, .training-directors .program-header small {
+    font-size: .7em;
+    font-weight: 100;
+    line-height: 1.3; }
+  .training-directors .section-header a, .training-directors .program-header a {
+    text-decoration: underline; }
+.training-directors .program-header {
+  border-bottom: 4px solid #004176;
+  overflow: hidden;
+  margin-bottom: 1em;
+  padding-bottom: 0;
+  padding-right: 0;
+  vertical-align: bottom; }
+  .training-directors .program-header h1 {
+    padding: 10px 0 0 0; }
+  .training-directors .program-header .large-6.columns {
+    margin-bottom: -12px; }
+.training-directors .section-header {
+  border-top: 1px dashed #cccccc; }
+.training-directors select {
+  width: 100%; }
+.training-directors .right {
+  float: right; }
+.training-directors .button.large {
+  padding: 11px;
+  color: white;
+  border-radius: 5px; }
+.training-directors h1 small, .training-directors h2 small, .training-directors h3 small {
+  font-size: .8em;
+  font-weight: 100; }
+.training-directors .mode-toggle {
+  float: right;
+  background-color: transparent;
+  border-radius: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 0;
+  padding: 4px;
+  list-style: none; }
+  .training-directors .mode-toggle > li {
+    position: relative;
+    display: block; }
+  .training-directors .mode-toggle > li > .button.large {
+    position: relative;
+    display: block;
+    padding: 10px 10px;
+    color: #666666;
+    background-color: #f2f2f2;
+    border: 0 none transparent;
+    text-decoration: none;
+    margin: 3px;
+    border-radius: 4px;
+    padding-bottom: 14px; }
+    .training-directors .mode-toggle > li > .button.large:hover, .training-directors .mode-toggle > li > .button.large:focus {
+      text-decoration: none;
+      background-color: #999999;
+      color: #fff; }
+  .training-directors .mode-toggle.nav-pills > li {
+    float: left;
+    display: inline-block;
+    width: 48%; }
+    .training-directors .mode-toggle.nav-pills > li + li {
+      margin-left: 2px; }
+    .training-directors .mode-toggle.nav-pills > li.active > .button.large,
+    .training-directors .mode-toggle.nav-pills > li.active > .button.large:hover,
+    .training-directors .mode-toggle.nav-pills > li.active > .button.large:focus {
+      color: #fff;
+      background-color: #004176;
+      border: 3px solid #fff;
+      margin: 0px;
+      border-radius: 8px; }
+
+/* Fit List Info Accordion And Pysdo Table  */
+.training-directors .fitheader .addform-fit {
+  float: right;
+  display: table; }
+  .training-directors .fitheader .addform-fit > div.columns {
+    display: table-cell;
+    width: auto; }
+    .training-directors .fitheader .addform-fit > div.columns > input {
+      padding: .25em .75em;
+      font-size: 1em;
+      margin: 0;
+      float: left;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      font-weight: 300; }
+      .training-directors .fitheader .addform-fit > div.columns > input.button {
+        padding: .45em .75em;
+        color: white;
+        font-weight: 700; }
+  .training-directors .fitheader .addform-fit h3 {
+    margin: 5px 1em 0 0; }
+.training-directors .fitheader div * {
+  margin-bottom: 0; }
+.training-directors .fitheader .action, .training-directors .fitheader .toggle {
+  visibility: hidden; }
+.training-directors .fitlist {
+  list-style: none;
+  padding: 0; }
+  .training-directors .fitlist .fit, .training-directors .fitlist > li {
+    clear: both;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    width: 100%; }
+    .training-directors .fitlist .fit ul, .training-directors .fitlist > li ul {
+      list-style: none;
+      padding: .5em 0em .6em 0em;
+      height: 3em; }
+    .training-directors .fitlist .fit li, .training-directors .fitlist > li li {
+      list-style: none;
+      display: table-cell;
+      box-sizing: content-box;
+      padding: 9px 5px 3px;
+      height: auto;
+      vertical-align: top;
+      margin: 0; }
+    .training-directors .fitlist .fit .accordion-header, .training-directors .fitlist > li .accordion-header {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: table;
+      list-style: none;
+      width: 100%; }
+    .training-directors .fitlist .fit .accordion, .training-directors .fitlist > li .accordion {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 1em;
+      border-top: #ddd 1px solid; }
+      .training-directors .fitlist .fit .accordion dl, .training-directors .fitlist > li .accordion dl {
+        margin: 0; }
+        .training-directors .fitlist .fit .accordion dl.large-4, .training-directors .fitlist > li .accordion dl.large-4 {
+          padding: 0 2%; }
+        .training-directors .fitlist .fit .accordion dl.inline dd, .training-directors .fitlist .fit .accordion dl.inline dt, .training-directors .fitlist > li .accordion dl.inline dd, .training-directors .fitlist > li .accordion dl.inline dt {
+          width: auto;
+          display: inline-block;
+          padding: 0 .5em; }
+        .training-directors .fitlist .fit .accordion dl dt, .training-directors .fitlist > li .accordion dl dt {
+          color: #000;
+          clear: left; }
+        .training-directors .fitlist .fit .accordion dl dd, .training-directors .fitlist > li .accordion dl dd {
+          color: #666; }
+          .training-directors .fitlist .fit .accordion dl dd pre, .training-directors .fitlist > li .accordion dl dd pre {
+            margin: 0;
+            font-family: arial;
+            line-height: 1.25em; }
+        .training-directors .fitlist .fit .accordion dl.contact-method, .training-directors .fitlist > li .accordion dl.contact-method {
+          display: block; }
+          .training-directors .fitlist .fit .accordion dl.contact-method dt, .training-directors .fitlist .fit .accordion dl.contact-method dd, .training-directors .fitlist > li .accordion dl.contact-method dt, .training-directors .fitlist > li .accordion dl.contact-method dd {
+            float: left;
+            display: block; }
+          .training-directors .fitlist .fit .accordion dl.contact-method dt, .training-directors .fitlist > li .accordion dl.contact-method dt {
+            width: 30%;
+            clear: left; }
+          .training-directors .fitlist .fit .accordion dl.contact-method dd, .training-directors .fitlist > li .accordion dl.contact-method dd {
+            width: 60%; }
+    .training-directors .fitlist .fit .alert-icon, .training-directors .fitlist .fit .alert-icon-hidden, .training-directors .fitlist > li .alert-icon, .training-directors .fitlist > li .alert-icon-hidden {
+      text-align: center;
+      width: 3%;
+      background-color: #ace0e7;
+      color: #222222;
+      font-weight: 900;
+      font-family: 'Arial Black', sans-serif;
+      height: auto; }
+    .training-directors .fitlist .fit .alert-icon-hidden, .training-directors .fitlist > li .alert-icon-hidden {
+      visibility: hidden; }
+    .training-directors .fitlist .fit .name, .training-directors .fitlist > li .name {
+      width: 31%;
+      font-weight: bold; }
+    .training-directors .fitlist .fit .name, .training-directors .fitlist > li .error-red { 
+        display:block; 
+        color:#c32231;}
+    .training-directors .fitlist .fit .email, .training-directors .fitlist > li .email {
+      width: 28%;
+      background-color: rgba(0, 0, 0, 0.02); }
+    .training-directors .fitlist .fit .end-date em, .training-directors .fitlist > li .end-date em {
+      color: #004176; }
+    .training-directors .fitlist .fit .action, .training-directors .fitlist > li .action {
+      text-align: right;
+      float: right; }
+  .training-directors .fitlist .fit.header {
+    font-weight: 900;
+    border-top: 1px solid #004176;
+    border-bottom: 1px solid #004176; }
+    .training-directors .fitlist .fit.header .toggle, .training-directors .fitlist .fit.header .action {
+      visibility: hidden; }
+  .training-directors .fitlist .fit.odd {
+    background-color: #fff; }
+  .training-directors .fitlist .fit.even {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .training-directors .fitlist .fit.alert {
+    border: #004176 1px solid; }
+    .training-directors .fitlist .fit.alert ul {
+      border-color: #004176; }
+    .training-directors .fitlist .fit.alert .alert-icon {
+      visibility: visible; }
+  .training-directors .fitlist .toggle {
+    width: 1em;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Arial Black', sans-serif; }
+    .training-directors .fitlist .toggle a {
+      text-decoration: none;
+      color: #222222; }
+      .training-directors .fitlist .toggle a:hover {
+        text-decoration: none;
+        color: black; }
+  .training-directors .fitlist a.button {
+    background: #cccccc;
+    border-color: #999999;
+    color: #666666; }
+    .training-directors .fitlist a.button:hover {
+      background: #999999;
+      border-color: #666666;
+      color: #222222; }
+  .training-directors .fitlist a.button + a.button {
+    background-color: #004176;
+    border-color: #000910;
+    color: #fff; }
+    .training-directors .fitlist a.button + a.button:hover {
+      background-color: #000910;
+      border-color: black;
+      color: #fff; }
+  .training-directors .fitlist .end-date + .action > a.button {
+    background-color: #004176;
+    border-color: #000910;
+    color: #fff; }
+    .training-directors .fitlist .end-date + .action > a.button:hover {
+      background-color: #000910;
+      border-color: black;
+      color: #fff; }
+
+/* Fit Registration  */
+.fit-registration .unregistered {
+  background-color: #fafafa;
+  border-bottom: 1px solid #004176;
+  border-top: 1px solid #004176;
+  position: relative;
+  width: 100%; }
+  .fit-registration .unregistered .cancel-button {
+    position: absolute;
+    top: 1em;
+    right: 1em; }
+  .fit-registration .unregistered .reveal-header,
+  .fit-registration .unregistered .reveal-footer {
+    padding: 1em; }
+.fit-registration .registration-list {
+  padding: 0em;
+  margin: 1em;
+  list-style: none; }
+  .fit-registration .registration-list li {
+    clear: left;
+    display: block;
+    height: 3.3em; }
+  .fit-registration .registration-list li + li {
+    border-top: 1px solid #004176; }
+  .fit-registration .registration-list .registrant {
+    background-color: #f5f5f5; }
+    .fit-registration .registration-list .registrant .default-selection {
+      background-color: #f0f0f0; }
+  .fit-registration .registration-list .registrant:nth-child(even) {
+    background-color: #e5e5e5; }
+    .fit-registration .registration-list .registrant:nth-child(even) .default-selection {
+      background-color: #e0e0e0; }
+  .fit-registration .registration-list .name, .fit-registration .registration-list .exam, .fit-registration .registration-list .exam-selection {
+    height: 3em;
+    display: inline-block;
+    float: left; }
+  .fit-registration .registration-list .name {
+    width: 50%;
+    padding: .75em .5em;
+    line-height: 1; }
+  .fit-registration .registration-list .exam {
+    width: 16%;
+    height: inherit;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1; }
+  .fit-registration .registration-list .exam-selection {
+    width: 50%; }
+    .fit-registration .registration-list .exam-selection .exam {
+      width: 33%;
+      padding: 1em 0;
+      height: inherit; }
+  .fit-registration .registration-list .header {
+    height: 3em; }
+    .fit-registration .registration-list .header .name, .fit-registration .registration-list .header .exam {
+      font-weight: 900;
+      height: inherit;
+      veritcal-align: top;
+      padding-top: .75em; }
+
+/* Fit Registered Table  */
+table.fitprogram {
+  width: 100%;
+  border-collapse: collapse; }
+  table.fitprogram .alert select {
+    color: #004176;
+    font-weight: 900; }
+  table.fitprogram .alert option {
+    color: #222222; }
+    table.fitprogram .alert option.missing-alert {
+      color: #004176; }
+  table.fitprogram td, table.fitprogram th {
+    border: 0 none;
+    border-collapse: collapse;
+    padding: 6px 8px 0 8px; }
+  table.fitprogram th {
+    font-weight: 900;
+    border-bottom: 2px solid #913941;
+    vertical-align: top;
+    background-color: #cccccc;
+    margin: 0; }
+    table.fitprogram th small {
+      color: #913941; }
+    table.fitprogram th.alert-icon {
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      background: #888;
+      padding: 6px 4px 0 4px; }
+    table.fitprogram th.ADA {
+      width: 16%; }
+    table.fitprogram th.TimeFactor {
+      width: 10%; }
+    table.fitprogram th.name {
+      width: 30%; }
+  table.fitprogram tr {
+    height: 3.5em; }
+    table.fitprogram tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-top: grey 1px solid;
+      border-bottom: grey 1px solid; }
+    table.fitprogram tr td.seperator {
+      font-size: 125%;
+      font-weight: 900;
+      background-color: #b1dcff; }
+    table.fitprogram tr td.alert-icon {
+      color: #888;
+      text-align: center;
+      vertical-align: middle;
+      background: #888;
+      padding: 6px 4px 0 4px; }
+    table.fitprogram tr.alert td.alert-icon {
+      background: #004176;
+      color: white; }
+  table.fitprogram .rowactions {
+    text-align: right; }
+    table.fitprogram .rowactions a {
+      display: inline-block;
+      width: 60%; }
+    table.fitprogram .rowactions a + a {
+      width: 35%; }
+
+/* Fit List Info Accordion And Pysdo Table  */
+
+/*# sourceMappingURL=TrainingDirectorStyles.css.map */

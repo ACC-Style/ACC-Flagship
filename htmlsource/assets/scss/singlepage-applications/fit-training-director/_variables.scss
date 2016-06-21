@@ -1,0 +1,28 @@
+$blue:#004176;
+$teal:#D6EFF2;
+$black:#222;
+$darkgrey:#666;
+$midgrey:#ccc;
+$lightgrey:#f2f2f2;
+$red-error:#c32231;
+$orange-alert:#d07600;
+@mixin grey-button{
+	background:$midgrey;
+	border-color:mix($midgrey,$darkgrey);
+	color:$darkgrey;
+}
+@mixin dark-grey-button{
+	background:mix($midgrey,$darkgrey);
+	border-color:$darkgrey;
+	color:$black;
+}
+@mixin red-button{
+	background-color: $blue;
+	border-color: darken($blue, 20%);
+	color: #fff;
+	}
+@mixin dark-red-button{
+	background-color:  darken($blue, 20%);
+	border-color: darken($blue, 40%);
+	color: #fff;
+	}

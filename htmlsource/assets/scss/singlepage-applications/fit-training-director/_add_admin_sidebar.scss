@@ -1,0 +1,57 @@
+.training-directors{
+	.program, .admins{
+		margin-top: 5px;
+		.program-title{color:$blue; font-weight: 900; font-size:1.5em;}
+		.admin-type-label{color:$blue;font-size:1.2em; margin-top: 0;}
+		h3,h4{color:$black;font-family: arial, helvetica, sans-serif;margin-bottom: 0;position: relative;
+			small{position: absolute;bottom:1em;right:1em;}
+		}
+		address{font-style: normal;line-height: 1.5em;}
+		h3 + address{margin-top: .5em;}
+		hr{color: $blue;border-color: $blue;margin:0.25em 0 0.1875em}
+	}
+	.admin-group{margin-bottom:1em; }
+	.admin a.button{background:none;border:none 0px;color:$blue;text-decoration:underline;font-size:8px; &:hover{color:#000; }}
+	.admins .admin-group{
+
+		ul {list-style: none;margin: .25em 0em .5em; padding: 0 0 0 7px}	
+		ul ul {
+			margin-top: 0em;
+			padding: 0;
+			margin-bottom: .5em;
+			display: block;}
+		>ul{
+			>li{clear:both;}
+			.admin + li {border-top: 1px solid #f2f2f2;}
+			.admin + .alter-message{border-top: 0px none; margin-top: 1em;}
+			li.admin ul li.associated-program{ float: left; display: inline-block;padding:0 .25em 0 0;}
+		.associated-program + .associated-program:before{content: ' , ';}
+		.associated-program +.last.associated-program:before{content:' & ';}
+			}
+		}
+	.alert-box.alert{
+		border:none;
+		background-color: $teal;
+		padding:.75em;
+		margin: 0px;
+		.message{margin: 0; vertical-align: middle; color:#000;
+			*{margin: 0;padding:0;}
+			a{float: right; color: $blue; font-weight: 700;}
+			
+		}
+
+	}
+	.alter-message *{ color: $blue}
+	.addform-coordiantor,.addform-chiefProctor,.addform-assistantProctor{
+		border-style: solid;
+		border-width: 1px;
+		border-color: #bbb;
+		margin-bottom: 1.25em;
+		padding: .25em 1em .5em 1em;
+		background: #bcbcbc;
+		div *{margin-bottom: .25em;}
+		div input, div input.button{width:100%;}
+		div input[text]{}
+		div input.button{margin-top:2px;}
+	}
+}

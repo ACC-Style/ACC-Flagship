@@ -1,0 +1,72 @@
+<div class="score-bar-holder">
+    <div class="score-bar row callout" style="margin-bottom:0" data-bind="visible:($root.allDataValidation().status == 'error' || $root.allDataValidation().status == 'warning') ,css:$root.allDataValidation().status">
+        <div class="column large-6 medium-8 small-12 small-centered ">
+            <span class="small-fs-2x text-condensed" data-bind="text:$root.allDataValidation().message"></span>
+        </div>
+    </div>
+    <div class="score-bar row" data-bind="visible:$root.allDataValidation().status != 'error' && $root.allDataValidation().status != 'warning'">
+        <div class="column small-6 primary-color data-container">
+            <div class="data float-right">
+                <div class="text-bold data-header small-fs-2x large-fs-3x">
+                    10-Year ASCVD Risk
+                </div>
+                <div class="data-group" data-bind="visible: $root.ageValidation().id != 2 ">
+                    <div class="text-bold small-fs-4x medium-fs-6x large-fs-6x data-value" data-bind="text:$root.Form().TenYearRisk">
+                        3%
+                    </div>
+                    <div class="text-condensed small-fs-2x medium-fs-3x data-label">
+                        calculated risk
+                    </div>
+                </div>
+                <div class="data-group"  data-bind="visible: $root.ageValidation().id != 2 ">
+                    <div class="text-bold small-fs-4x medium-fs-6x large-fs-6x data-value" data-bind="text:$root.Form().TenYearOptimal">
+                        3%
+                    </div>
+                    <div class="data-label text-condensed small-fs-2x medium-fs-3x">
+                        risk with optimal risk factors
+                        <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' tabindex=1 data-bind="attr:{title:$root.FormData.infotext.scorebar.text}">
+                            <i class="fa fa-info-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="data-group content-block" data-bind="visible: $root.ageValidation().id == 2">
+                    <div class="text-condensed small-fs-1x medium-fs-2x medium-fs-3x" data-bind="text:$root.FormData.notifications.age[2].message">
+                        This calculator only provides 10-year risk estimates for individuals 40 to 70 years of age.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column small-6 secondary-color data-container">
+            <div class="data float-left">
+                <div class="text-bold data-header small-fs-2x large-fs-3x">
+                    Lifetime ASCVD Risk
+                </div>
+                <div class="data-group" data-bind="visible: $root.ageValidation().id != 3">
+                    <div class="text-bold small-fs-4x medium-fs-6x large-fs-6x data-value" data-bind="text:$root.Form().yourLifeTimeRisk">
+                        3%
+                    </div>
+                    <div class="text-condensed small-fs-2x medium-fs-3x data-label">
+                        calculated risk
+                    </div>
+                </div>
+                <div class="data-group" data-bind="visible: $root.ageValidation().id != 3">
+                    <div class="text-bold small-fs-4x medium-fs-6x large-fs-6x data-value"
+                        data-bind="text:$root.Form().lifeTimeRisk">
+                        3%
+                    </div>
+                    <div class="data-label text-condensed small-fs-2x medium-fs-3x">
+                        risk with optimal risk factors
+                        <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' tabindex=1 data-bind="attr:{title:$root.FormData.infotext.scorebar.text}">
+                            <i class="fa fa-info-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="data-group content-block"data-bind="visible: $root.ageValidation().id == 3">
+                    <div class="text-condensed small-fs-1x medium-fs-2x medium-fs-3x" data-bind="text:$root.FormData.notifications.age[3].message">
+                        Lifetime Risk Calculator only provides lifetime risk estimates for individuals 20 to 59 years of age.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

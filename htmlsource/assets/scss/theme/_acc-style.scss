@@ -1,0 +1,5295 @@
+.profiler-results{
+	display: none;
+}
+
+body,#body {
+	font-size: .75em;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0;
+	font-family: $font-stack;
+	background-color: $main-bg-color;
+	color: $body-copy-color;
+	min-width: $site-width;//only for LLP, this is reset to 300px as soon as responsive.css kicks in
+	-webkit-font-smoothing:antialiased;
+}
+*,
+*:after,
+*:before{
+	@include box-sizing(border-box);
+}
+*:focus {
+	//outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.template-listing{
+	font-size: 1.2em;
+	line-height: 2;
+}
+.ui-front{//ACCORG-1627
+	z-index: 2000 !important;
+}
+.date { 
+	margin-top: 0.5em;
+	font-weight: 700;
+}
+.current {
+	background-color: #666;
+	border-top: 6px solid #666;
+}
+.hide-element{
+	display: none;
+}
+.active2 { 
+	background-color: #fff; 
+}
+.darktext{
+	color: $body-copy-color;
+}
+.required{//<span class="required"* </span>
+	display: block;
+	float: left;
+	width: 10px;
+	margin-left: -10px;
+}
+.alert,
+.validation-error,
+.field-validation-error{
+	color: $notification-color;
+}
+.info-text{
+	color: $link-color;
+}
+.link-header,
+.link-header h1,
+.article-tease h1 {
+	font-family: $font-stack-headings;
+}
+h1,h2,h3,h4,h5,h6 {
+	@include baseline-font(0);
+	margin-top: 0;
+	font-family: $content-font-stack;
+	font-weight: normal;
+
+}
+h1{
+	// line-height: 1;
+	// font-size: 1.4em;
+	@include baseline-font(3);
+}
+h2{
+	// line-height: 1;
+	// font-size: 1.4em;
+	@include baseline-font(2);
+}
+h3{
+	// line-height: 1;
+	// font-size: 1.4em;
+	@include baseline-font(1);
+}
+h5{
+	@include baseline-font(-1);
+}
+h6{
+	@include baseline-font(-2);
+}
+p:empty{
+	display: none;
+}
+a {
+	color: $link-color;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		color: $hover-color;
+		text-decoration: underline;
+	}
+}
+img{
+	#main-content &{
+		max-width: 100%;
+		height: auto;
+	}
+}
+table{
+	margin-bottom: 1em;
+}
+%button-as-link{
+	display: inline !important;
+	float: none !important;
+	clear: none !important;
+	padding: 0;
+	margin: 0;//removed 1em left margin
+	background-color: transparent;
+	color: $link-color;
+	border: none;
+	cursor: pointer;
+	text-align: left;//if this is a problem, see ACCORG-1344
+	font-family: $content-font-stack;
+	font-size: 1em;
+	&:active{
+		border: none;
+	}
+	&:hover{
+		text-decoration: underline;
+		background-color: transparent;
+	}
+	&.coveo-more{
+		width: 100%;
+		display: block !important;
+		color: #666;
+		text-align: center;
+	}
+}
+.button-as-link{
+	@extend %button-as-link;
+}
+%no-bullets{
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	ul{
+		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+	li{
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+.no-bullets{
+	@extend %no-bullets;
+}
+.no-list{
+	@extend %no-bullets;
+	@include clearfix;
+	li{
+		display: inline;//!important on this will hurt ng-hide on LIs
+		margin-right: .5em !important;
+	}
+}
+.cal-date{
+	@include box-sizing(border-box);
+	width: 36px;
+	float: left;
+	padding: 0 0 .2em 0;
+	margin: 0 1em 0 0;
+	background: $button-color;
+	text-align: center;
+	color: #fff !important;//important when cal-date is on an <a>
+	&:hover{
+		color: #fff;
+	}
+	span{
+		display: block;
+		border-top: 1px #fff solid;
+		font-size: 1.4em;
+	}
+	.tab-content &{//make same size as thumbnail images in tabs
+		height: 110px;
+		width: 110px;
+		padding-top: .1em;
+		span{
+			padding-top: .2em;
+			margin-top: .2em;
+			font-size: 3em;
+		}
+		+ .article-content{//only apply width following calendar date
+			float: left;
+			width: 75%;
+		}
+	}
+}
+%click-drag-killer{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.display{
+	display: block;
+}
+.hidden{
+	display: none;
+}
+.headline-list{
+	@extend %no-bullets;
+	li{
+		margin-bottom: 1em;
+	}
+	h2,h2{
+		display: inline;
+		font-size: 1em;
+	}
+}
+.list-filters{
+	@extend %no-bullets;
+	li{
+		@extend .extra-lineheight;
+	}
+}
+.sort-controls{
+	dt,
+	dd{
+		float: left;
+	}
+	dt{
+		padding: .3em .3em 0 0;
+	}
+}
+.columns-5050{
+	float: left;
+	width: 50%;
+	padding: 0 1em;
+	@include box-sizing(border-box);
+}
+.flexcolumn,	
+.flexcolumn-pers {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: flex-start;
+}
+.flex-space-around { 
+	justify-content: space-around; 
+}
+.hidden { 
+	display: none; 
+}
+#main-container {
+	background-color: #fff;
+	@include box-shadow(0 0 30px rgba(0,0,0,.3));
+}
+#main-content{
+	font-family: $content-font-stack;
+	p, table, ul, ol {
+		@include baseline-font(0);
+	}
+	//Exclusions for listings
+	p.document-type, p.document-type a, p.topics-list, p.topics-list a, p.keywords-list, p.keywords-list a,p.date,p.authors,.media-details p.authors,.media-details p.topics-list,.media-details p.keywords-list {
+		@include baseline-font(-1);
+	}
+
+	p.date {
+		margin-bottom:0.5em;
+	}
+       // Listings - we don't want bottom margin on some entries
+    p.date,p.authors{ 
+        margin-bottom: 0;
+    }
+	ul.meeting-details {
+		font-size:inherit;
+	}
+	ul.tab-controls {
+		font-size:1.0em;
+	}
+	aside.suggested-materials {
+		ul {
+			font-size:1.0em;
+		}
+	}
+}
+
+#sidebar{
+	font-family: $content-font-stack;
+	.dart-ad{
+		margin-bottom: 1em;
+	}
+}
+#filter-holder{
+	.dart-ad{
+		margin-bottom: 1em;
+	}
+}
+img{
+	display: block;
+	border: none;
+	&.ang-spinner{
+		display: inline;
+	}
+	&.spinner{
+		display: none;
+	}
+	&.show-spinner{
+		display: inline;
+		position: absolute;
+		margin-left: 1em;
+	}
+}
+#btn-change-subscrption{
+	&.hide-button{
+		display: none;
+	}
+}
+.radio, .checkbox{//kill bootstrap defaults
+	margin-top: 0;
+	margin-bottom: 0;
+}
+input[type="button"]{
+	@include appearance(none);
+}
+// all checkboxes must look prettier
+label.checkbox,
+input[type="checkbox"] + label,
+input[type="checkbox"] + input[type="hidden"] + label{//fixes checkboxes with auto-generated hidden element between check and label
+	position: relative;
+	min-height: 18px;
+	display: inline-block;
+	padding-left: 2em;
+	background: url(../images/checkbox-unchecked.png) left top no-repeat;  
+	@extend %click-drag-killer;
+	.view-mode &{//first implemented on 'manage enewsletter subscriptions' on "/my-acc/my-communication-preferences"
+		background-image: none;
+	}
+	&.hide-label,
+	.hide-label &{//class can be added to the label or any parent
+		overflow: hidden;
+		text-indent:-40em;
+		width: 16px;
+		height: 16px;
+		margin: 0 4px -2px 0;
+		padding-left: 0;
+	}
+	.collapse-box-heading &{
+		background-image: url(../images/checkbox-white-unchecked.png);
+	}
+	&.checked{
+		background-image: url(../images/checkbox-checked.png);
+	}
+	.all-filters-cleared &{
+		background-image: url(../images/checkbox-allchecked.png);
+	}
+}
+label.checked{
+	background-image: url(../images/checkbox-checked.png);
+}
+input[type="checkbox"]{
+	position: absolute;
+	left: -999em;
+	&:checked + label,
+	&:checked + input + label,//fixes 'remember me' on login
+	label.checked{
+		background-image: url(../images/checkbox-checked.png);  
+		.view-mode &{//first implemented on 'manage enewsletter subscriptions' on "/my-acc/my-communication-preferences"
+			background-image: url(../images/icon-completed.png);
+			background-size: 16px;
+		}
+	}
+}
+
+input,
+select,
+textarea,
+input[type=checkbox],
+input[type-radio]{
+	&:disabled{
+		@include opacity(.5);
+	}
+}
+%button-defaults{
+	padding: .25em .5em;
+	border: 1px solid $box-rule-color;
+	color: #fff;
+	background-color: $button-color;
+	cursor: pointer;
+	a{
+		color: #fff !important;
+		&:hover{
+			text-decoration: none;
+			color: #fff; 
+			cursor: pointer;
+		}
+	}
+	&:hover{
+		background-color: mix($button-color,#fff,90%);
+	}
+	&.coveo-big-more{
+		display: block;
+		width: 100%;
+		padding: .5em;
+		font-size: 1.4em;
+}
+}
+button,
+.button-standard,
+.button-buy,
+input[type="button"],
+input[type="submit"] {
+	@extend %button-defaults;
+}
+.button-buy { 
+	background-color: $hover-color; 
+}
+.styled-select {
+	@include appearance(none);
+	background: url(../images/icon-drop-down-fake-2.png) no-repeat right #e6e6e6;
+	padding: 0px 3em 0 0;
+	line-height: 1;
+	border: 0;
+	@include border-radius(0);
+	height: 24px;
+	color: $body-copy-color;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="phone"],
+select{
+	border: 1px $box-rule-color solid;
+	padding: .33em;
+	background-color: #fff;
+	z-index: 200;
+	max-width: 100%;
+}
+select{
+	padding: .24em;
+}
+input[type="radio"] + label{
+	display: inline !important;
+}
+.extra-lineheight{ 
+	line-height:1.5em;
+}
+.inline-list{
+	@include clearfix;
+	li{
+		float: left;
+	}
+}
+.save-cancel{//cancel button styled as normal link
+	@include clearfix;
+	li{
+		list-style-type: none;
+		float: left;
+		button{
+			cursor: pointer;
+		}
+		.cancel{
+			background: transparent;
+			color: $link-color;
+			border: 0;
+			text-decoration: underline;
+		}
+	}
+}
+// test comment
+// *** sitewide icons ****
+%icon-link{
+	display: inline;
+	padding: 0 0 2px 24px;//check mylibrary listing before added top padding back here
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin: 0 0 1em 0;	
+	@include box-sizing(border-box);
+	.article-toolbar &{
+		padding-left: 20px;
+		background-position: 0 50%;
+	}
+}
+%inline-icon-link{
+	display: inline;
+	padding-right: 30px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.folder-icon,
+.Folder-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-savetofolder.png);
+	.article-toolbar &{
+		@extend %button-as-link;
+	}
+}
+.article-icon,
+.Article-icon,
+.DOC-icon,
+.DOCX-icon,
+.XLS-icon,
+.XLSX-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-article.png);
+}
+.image-icon,
+.Image-icon,
+.JPEG-icon,
+.JPG-icon,
+.GIF-icon,
+.PNG-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-image.png);
+}
+.meeting-icon,
+.Meeting-icon,
+.calendar-icon,
+.Calendar-icon{
+	@extend %icon-link;
+	padding-bottom: .2em;
+	background-image: url(../images/icon-meetings.png);
+}
+.education-icon,
+.Education-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-book.png);
+}
+.tag-icon,
+.Tag-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-tag.png);
+}
+.completed-icon,
+.Completed-icon {
+	@extend %icon-link;
+	background-image: url(../images/icon-completed.png);
+}
+.slideshow-icon,
+.Slideshow-icon,
+.PPT-icon,
+.PPTX-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-slideshow.png);
+}
+.resume-icon,
+.Resume-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-resume.png);
+}
+.pdf-icon,
+.PDF-icon,
+.Pdf-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-pdf.png);
+}
+.print-icon,
+.Print-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-print.png); 
+}
+.tag-icon,
+.Tag-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-tag.png); 
+}
+.audio-icon,
+.Audio-icon{ 
+	@extend %icon-link;
+	background-image: url(../images/icon-audio.png);
+	.article-toolbar &{
+		background-image: url(../images/icon-headphones.png);
+	}
+}
+.video-icon,
+.Video-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-video.png);
+}
+.guideline-icon,
+.Guideline-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-guidelines.png);
+}
+.comments-icon,
+.Comments-icon{ 
+	@extend %icon-link;
+	background-image: url(../images/icon-star.png); 
+}
+.editors-pick-icon{
+	@extend %icon-link;
+	background-image: url(../images/icon-checkmark.png); 
+}
+.new-window-icon,
+.external-link{
+     .coveo-title &{
+        .CoveoResult &{
+            &:after{
+		        width: 30px;
+		        height: 14px;
+		        display: inline-block;
+		        content: '';
+                visibility: visible;
+                white-space: normal;
+		        background: url(../images/icon-newwindow.png) 100% 50% no-repeat;
+            }
+        }
+    }
+	&:after{
+		width: 30px;
+		height: 14px;
+		display: inline-block;
+		content: '';
+        visibility: visible;
+        white-space: normal;
+		background: url(../images/icon-newwindow.png) 100% 50% no-repeat;
+	}
+	#footer &{
+		&:after{
+			background-image: url(../images/icon-newwindow-white.png);
+		}
+	}
+}
+.question-circle{
+	display: inline;
+}
+#page-mask{
+	display: none;
+}
+/* ************************* header v4 **********************************/
+#header { 
+	position: relative; 
+	z-index: 150;//stay on top of page mask for touch screens
+	padding: 1.2em 0 0;
+	min-height: 160px;
+	@include box-sizing(border-box);
+	@include clearfix;
+}
+#header-logo {
+	float: left;
+	display: block;
+	width: 52%;
+	height: auto;
+	max-width: 490px;
+	margin: 0;
+	padding: .1em 0 0 .5em;
+	background-repeat: no-repeat;
+	img{
+		max-width: 280px;
+		float: left;
+		&.logo-addon{
+			float: right;
+			margin-left: 20px
+		}
+	}
+	.splashtext{
+		position: absolute;
+		top: 86px;
+		left: 95px;
+		display: block;
+		clear: both;
+		padding: .4em 0 0 0;
+		font-size: 0.8em;
+	}
+	.mobile-logo-svg,
+	.mobile-logo-image{
+		width: 126px;
+		height: 43px;
+		display: none;
+	}
+}
+#header-mobile-trigger,
+#header-search-trigger{
+	display: none;
+}
+/* *********** main nav  */
+#nav-utility-holder{
+	float: right;
+	margin-bottom: 1em;//pushes search down
+}
+#nav-utility {
+	margin: 0;
+	padding: 0;
+	li{
+		float: left;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		a {
+			border-left: 1px solid $box-rule-color;
+			padding: 0 1em;
+			font-size: 1.2em;
+		}
+		&:first-child{
+			a{
+				border-left: none;
+			}
+		}
+	}	
+}
+#nav-primary-holder{//styles for #nav-primary and #nav-utility (when it is moved inside #nav-primary-holder via JS)
+	position: relative;
+	top: 1.5em;
+	clear: both;
+	width: 100%;
+	line-height: 2.4;
+	padding: 0 0 0 0;
+	margin: 0;
+	border: 0;
+	background-color: $main-menu-bg-color;
+	@include clearfix;    
+	a,
+	.no-link{//no click-n-drag highlighting on nav items
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	li{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+	}
+	#nav-utility{
+		display: none;
+	}
+	.header-link{
+		float: left;
+		position: relative;
+		padding: 0 .9em;
+		margin: 0;
+		background-color: $main-menu-bg-color;
+		border-top: 6px solid $main-menu-bg-color;
+		//border-right: 1px solid #1c4d76; //makes top color bar mismatch
+		text-align: center;
+		padding-bottom: .4em;
+		button{
+			display: none;//only for tablet and lower
+		}	
+		a,
+		.no-link {
+			color: #fff;
+			text-decoration: none;
+			font-family: $font-stack-headings;
+			font-size: 1.3em;
+			&:hover { 
+				color: $hover-color; 
+			}
+			&.arrow-down {
+				background-image: url(../images/icon-drop-arrow.png);
+				background-repeat: no-repeat;
+				background-position: right center;
+				padding-right: 1.33rem;
+			}
+		}	
+		&.bfHover .dropdown,
+		&.active .dropdown{ 
+			display: block;
+		}
+		.set-one{
+			@extend .columns-5050;
+		}
+		.set-two{
+			@extend .columns-5050;
+			border-left: 1px $horizontal-rule-color solid;
+		}
+	}
+	.dropdown{
+		display: none;
+	}
+	.dropdown {
+		position: absolute;
+		z-index: 1;
+		background: #fff;
+		border: 1px solid $box-rule-color;
+		border-top: none;
+		padding: 1em 0em;
+		margin: 0;
+		line-height: 1.5;
+		margin-left: -9px;
+		text-align: left;
+		@include clearfix;
+		-webkit-backface-visibility: hidden;
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			font-size: 1.25em;
+			font-family: $font-stack;
+			color: $link-color;
+			padding: 0 1em;
+			display: block;
+			position: relative;
+			border: 1px #fff solid;
+			&:hover {
+				background: $hover-color;
+				border: 1px #fff solid;
+				color: #fff;
+			}
+		}
+		.nav-level-1{
+			li > a{
+				margin-top: .5em;
+			}
+		}
+		.nav-level-2 {
+			li > a{
+				font-size: 1em;
+				margin-top: .2em;
+				padding-left: 2em;
+			}				
+		}
+		.with-image {
+			a:hover{
+				background: transparent;
+			}            
+			img{
+				margin: 0;
+			}
+		}
+	}
+	#nav-utility{//only kicks in at tablet and below
+		.header-link{
+			padding-left: 0;//4em to equal space created by "+/-" toggles
+			line-height: .8;
+		}
+		a{
+			//font-weight: 300;
+		}
+	}
+	/* sizes of each block & dropdowns total size of all =< 960px */
+	.header-home { 
+		float: left;
+		width: 35px; 
+		border-right: 0;
+		&.current { 
+			background: $current-nav-color;  
+			border-top-color: $current-nav-color;
+			&:hover > a,
+			> a:hover{
+				color: #fff;
+			}
+		}
+		&:hover{
+			background: #fff;
+			border-top: 6px solid $hover-color;
+			a { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		a {
+			background-image: url(../images/icon-home.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 28px;
+			display: inline-block;
+			background-position: 50% 75%;
+			overflow: hidden;
+			text-indent: -99em;
+		}
+		&:hover a{ 
+			background-image: url(../images/icon-home-active.png); 
+		}
+	}
+	.header-clinical { 
+		.dropdown {
+			width: 760px;
+			left: 8px;
+			top: 43px;
+		}
+	}
+	.header-latest { 
+		.dropdown {
+			width: 257px;
+			left: 8px;
+			top: 43px;
+		}
+	}
+	.header-education { 
+		.dropdown {
+			width: 538px;
+			left: -51px;
+			top: 43px;
+		}
+	}
+	.header-tools { 
+		.dropdown {
+			width: 620px;
+			left:-206px;
+			top: 43px;
+		}
+	}
+	%myacc-bg-normal-state{
+		background-color: $myacc-color;
+		border-color:$myacc-color;
+		border-right: none;
+	}
+	%myacc-bg-active-state{
+		display: block;
+		background-color: #FFF;
+		border-top: 2px $myacc-color solid;
+		padding-top: 4px;
+	}
+	.header-myacc {
+		@extend %myacc-bg-normal-state;
+		cursor: pointer;
+		&.arrow-down{
+			background-image: url(../images/icon-drop-arrow.png);
+			background-position: 80px 40%;
+			background-repeat: no-repeat;
+			padding-right: 36px;
+			&.current{
+				background-image: url(../images/icon-drop-arrow-active.png);
+				background-position: 80px 48%;
+			}
+		}
+		a:hover,
+		.no-link:hover{
+			color: #fff;
+		}
+		&:hover{//must defeat hover inherited from other primary nav items
+			@extend %myacc-bg-normal-state;
+			background-image: url(../images/icon-drop-arrow.png);
+			background-repeat: no-repeat;
+			background-position: 80px 40%;
+			> a{
+				color: #fff;
+			}
+		}
+		.dropdown {
+			display: none;
+		}
+		.myacc-active &{//myacc menu item triggers on click, this is what happens when it does
+			background-color: #fff;
+			background-image: url(../images/icon-drop-arrow-active.png);
+			background-position: 80px 49%;
+			.dropdown{
+				display: block;
+				width: 297px;
+				right: -1px;//line up with right pixel border of parent
+				top: 47px;
+				ul{
+					margin-left: 0;
+				}
+			}
+			a,
+			.no-link { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		&.current,
+		.myacc-active &{
+			@extend %myacc-bg-active-state;
+			border-left: none;
+			margin-left: -2px;
+			a,
+			.no-link {//no-link is on the My ACC label to replicate link appearance
+				color: $body-copy-color; 
+			}
+			a:hover{//applies only to subnav items
+				color: #fff;
+			}
+		}
+	}
+	//****************************  header-myacc-noti ****************************
+	.header-myacc-noti{
+		@extend %myacc-bg-normal-state;
+		padding-top: 5px;
+		padding-bottom: 0;
+		&.current {
+			@extend %myacc-bg-active-state;
+		}
+		.no-link  {
+			background-image: url(../images/icon-notification.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 27px;
+			display: inline-block;
+			background-position: 50% 50%;
+			cursor: pointer;
+			b{//alert 
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				height: 16px;
+				width: 16px;
+				line-height: 1.8;
+				font-size: .6em;
+				text-align: center;
+				background: $notification-color;
+				@include border-radius(10px);
+				&.display-none{
+					display: none;
+				}
+			}
+		}
+		&.clear-alert{
+			b{
+				display: none;
+			}
+		}
+		a:hover,
+		a:hover .darktext{
+			color: #fff;
+		}
+		&:hover{//must defeat hover inherited from other primary nav items
+			@extend %myacc-bg-normal-state;
+			background-image: url(../images/icon-drop-arrow.png);
+			background-repeat: no-repeat;
+			background-position: 80px 40%;
+			> a{
+				color: #fff;
+			}
+			b{//alert 
+				background: darken($notification-color,10%);
+				color: #fff;
+			}
+		}        
+		.dropdown{
+			display: none;
+			.noti-drop-icon,
+			.alert-drop-icon,
+			.system-drop-icon,
+			.content-drop-icon{//divs
+				padding: 0 1em 1.5em 2.25em;	
+				background-repeat: no-repeat;
+				background-position: 6px 4px;
+				font-size: 1.15em;
+				a{
+					font-size: 1em;
+					&:hover{
+						display: inline;
+						background: #fff;
+						color: $myacc-color;
+						text-decoration: underline;
+					}
+				}
+			}
+			.noti-drop-icon{
+				background-image: url(../images/icon-clock.png);
+			}
+			.alert-drop-icon {
+				background-image: url(../images/icon-notification-active.png);
+			}
+			.system-drop-icon{
+				background-image: url(../images/icon-system.png);
+			}
+			.content-drop-icon {
+				background-image: url(../images/icon-content.png);
+			}
+			a{
+				display: inline;
+				padding: 0;
+			}
+			.nav-level-2 li > a{
+				padding-left: 2.8em;//more padding than the MyACC logout link because of the space needed for the notification icons
+			}
+		}
+		.notification-active &{
+			background: #fff;
+			display: block;
+			border-top: 2px solid $myacc-color;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			overflow: visible;
+			.no-link  {
+				background-image: url(../images/icon-notification-active.png);
+				background-repeat: no-repeat;
+				background-position: center bottom;
+			}
+			.dropdown {
+				display: block;
+				width: 297px;
+				right: -1px;
+				top: 47px;
+				font-size: .95em;
+			}
+		}
+		&.current .no-link { 
+			background-image: url(../images/icon-notification-active.png); 
+		}
+	}
+	//****************************  header-myacc-cart ****************************
+	.header-myacc-cart{
+		@extend %myacc-bg-normal-state;
+		&.current { 
+			@extend %myacc-bg-active-state;
+			border-right: 2px $myacc-color solid;
+			margin-left: -2px;
+			a.iconit { 
+				background-image: url(../images/icon-cart-active.png); 
+			}
+		}
+		a.iconit {
+			background-image: url(../images/icon-cart.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 26px;
+			display: inline-block;
+			background-position: center bottom;
+		}
+		b{
+			margin: 0 !important;
+			position: absolute;
+			top: 0;
+			right: 2px !important;
+			left: auto !important;
+			display: block;
+			height: 16px;
+			width: 16px;
+			line-height: 1.8;
+			font-size: .6em;
+			text-align: center;
+			background: $notification-color;
+			@include border-radius(10px);
+			overflow: hidden;
+		}
+		&:hover b{
+			background: darken($notification-color,10%);
+			color: #fff;
+			//width: auto;
+		}
+	}
+	.myacc-link:hover {
+		background-color: $myacc-color;
+		border: none;
+		a.arrow-down {
+			color: #fff;
+			background: none;
+			border-right: none;
+		}
+	}
+	//primary nav tooltips (home, notifications, cart)
+	.tooltip{
+		z-index: 10000;
+	}
+}
+#nav-primary{
+	float: left;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	&:hover,
+	&.nav-active,
+	.nav-active &{
+		overflow: visible;
+	}
+	.header-link{
+		&.bfHover{
+			background: #fff;
+			border-top: 6px solid $hover-color;
+			> a { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		&.current { 
+			background: $current-nav-color;  
+			border-top-color: $current-nav-color;
+			&:hover > a,
+			> a:hover{
+				color: #fff;
+			}
+		}
+	}
+}
+#myacc-holder{	
+	float: right;
+	position: relative;
+	background-color: $myacc-color;
+	.logged-out{
+		#header-personal{
+			padding-right: 66px; 
+			bottom: 40px;
+			top: auto;
+		}
+		p{
+			margin: 0;
+			padding: 0;
+		}
+		.header-myacc{
+			//padding-right: 1.65em;
+			img{
+				float: left;
+			}
+			&:hover{
+				background-image: none;
+			}
+		}
+	}
+}
+#header-personal {
+	position: absolute;
+	right: .65em;
+	top: -32px;
+	//background: #e6e6e6;
+	padding: 0 56px 0 0;
+	height: 32px;
+	line-height: 2;
+	//border: 1px $box-rule-color solid;
+	//border-bottom: 0;
+	white-space: nowrap;
+	@include box-sizing(border-box);
+	img{//profile image
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 35px;
+		width: 35px;
+	}
+	p { 
+		font-size: 1em;
+		padding: .5em 0 0 .5em;
+		margin: 0; 
+	}
+}
+#nav-myacc{
+	float: left;
+	margin: 0;
+	padding: 0;
+	.header-link{
+		overflow: hidden;
+		.myacc-active &{
+			overflow: visible;
+		}
+	}
+}
+#nav-secondary{
+	background: $button-color;
+	ul {
+		@extend %no-bullets;
+		margin-top: -1px;
+		background: $button-color;
+		a{
+			font-size: 1.2em;
+			display: block;
+			padding: .5em .5em .5em 30px;
+			color: #fff;
+		}
+		li{
+			position: relative;			
+		}
+		ul ul{
+			display: none;
+			background: mix($button-color,#fff,90%);
+			a{
+				padding-left: 50px;
+				font-size: 1em;
+				font-weight: 400;
+			}
+			li{
+				padding-left: 0;
+				margin-top: 1px;
+			}
+		}
+		.active{
+			> ul{
+				display: block;
+			}
+		}		
+	}
+	.toggler{
+		border: none;
+		height: 30px;
+		width: 30px;
+		padding: 0;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: transparent;
+		cursor: pointer;
+		text-align: center;
+		line-height: 1;
+		font-size: 1.2em;
+		@extend %click-drag-killer;
+		&:hover{
+			background: transparent;
+		}
+		&:before{
+			display: block;
+			height: 30px;
+			width: 30px;
+			content: "+";
+			color: #fff;
+			font-size: 2em;
+		}
+	}
+	.active > .toggler:before{
+		content: "-";
+	}
+	.current{
+		border-top: none;
+		> a{
+			background: mix($button-color,#000,90%);
+		}
+		.current{
+			background: mix($button-color,#fff,70%);
+		}
+	}
+	> ul > li {
+		> a{
+			padding-left: 10px;
+		}
+		> .toggler{
+			display: none;
+		}
+	}
+}
+//  ****************************  myacc masthead ****************************/
+#myacc-masthead {
+	border: 1px $myacc-color solid;
+	border-top: none;
+	padding: 1em;
+	margin: -1px 0 2em;
+	@include clearfix;
+	h1 {
+		float: left;
+		font-size: 1.125em;
+		padding-top: 1.5em;
+		margin-left: 1em;
+		margin-top: 0;
+		font-weight: bold;
+	}
+	#member-header-info {
+		float: right;
+		text-align: right;
+		font-size: .9em;
+		ul{
+			float: right;
+			margin: 0;
+			padding: 0;
+			@extend %no-bullets;
+		}
+		img {
+			float: right;
+			margin-left: 1em;
+			height: 60px;
+			width: 60px;
+			border: 1px solid $box-rule-color;
+		}
+	}
+	
+}
+//  ****************************  lvl2 masthead ****************************/
+#lvl2-masthead { 
+	position: relative;
+	padding: 1em; 
+	font-family: $content-font-stack;
+	&.masthead-empty{
+		*{display: none;}
+		padding: 0 0 1em 0;
+	}
+	&.contains-featured-content{
+		//padding-bottom: 0;//don't this
+	}
+	#back{
+		display: block;
+		margin-bottom: 1em;
+	}
+	h1,
+	h2 {
+		padding: 0;
+		margin: 0;
+		color: #000;
+		position: relative;
+		//float: left;//can't do this or things below have problems (see landing page sub-topic nav)
+		margin-right: 120px;
+	}
+	#subnav-toggler-holder{
+		clear: both;
+		display: block;
+		margin-top: 1em;
+	}
+	#subnav-toggler{//this shows up at tablet and below
+		display: none;
+	}
+	.subnav {
+		clear: both;
+		margin: 1em 0 0 0;
+		padding: 0;
+		@include clearfix;
+		li{
+			float: left;
+			@extend %no-bullets;
+			border-left: 1px solid $box-rule-color;
+			padding: 0 .75em;
+			&:first-child {
+				border-left: none;
+				padding-left: 0;
+			}
+		}
+	}
+	img {
+		border: 1px solid $box-rule-color;
+	}
+	.standard {
+		padding-left: 1em;
+		margin-top: .75em;
+		font-size: 1em;
+		line-height: 1.4;
+		a {
+			font-family: $font-stack-headings;
+		}
+	}
+	.full-width-feature{
+		clear: both;
+		padding: 2em 0;
+		@include clearfix;
+		.full-width-image,
+		.full-feature-image{
+			border: none;
+			max-width: 575px;
+			float: left;
+			margin-right: 1em;
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+		}
+		.full-width-content,
+		.full-feature-content{
+			float: left;
+			p{
+				margin-top: 0;
+				font-size:1.2em;
+			}
+		}
+	}
+	.notify-me {
+		padding: .25rem .5em;
+		border: 1px solid $box-rule-color;
+		font-size: .75em;
+		position: absolute;
+		right: 2.5em;
+		color: #fff;
+		background-color: $button-color;
+	}
+	.icon-rss {
+		font-size: .75em;
+		position: absolute;
+		right: 2em;
+		top: 13px;
+		background-image: url(../images/icon-rss.png);
+		background-repeat: no-repeat;
+		height: 16px;
+		width: 16px;
+		overflow:hidden;
+		text-indent: -99em;
+	}
+	#subcribe-actions{
+		position: absolute;
+		right: 44px;
+		top: 10px;
+		button{
+			float: right;
+			margin-left: .5em;
+		}
+		.spinner{
+			position: static;
+			float: left;
+			margin-top: .25em;
+			border: none;
+		}
+	}
+}
+//**************************** myacc masthead *********************************/
+.myacc-masthead {
+	color: $button-color;
+	background-color: #fff;
+}
+//  ****************************  Main Content ****************************/
+
+// ******************************* tab blocks *****************************/
+
+.user-not-logged-in{//if not logged in, no tab contents, therefore no tabs
+	#recommended-for-you{
+		.coveotabs-loading-screen,
+		.content-block-nav{
+			display: none !important;
+		}
+	}
+	#latest-tabs{//not including the recommended for you tabs
+		//display: none !important;
+	}   
+}
+.no-results-returned{//guess what?
+	&.tabgroup,
+	&.tabgroup-coveo{
+		 display: none !important;
+	}
+	.coveotabs-loading-screen,
+	.content-block-nav{
+		display: none !important;
+	}
+}
+.content-block.tabgroup-coveo{
+	border-top: 1px $box-rule-color solid;
+	.content-block-nav{//entire tab nav
+		display: none;
+	}
+	.tab-control{//individual nav items
+		display: none;
+		&.result-returned{//show them once an individual result returns
+			display: block;
+		}
+	}
+	.coveotabs-loading-screen{
+		display: block;//show loading spinner on load
+		.coveo-first-loading-animation{
+			position: relative;
+			background: transparent;
+			padding: 2em;
+		}
+	}
+	&.results-returned{//after any result has returned
+		border-top: none;//turn off the top border, the content-block-nav border will do
+		.coveotabs-loading-screen{//hide the spinner
+			display: none;
+		}
+		.content-block-nav{//unhide the nav
+			display: block;
+		}
+	}
+}
+.tabgroup,
+.tabgroup-coveo{
+	.tab-content{
+		display: none;
+		&.active{
+			display: block;
+			padding-top: 1em;
+		}
+	}
+}
+/********************* homepage slideshow *********************/
+.flexslider{
+	@include clearfix;
+	position: relative;
+	overflow: hidden;
+}
+.feature-tabs {
+	padding: 0;
+	margin: 0 0 1em 0;
+	border: none;
+	width: 100%;
+	.flexslider{
+		font-size: 1.4em;
+	}
+	.slides{
+		//position: relative;
+		//z-index: 500;
+	}
+	ul,
+	li{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	.content-featured-pic,
+	.tab-content{
+		a {
+			display: block;
+			width: 100%;
+			height: auto;
+			position: relative;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+		}
+		img{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+	} 
+	.tab-content{
+		display: none;//hide until page loaded and flexslider kicks in
+	}
+	a {
+		.subtext {
+			@include transparent(#000,0.6);
+			color: #fff;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			font-family: $font-stack-headings;
+			.inner {
+				display: block;
+				padding: .5em .5em 3.5em .5em;
+				font-size: 1em;
+			}
+		}
+	} 
+	.flex-direction-nav{
+		display: none;
+	}
+	.tab-controls {
+		margin-top: -3em;
+		position: relative;
+		z-index: 2;
+		height: 3em;
+		line-height: 3em;
+		padding: 0;
+		list-style: none;
+		font-size: 1.4em;
+		li {
+			display: block;
+			float: left;
+			width: 33.3%;
+			min-width: 140px;
+			padding: 0 .5em;
+			text-align: center;
+			cursor: pointer;
+			background-color: #e6e6e6;
+			border-left: 2px solid #fff;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			&:first-child {
+				border: 0px;
+				width: 204px;
+			}
+			&.active,
+			&.flex-active { 
+				background: none; 
+				color: #fff;
+				a {
+					color: #fff;
+					text-shadow: 1px 1px 1px #000;
+				}
+			}
+			a {
+				text-decoration: none;
+				color: $main-menu-bg-color;
+				padding: none;
+			}
+		}
+	}	
+}
+// ****************************** push buttons interface ***************************/
+.display, 
+.show {
+	color: #000;
+}
+.show { 
+	left: 16em; 
+	input[type="checkbox"] + label span { 
+		margin: 0 4px -3px 0; 
+	}
+}
+
+%push-buttons {
+	padding: 0;
+	margin: 0;
+	dl{
+		float: right;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	dt,
+	dd{
+		margin: 0;
+		float: left;
+	}
+	b{
+		display: block;
+		padding: .25em .5em;
+		font-weight: normal;
+	}
+	a {
+		display: block;
+		padding: .25em .5em;
+		margin: 0;
+		background-color: #fff;
+		color: $button-color;
+		border: 1px $button-color solid;
+		white-space: nowrap;
+		&:hover{
+			text-decoration: none;
+			color: #fff;
+			background: darken( $button-color, 10% );
+			@include box-shadow(inset 0 0 3px 2px rgba(0,0,0,.2));
+		}
+		&.active {
+			color: #fff;
+			background: darken( $button-color, 10% );
+			@include box-shadow(inset 0 0 3px 2px rgba(0,0,0,.2));
+		}
+	}
+	.popularity a,
+	.alphabetical a,
+	.date-added a{
+		border-right: none;
+		@include border-radius(.4em 0 0 .4em);
+	}
+	.release-date a{
+		border-left: none;
+		@include border-radius(0 .4em .4em 0);
+	}
+}
+.push-buttons{
+	@extend %push-buttons;
+}
+.push-buttons-left { 
+	border-right: 0; 
+}
+.push-buttons-right {
+	border-left: 0; 
+}
+.datepicker{//not the one being used on Coveo search
+	width: 100%;
+	@include clearfix;
+	input{
+		float: left;
+		margin-right: 20px;
+	}
+	button{
+		float: left;
+		margin-left: -21px;
+		padding: .33em;
+		border: 1px $box-rule-color solid;
+		background: transparent;
+	}
+	.calendar-icon{
+		position: relative;
+		top: 2px;
+		left: 3px;
+	}
+}
+#from-day-picker,
+#to-day-picker,
+#from-month-picker,
+#to-month-picker{
+	padding: .2em;
+	margin-bottom: .5em;
+}
+//column grid maker
+//not used in the site structure
+//just for RTE trickery
+.col-grid-wrapper{
+	@include clearfix;
+	display: table;
+	width: 100%;
+	.grid-item{
+		@include box-sizing(border-box);
+		float: left;
+		display: table-cell;
+	}
+	&.col-count-1{
+		.grid-item{
+			width: 100%;
+			float: none;
+		}
+	}
+	&.col-count-2{
+		.grid-item{
+			width: 50%;
+		}
+	}
+	&.col-count-3{
+		.grid-item{
+			width: 33.33%;
+		}
+	}
+	&.col-count-4{
+		.grid-item{
+			width: 25%;
+		}
+	}
+	&.col-count-5{
+		.grid-item{
+			width: 20%;
+		}
+	}
+	&.col-count-6{
+		.grid-item{
+			width: 16.66%;
+		}
+	}
+	&.col-count-7{
+		.grid-item{
+			width: 14.28%;
+		}
+	}
+	&.col-count-8{
+		.grid-item{
+			width: 12.5%;
+		}
+	}
+}
+.sort-controls{
+	@extend %push-buttons;
+	dt,
+	dd{
+		float: left;
+	}
+	.pagination-controller &{
+		float: right;
+	}
+}
+.view-all {
+	text-align: right;
+	padding-right: 1em;
+	a { 
+		text-decoration: none; 
+	}
+}
+//Content blocks
+.content-block-listing{
+	margin-bottom: 1em;//if this changes to something else, adjust sidear-box for main content area
+	border: 1px $box-rule-color solid;
+}
+.content-block-heading{
+	padding: .5em;
+	margin: 0;
+	font-size: 1.8em;
+	.sidebar-box &{//has it's own padding 
+		padding: .5em 0;
+	}
+}
+.content-block {
+	border: 1px $box-rule-color solid;
+	border-top: none;
+	position: relative;
+	margin-bottom: 1em;
+	.content-block-listing &{
+		border: none;
+	}
+	.article-tease{
+		padding: 1em 0;
+		margin-bottom: 1em;
+		border-bottom: 1px $box-rule-color solid;
+	}
+	h3 { 
+		margin: 0 auto 1em 0; 
+	}
+}
+.article-notifications-tease{
+	@include clearfix;
+	.article-content{
+		float: left;
+		width: 80%;
+		margin-bottom: 1em;
+		.notification-icon{
+			margin-right: 5px;
+			float: left;
+		}
+		p{
+			padding-left: 2em;
+			margin-top: 0;
+		}
+	}
+	.article-actions{
+		float: right;
+		width: 20%;
+		padding-left: 2em;
+		.notification-icon{
+			margin-right: 10px;
+			float: left; 
+			cursor: pointer;
+		}
+		.notification-spinner{
+			padding-left:5px;
+			display: none;
+		}
+	}
+	&.notification-hidden{
+		p,a{
+			color: #bbb;
+		}
+	}
+	&.notification-pinned{
+		padding: .5em 0 .5em .5em;
+		margin: 1em 0;
+		background: $collapse-header-color;
+	}
+}
+.gig-comments-container{
+	padding-top: 2em !important;
+}
+.gig-composebox-follow{//per 10/27/14 email from Len
+	display: none !important;
+}
+#recommended-for-you{
+	@include clearfix;
+	.article-tease{
+		border-bottom: none;
+	}
+	.tab-content{
+		.article-tease{
+			float: left;
+			width: 25%;
+			min-width: 120px;
+			padding: 0 1em;
+			@include box-sizing(border-box);
+			.main-image{
+				width: 100%;
+			}
+			h1 {
+				font-size: 1.2em;
+				margin: 1em 0 .5em 0;
+                word-wrap: break-word;
+			}
+			p { //date? always?
+				font-size: 1em; 
+				margin-top: 0;
+				font-weight: 700;
+			}
+			a { 
+				text-decoration: none; 
+			}
+			img {
+				border: 1px $box-rule-color solid;
+				max-width: 110px;
+				height: auto;
+			}
+		}
+		.main-image{
+			margin-bottom: .5em;
+		}
+		.article-content{
+			clear: both;			
+			.highlight{
+				font-weight: 400;//no highlights in the tabs
+			}
+		}
+	}
+	.unauthenticated,
+	.authenticated-nothing-selected,
+	.authenticated-notamemeber,
+	.authenticated-no-results{
+		.article-tease{
+			width: 100%;
+			.main-image{
+				width: 20%;
+				float: left;
+			}
+			.article-content{
+				clear: none;
+				padding-top: 0;
+			}
+			button{
+				display: block;
+				margin: .5em 0;
+			}
+		}
+	}	
+}
+#search-latest-in-cardiology{
+	&.CoveoSearchInterface{
+		.CoveoResultList,
+		.CoveoResult{
+			margin-top: 0;
+		}
+	} 
+	.CoveoSort{
+		display: none;
+	}
+}
+#recommended-for-you,
+#latest-tabs{
+	.CoveoResultList{
+		margin-top: 0;
+	}
+	.CoveoSearchInterface{
+		.CoveoSort{
+			display: none;
+		}
+		.coveo-results-section {
+			.coveo-results-column{
+				width: 100%;
+				padding-top: 0;
+				padding-right: 0;
+				padding-left: 0;
+				.CoveoSort{
+					display: none;
+				}
+			}
+		}
+	} 
+}
+
+// ******************************* content block nav ****************************************/
+.content-block-nav {
+	border-top: 1px $box-rule-color solid;
+	border-bottom: 1px $box-rule-color solid;
+	font-size: 1.2em;
+	@include clearfix;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		&.push-buttons li a { 
+			color: #fff; 
+		}
+	}
+	li {
+		float: left;
+		border-left: 1px $box-rule-color solid;
+		a{
+			display: block;
+			padding: .5em .6em;
+		}		
+		&.active,
+		&:hover { 
+			background-color: #999; 
+			border-top:0; 
+			a { 
+				background-color: #999; 
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+		&:first-child { 
+			border: none; 
+		}
+	}
+	&.tabgroup-coveo{//unique rules for tabgroups that use AJAX coveo queries 
+		li{
+			display: none;//only show after content queries return
+			&.result-returned{
+				display: block;//show tabs that have returned results
+			}
+		}
+	}
+}
+.fake-content-block-nav {
+	margin: -1em -1em 1em -1em;
+	border-bottom: 1px $box-rule-color solid;
+	.outer {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		div:first-child { border: none; }
+		.inner {
+			padding: .5em 1em;
+			border-left: 1px $box-rule-color solid;
+			span {
+				text-decoration: none;
+				font-size: .875em;
+				color: $link-color;
+			}
+		}
+	}
+	
+}
+.divider {
+	border-bottom: 1px $box-rule-color solid;
+	margin: 1em 0;
+	#sidebar &{
+		margin: .75em 0;
+	}
+}
+%show-hide-terms{//works with toggleTermsLists() in acc_scripts.js
+	a,i,span{//elements that can wrap individual terms
+		margin: 0;
+		font-weight: normal;
+		letter-spacing: .04em;
+	}
+	b{
+		padding-right: 1em;
+		margin: 0;
+	}
+	.more-link{//added via JS when more than 4 items in list
+		padding-left: 12px;
+		margin-left: -8px;
+		background: #fff;
+		&:after{
+			content: " +";
+		}
+	}
+	&.more-toggle-active{
+		a + a + a + a, i + i + i + i, span + span + span + span{
+			display: none;//hide all but the first three occurrences
+		}
+		&.show-all{
+			a + a, i + i, span + span{
+				display: inline;//unhide all when 'show-all' class added to parent
+			}
+			.more-link{//mide more link once list has been expanded
+				display: none !important;
+			}
+		}
+	}
+}
+.author-list { clear: both; }
+.author-list,
+.keywords-list,
+.topics-list,
+.document-type{
+	@extend %show-hide-terms;
+}
+// ****************************** article teases ***************************/
+.article-tease {
+	margin: 0 0 2em 0;
+	@include clearfix;
+	.content-block-content &{
+		padding: 0 1em 1em 1em;
+	}
+	.main-image {
+		@include box-sizing(border-box);
+		float: left;
+		padding: 0 1em 0 0;
+		width: 20%;
+		&.align-right{
+			float: right;
+			padding: 0 0 0 1em ;
+		}
+		img{
+			border: 1px $box-rule-color solid;
+		}
+		+ .article-content{//only apply width if image is present
+			float: left;
+			width: 80%;
+		}
+	}
+	.article-content{
+		@include box-sizing(border-box);
+        .folder-icon,
+        .Folder-icon, 
+        .article-icon,
+        .Article-icon,
+        .DOC-icon,
+        .DOCX-icon,
+        .XLS-icon,
+        .XLSX-icon, 
+        .image-icon,
+        .Image-icon,
+        .JPEG-icon,
+        .JPG-icon,
+        .GIF-icon,
+        .PNG-icon, 
+        .meeting-icon,
+        .Meeting-icon,
+        .calendar-icon,
+        .Calendar-icon, 
+        .education-icon,
+        .Education-icon, 
+        .tag-icon,
+        .Tag-icon, 
+        .completed-icon,
+        .Completed-icon, 
+        .slideshow-icon,
+        .Slideshow-icon,
+        .PPT-icon,
+        .PPTX-icon, 
+        .resume-icon,
+        .Resume-icon, 
+        .pdf-icon,
+        .PDF-icon,
+        .Pdf-icon, 
+        .print-icon,
+        .Print-icon, 
+        .tag-icon,
+        .Tag-icon, 
+        .audio-icon,
+        .Audio-icon, 
+        .video-icon,
+        .Video-icon,
+        .guideline-icon,
+        .Guideline-icon, 
+        .comments-icon,
+        .Comments-icon{
+            display: inline-block;
+            line-height: 1.2;
+            margin-top: 0.5em;
+            margin-bottom:0;
+        }
+        p.date { 
+            margin-bottom:0px;
+        }
+	}
+	.journal-title, .meeting-type{
+		font-weight: 700;
+		font-size: 1em;
+		margin-top: .5em;
+	}
+	h1{
+		margin: 0;
+		//line-height: 1.2;//ACCORG-2538
+		span{//usually file type holder
+			margin-left: 1em;
+			font-size: .9em;
+			background-position: 0 4px;//file type icon
+			&.highlight{//these don't have filetype icons in them
+				margin-left: 0;
+				font-size: 1em;
+			}
+		}
+	}
+	.article-tools{
+		float: right;
+		width: 120px;
+		margin: 0 0 1em 1em;
+		#searchMeetings &{
+			float: none;
+			width: auto;
+			margin-left: 0;
+		}
+	}    
+	.article-tags{
+		float: right;
+		width: 120px;
+		margin-left: 1em;
+		@extend .tag-icon;
+	}
+	.article-select{
+		float: left;
+		input[type="checkbox"] + label{
+			padding: 0 1em 0 2em;
+		}
+	}
+}
+
+.CoveoResult .coveo-title {
+    line-height: 1;
+}
+
+.article-guidelines-tease{
+	@extend .article-tease;
+	padding-bottom: 1em !important;
+	h1,
+	.coveo-title,//just in case this ever is not an h1
+	.guideline-meta{
+		margin-right: 120px;//width of article tools
+	}
+	.article-tools{
+		position: absolute;
+		right: 0;
+		margin-top: 1em;
+	}
+}
+.article-library-tease{
+	@extend .article-tease;
+}
+.article-library-tease{
+	padding-bottom: 1em !important;
+	.article-select{
+		max-width: 40px;
+	}
+	.article-content{
+		width: 70%;
+		padding-left: 40px;//space for article select
+		float: left;
+	}
+	.article-tags{
+		float: right;
+		width: 20%;
+	}
+	h1 a{
+		display: block;
+		float: left;
+		width: 96%;
+	}
+	.date{
+		clear: left;
+	}
+}
+.article-recommended-tease{
+	@extend .article-tease;
+	margin-bottom: 1em;
+	.sidebar-box &{
+		h1{
+			font-size: 1em;
+		}
+		.main-image{
+			min-width: 0;
+			width: 60px;
+			& + .article-content{
+				width: 75%;
+			}
+		}
+	}	
+}
+.meeting-tease{
+	.date{
+		margin: 0;
+	}
+	.coveo-title{
+		margin-bottom: 1em;
+	}
+}
+.guideline-meta,
+.article-keywords{
+	@include clearfix;
+	dt,
+	dd{
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+	dt{
+		clear: left;
+		padding-right: 1em;
+	}
+	dd{
+		font-weight: bold;
+		max-width: 80%;
+	}
+}
+.netflix-hover{
+	tr td+td { 
+		width: 86px; 
+	}
+	.netflix-hover-link:hover { 
+		text-decoration: none; 
+	}
+	.link-header{
+		.netflix-hover-content {	
+			position: absolute;
+			width: 350px;
+			background: #fff;
+			color: $body-copy-color;
+			border: 1px solid $box-rule-color;
+			padding: .5em;
+			@include box-shadow(1px 1px 1px rgba(0,0,0,.3));
+			@include opacity(0);
+			z-index: -1;
+			@include transition(opacity .25s ease-in-out .25s, z-index .25s ease-in-out .25s);
+		}
+		&:hover{
+			.netflix-hover-content { 
+				@include opacity(1); 
+				z-index: 1000;
+			}
+		}
+	} 
+}
+#main-content .promo-space {
+	padding: 0;
+	margin: 1em 0;
+	line-height: 0em;
+}
+//AngularUI.Bootstrap overrides
+//form elements
+.input-group{
+	.form-control{
+		height: 33px;
+		font-size: 1em;
+		@include border-radius(0);
+		@include box-shadow(0);
+	}
+}
+.input-group-btn{
+	> .btn{
+	   margin: 0;
+	   .calendar-icon{
+		   padding-top: 0;
+	   }
+	}
+} 
+//Dialog (overlays)
+.modal-open{//added so we can defeat the bootstrap css
+	.modal-content{
+		border-top: 4px $button-color solid;
+		margin-top: 2em;
+		@include border-radius(0);
+		@include clearfix;
+		padding: 1em;
+	}
+	.modal-header{
+		padding: 0 0 1em 0;
+		border: none;
+		h1 {
+			font-size: 1.6em; 
+			line-height: 1.4em; 
+			text-align: left;
+		}
+		h2 { 
+			font-size: 1.4em; 
+			display:inline; 
+		}
+	}
+}
+
+.audio-body { 
+	padding-top:0;
+	p { 
+		font-size:1.2em; 
+	} 
+}
+
+.audio-listing { 
+	float: right; 
+	margin: -4px 5px 0 0; 
+    a {
+        font-weight: bold;
+    }
+}
+
+audio { 
+	width: 100%; 
+}
+
+.speaker-icon { 
+	display:inline; 
+	width: 25px; 
+	height: 25px; 
+	margin: 0 0 3px 20px; 
+	vertical-align: middle; 
+}
+
+//Tooltips
+.tooltip-inner {
+  background-color: $tooltip-bg-color;
+}
+.tooltip {
+  &.in {
+	  @include opacity(1); //default is .9
+  }
+  &.top .tooltip-arrow,
+  &.top-left .tooltip-arrow,
+  &.top-right .tooltip-arrow {
+	border-top-color: $tooltip-bg-color;
+  }
+  &.right .tooltip-arrow {
+	border-right-color: $tooltip-bg-color;
+  }
+  &.left .tooltip-arrow {
+	border-left-color: $tooltip-bg-color;
+  }
+  &.bottom .tooltip-arrow,
+  &.bottom-left .tooltip-arrow,
+  &.bottom-right .tooltip-arrow {
+	border-bottom-color: $tooltip-bg-color;
+  }
+}
+
+//END Angular Bootstrap overrides
+// ************************** ratings stars ******************************/
+.rating { 
+	float: right;
+	> span {
+		display: inline-block;
+		position: relative;
+		width: 1.1em;
+		cursor: pointer;
+	}
+}
+.rated { 
+	color: #FEB700; 
+	&:before {
+		content: "\2605";
+		position: absolute;
+	}
+}
+//article stuff (journal scan, clinical trial, article, etc.)
+.article-meta{
+	position: relative;
+	@include clearfix;
+	margin-bottom: 1em;
+	dl{
+		@include clearfix;
+	}
+	dd{
+		display: inline;
+		margin: 0;
+		padding: 1em 0 0 0;
+	}
+	dt{
+		display: block;
+		clear: left;
+		padding: .5em 0 0 0;
+		font-weight: 700;
+	}
+	.date{
+		float: left;
+		margin-top: 0;
+		.calendar-icon{
+			position: relative;
+			top: 2px;
+			left: 12px;
+		}
+	}
+	.comment-count{
+		float: right;
+		margin-left: 2em;
+	}
+	.rating-block {
+		float: right;
+	}
+	#course-payment-credits{
+		width: 25%;
+		float: right;
+		padding: 1em;
+		margin: 1em 0 1em 1em;
+		background: $main-bg-color;
+	}
+	.evaluation-links{		
+		clear: both;
+		padding-top: 1em;
+		@extend %no-bullets;
+	}
+}
+.meeting-details,
+.educational-details{
+	@extend %no-bullets;
+	&.with-credits-block{
+		float: left;
+		width: 60%;
+		margin-top: 0;
+		padding-top: 1em;
+	}
+	li{
+		@include clearfix;
+	}
+}
+.educational-details{
+	dd{
+		width: auto;
+	}
+}
+.educational-credits{
+	@include clearfix;
+	margin: 0;
+	dt,
+	dd{
+		display: block;
+		clear: none;
+		float: left;
+		padding: 0 .3em;
+		margin: 0 0 .75em 0;
+		height: 16px;
+		width: auto;
+		vertical-align: top;
+		font-size: 1em;
+		line-height: 1.2;
+		@include box-sizing(border-box);
+		.article-tease &{
+			margin-bottom: 4px;
+			border: none;
+		}
+		.tab-content &{
+			clear: none;
+		}
+	}
+	
+	dd{
+		margin-right: .5em;
+		.full-article &{
+			float: right;
+			clear: right;
+		}		
+	}
+	dt{
+		.full-article &{
+			clear: left;
+			float: left;
+		}		
+		color: #fff;
+		border: 1px #666 solid;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-right: .5em;
+		.article-tease &{
+			border: none;			
+		}
+		&.cme,
+		&.CME{		
+			background: #096;		
+		}
+		&.tech,
+		&.TECH,
+		&.Tech{
+			background: #f00;
+		}
+		&.moc,
+		&.MOC,
+		&.moc4,
+		&.MOCIV,
+		&.MOC.Part.IV,
+		&.moc2,
+		&.MOCII,
+		&.MOC.Part.II{
+			background: #e48119;
+		}
+		&.ce,
+		&.CE{
+			background: #245a99;
+		}
+		&.pharmd,
+		&.PHARMD,
+		&.PharmD{
+			background: #000;
+		}
+		&.cop,
+		&.COP,
+		&.Participation{
+			background: #000;
+		}
+	}
+}
+.article-toolbar {
+	position: relative;
+	padding: .5em 0 .2em 0;
+	margin-bottom: 1em;
+	clear: both;
+	border-top: 1px solid $box-rule-color;
+	border-bottom: 1px solid $box-rule-color;
+	@include clearfix;
+	.share-tools{
+		width: 25%;
+		float: left;
+		margin: 0 1em 0 0;
+		padding: 0;
+		@include box-sizing(border-box);
+		dt,
+		dd{
+			float: left;
+			margin: 0 0.4em 0 0;
+			padding: 0;
+		}
+		a{
+			display: block;
+			height: 16px;
+			width: 16px;
+			@include box-sizing(border-box);
+		}
+		.facebook{
+			padding-top: 0px;
+
+		}
+		.twitter{
+			padding-top: 0px;
+		}
+		.linkedin{
+			padding-top: 0px;
+		}
+		.email{
+			padding-top: 0px;
+		}
+	}
+	.article-tools{
+		float: left;
+		@extend %no-bullets;
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+		line-height: 1;
+		a{
+			margin-bottom: 0;
+		}
+		li{
+			float: left;
+		}
+		.save-to-library{
+			width: 20%;
+			min-width: 120px;
+			margin-right: 10px;
+		}
+		.download-audio{
+			width: 25%;
+			min-width: 124px;
+
+		}
+		.print{
+			width: 10%;
+			min-width: 90px;
+		}
+		.print-icon,
+		.folder-icon,
+		.audio-icon{
+			@extend %button-as-link;
+			padding-left: 20px; 
+			margin: 0 0 .4em 0;
+			font-size: .9em;
+		}
+	}
+	#font-resizer{
+		position: relative;
+		top: -4px;
+		float: right;
+		width: 15%;
+		min-width: 90px;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+		dt,
+		dd{
+			display: inline;
+			margin: 0;
+			padding: 0;
+		}
+		dd{
+			cursor: pointer;
+		}
+		.font-normal{
+			font-size: 0.9em;
+			.font-normal &{
+				border-bottom: 1px dotted #444;
+			}
+		}
+		.font-medium{
+			font-size: 1.2em;
+			.font-medium &{
+				border-bottom: 1px dotted #444;
+			}
+		}
+		.font-large{
+			font-size: 1.6em;
+			.font-large &{
+				border-bottom: 1px dotted #444;
+			}
+		}
+	}
+}
+
+%body-font-resizing{
+	.font-normal &{
+		font-size: $font-size-normal;
+	}
+	.font-medium &{
+		font-size: $font-size-medium;
+	}
+	.font-large &{
+		font-size: $font-size-large;
+	}
+}
+.the-text{//article body content
+	font-family: $content-font-stack;
+   
+    .font-normal &{
+		font-size: 1.0em;
+	}
+	.font-medium &{
+		font-size: 1.2em;
+	}
+	.font-large &{
+		font-size: 1.6em;
+	}
+}
+.the-quiz-answered{
+	clear: both;
+}
+.publication-info{
+	font-family: $content-font-stack;
+	@extend %body-font-resizing;
+}
+.article-meta .date {
+	@extend %body-font-resizing;
+	margin-bottom: 1em;
+}
+
+.full-article{
+	> h1{
+		.font-normal &{
+			font-size: 1.7em;
+            line-height: 1.3;
+		}
+		.font-medium &{
+			font-size: 1.8em;
+            line-height: 1.3;
+		}
+		.font-large &{
+			font-size: 2em;
+            line-height: 1.3;
+		}
+	}
+}
+.the-quiz{
+	margin-top: 2em;
+	margin-bottom: 1em;
+	form{
+		padding-bottom: 1em;
+	}
+	h1{
+
+	}
+	.answers{
+		@extend %no-bullets;
+		margin-left: 1em;
+	}
+	ul.answers {
+		font-size:1.4em !important;
+	}
+	.validation-holder{
+		padding-bottom: 1em;
+	}
+	img{
+		display: inline;
+	}
+}
+#show-answer-trigger{
+	position: relative;
+	top: 1em;
+	color: $link-color;
+	cursor: pointer;
+}
+#correctAnswer{
+	padding-top: 1em;
+}
+.the-quiz-answered{
+	form{
+		padding-bottom: 1em;
+	}
+}
+.meeting-details,
+.publication-info{
+	padding: 2em 0 0 0;
+	@include clearfix;
+	border-bottom: 1px #f0f0f0 dotted;
+	li{
+		.tab-content &{
+			padding: .2em 0;
+		}
+	}
+	.font-normal &{
+		font-size: 1.2 * $font-size-normal;
+	}
+	.font-medium &{
+		font-size: 1.2 * $font-size-medium;
+	}
+	.font-large &{
+		font-size: 1.2 * $font-size-large;
+	}
+	.article-tease &{
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	dt,
+	dd{
+		float: left;
+		margin: 0;
+		padding: .4em 0;
+		@include box-sizing(border-box);
+		border-top: 1px #f0f0f0 dotted;
+	}
+	dt{
+		clear: both;
+		width: 35%;
+		font-weight: bold;
+		padding-right: 1em;
+		.tab-content &{
+			width: auto;
+			padding: 2px 8px;
+		}
+
+	}
+	dd{
+		width: 65%;
+		.tab-content &{
+			width: auto;
+			padding: 2px 8px;
+		}
+		img{
+			display: inline;
+		}
+		&.meeting-cosponsors{//sponsor logos
+			float: right;
+			border-top: none;
+		}
+	}
+	
+}
+.promo-space img {
+	padding: 0;
+	border: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.collapse-box {
+	padding-left: 1.2em;
+	background: #fff;
+	color: $body-copy-color;
+	@include box-sizing(border-box);
+	position:relative;
+	display: block;
+	margin: 1em 0;
+	font-family: $font-stack-headings;
+	width: 90%;
+	&.shorter{
+		padding: 0 .5;
+	}
+	.collapse-box-link {	
+		border:none;
+		margin-bottom:0;	
+	}	
+	> h1,
+	.collapse-box-heading {
+		margin: 0;
+		padding: 0;
+		font-size: 1.4em;
+		line-height: 1;
+		background: #fff;
+		@include clearfix;
+		button{
+			position: absolute;
+			left: 0; 
+			top: .05em;
+			margin: 0;
+			padding: 0;
+			background: transparent;
+			border: none;
+			outline: none;
+			&:after{
+				content: "+";
+				color: $link-color;
+				font-size: 1.4em;
+				font-weight: 700;
+				font-family: Verdana;
+			}
+		}
+		&.active{
+			button{
+				 &:after{
+					content: "\2013";
+				}
+			}
+		}
+		> .collapse-box-link,
+		> a,
+		> span {
+			display: inline-block;
+			padding: .4em;
+			&:hover {
+				text-decoration: none;
+			}                
+		}
+	}
+	.collapse-box-content {
+		display: none;
+		border:none;
+		box-shadow:none;
+		padding:0 0 0 2em;
+		margin-top:0;
+		line-height:1.5em;
+		@include clearfix;
+		&.active{
+			display: block;
+		}
+		section{
+			@include clearfix;
+			border-bottom: 1px $horizontal-rule-color solid;
+			padding-bottom: 2em;
+			margin-bottom: 2em;
+		}
+		.collapse-box-content,	
+		.collapse-box-content section{
+			padding-bottom: 0;
+		}
+		.column-listing{
+			margin: 0;
+			padding: 0 1em 2em;
+			list-style-type: none;
+			@include colcount(3);
+			li{
+				@include box-sizing(border-box);
+			}
+		}
+		ul,li{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			label{
+				font-weight: 600;
+			}
+		}
+		li{
+			margin: .5em 0;
+		}
+		button{
+			display: block;
+			clear: both;
+			float: left;
+		}
+	}
+	&.associated-documents-collapse {//topic landing page (guidelines.html)
+        margin: 0;                                
+
+		.trigger{
+			right: 4px;
+			left: auto;
+			top: auto;
+			z-index: 100;
+			width: 100%;
+		}
+		.collapse-box-heading{
+			background: transparent;
+			padding: 0;
+			border: none; 
+			button:after{
+				float: right;
+				margin-top: 3px;
+			}           
+			&.active{
+				.collapse-box-link{
+					padding-bottom:6px;
+					border-bottom: 1px #fff solid;
+				}
+			}
+		}
+		.collapse-box-link {
+			position: relative;
+			z-index: 1;
+			display: block;
+			float: right;
+			padding: .33em 2em .33em .33em;
+			border: 1px solid $box-rule-color;
+			background-color: #fff;
+			color: #000;
+			cursor: default;
+			&:before{
+				display: none;
+			}
+		}
+		.collapse-box-content {
+			position: relative;
+			padding: 1em;
+			clear: both;
+			top: -1px;
+			border:1px solid $box-rule-color;
+			background:#fff;
+			box-shadow:none;
+		}
+	}
+}
+#accordion-control{
+	clear: both;
+}
+//Bootstrap (and Angular) accordions
+#accordion{
+	margin: 1em 0;
+	.glyphicon-minus{
+		display: block;
+	}
+		.glyphicon-plus{
+		display: none;
+	}
+	.collapsed{
+		.glyphicon-plus{
+			display: block;
+		}
+		.glyphicon-minus{
+			display: none;
+		}
+	}
+	&.panel-group{
+		.panel + .panel{
+			margin-top: 1em;
+		}
+		.panel-collapse{
+			padding: 1em;
+		}
+	}
+}
+.panel-group{
+	.panel-default{
+		border-radius: 0 !important;
+		.panel-heading{//The Heading (Angular wraps title in H4)
+			position: relative;
+			padding: 0;
+			@include clearfix;
+			span{
+				display: block;
+				padding: .4em .4em .2em 3em;
+			}
+			.accordion-toggle{
+				display: block;
+				overflow: hidden;
+				background: mix($collapse-header-color,#000,90%);
+				i{
+					@include box-sizing(border-box);
+					display: block;
+					height: 34px;
+					width: 34px;
+					padding-top: 9px;
+					position: relative;
+					top: 0;
+					left: 0;
+					text-align: center;
+					color: #fff;
+					background: $collapse-toggle-color;
+				}
+				&:hover{
+					text-decoration: none;
+					cursor: pointer;
+					color: #000;
+					background: darken($collapse-header-color,15%);
+					i{
+						background: darken($collapse-toggle-color,10%);
+					}
+				}
+			}
+		}
+		.panel-collapse {//The Content
+			> h1{
+				position: relative;
+				margin: 0;
+				padding: 1em 0 1em 1em;
+				font-size: 1.1em;
+				line-height: 1;
+				background: $collapse-header-color;
+				border-left: 34px $collapse-toggle-color solid;
+				> .collapse-box-link {
+					color: #000;
+					@include clearfix;
+					&:before{
+						@include box-sizing(border-box);
+						display: block;
+						height: 34px;
+						width: 34px;
+						position: absolute;
+						top: 0;
+						left: -34px;
+						content: "+";
+						font-size: 2.8em;
+						text-align: center;
+						color: #fff;
+					}
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+			.panel-heading{//nested accordion headers
+				background:$collapse-header-color;
+			}
+			section{
+				@include clearfix;
+				border-bottom: 1px $horizontal-rule-color solid;
+				padding-bottom: 2em;
+				margin-bottom: 2em;
+			}
+		}
+		.myacc-landing &{
+			.panel-collapse {//The Content
+				section{
+					&.configure-notifications,
+					&.certifications-information,
+					&.newsletters-information{//these sections have a single block, so no need for dividers ACCORG-1348
+						border-bottom: none;
+						margin-bottom: 0;
+						section{
+						border-bottom: none;
+						margin-bottom: 0;
+							padding-bottom: 0;
+						}
+					}
+				}
+				.column-listing{
+					margin: 0;
+					padding: 0 1em 2em 0;
+					list-style-type: none;
+					@include colcount(3);
+					li{
+						@include box-sizing(border-box);
+					}
+				}
+				ul,li{
+					position: relative;
+					list-style-type: none;
+					margin: 0;
+					padding: 0 0 1em 0;
+					label{
+						font-weight: 600;
+					}
+				}
+				.address-information{//My-Profile
+					.column-listing{
+						h1{
+							margin-bottom: .5em;
+						}
+					}
+					li{
+						padding: 0;
+					}
+				}
+				button{
+					display: block;
+					clear: both;
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+.bio-pic{
+	height: 160px;
+	width: 120px;
+	float: left;
+	margin-right: 1em;
+}
+//subtitles
+.subtitle{
+	font-size: 1.2em;   
+	font-style: italic;
+	margin-top: .5em;
+	.full-article &{
+		margin-top: -.5em;             
+	}    
+	.search-container{
+		
+	}    
+}
+
+//Press Release
+.press-release-full{
+	.location{
+		display: inline;
+		+ p{
+			display: inline;
+		}
+	}
+}
+//Search results
+#results-within-guidelines{
+	margin-top: 2em;
+	background: #ececec;
+	padding: 1em;
+	@include clearfix;
+	> h1{
+		font-weight: 700;
+	}
+	.article-tease{
+		h1{
+			position: relative;
+			padding-left: 1.5em;
+			span{
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+		}		
+		.show-more{
+			display: none;
+		}
+		.toggler{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			float: left;
+			border: 0;
+			background: transparent;
+			color: #004176;
+			height: 36px;
+			width: 36px;
+			font-family: verdana;
+			line-height: 1;
+			font-size: 1.5em;
+			&:before{
+				content: "+";
+				position: absolute;
+				top: -4px;
+				left: 0;
+			}
+		}
+		&.active{
+			.show-more{
+				display: block;
+			}
+			.toggler:before{
+				content: "\2013";
+				left: 4px;
+			}
+		}
+	}
+	#more-results{
+		margin-top: 1em;
+	}
+}
+//Search Member Directory
+#member-directory-search{
+	.matches{
+		float: right;
+	}
+	.new-search{
+		font-weight: 700;
+	}
+}
+.search-directory-form{
+	@include clearfix;
+	@extend %no-bullets;
+	li{
+		margin: 0;
+		padding: 0 1em 1em 0;
+		float: left;
+		&.country,
+		&.city,
+		&.specialty{
+			clear: left;
+		}
+	}
+	label{
+		display: block;
+		margin-top: .4em;
+	}
+}
+.member-card{//these are the individual articles listed in search results
+	clear: both;
+	margin-bottom: 1em;
+	padding: .5em;
+	border-bottom: 1px $box-rule-color solid;
+	@include clearfix;
+	.bio-pic{
+		clear: both;
+	}
+	dt{
+		font-weight: bold;
+	}
+	dd{
+		margin: 0;
+	}
+	header,
+	.header{
+		margin-bottom: 1em;
+		h1,
+		h2{
+			margin-bottom: 0;
+		}
+	}
+	address,
+	.address{
+		clear: left;
+		width: 50%;
+		float: left;
+	}
+	.specialties,
+	.mobile-phone,
+	.business-phone{
+		width: 50%;
+		float: left;
+	}
+	.member-statement{
+		clear: both;
+		padding-top: 1em;
+	}
+}
+//myACC styles
+.inline-list{
+	@include clearfix;
+	li{
+		float: left;
+	}
+}
+%side-by-side-buttons{
+	clear: both;
+	@extend %no-bullets;
+	@include clearfix;
+	li{
+		list-style-type: none;
+		float: left;
+		margin-right: .5em !important;
+		button{
+			cursor: pointer;
+		}
+		.cancel{
+			background: $collapse-header-color;
+			text-decoration: none;
+			border: 1px $collapse-header-color solid;
+			color: $body-copy-color;
+		}
+	}
+}
+.save-cancel,
+.edit-remove{
+	@extend %side-by-side-buttons;
+}
+.edit-box,
+.modal{//edit-box default styles followed by specifics
+	padding: 2em 3em;
+	#{headings()}{
+		clear: both;
+		font-weight: 700;
+	}
+	h2{
+		font-size: 1em;//same as plain labels, see contact info email headings
+	}
+	ul,li{
+		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+	li{
+		position: relative;
+		padding-bottom: 1em;
+		@include clearfix;
+	}
+	.close-x{
+		position: absolute;
+		top: -4px;
+		right: 0px;
+		border: 0;
+		cursor: pointer;
+	}
+	.save-cancel{
+		li{
+			margin-right: 1em;
+		}
+	}
+	dt{
+		font-weight: 700;
+	}
+	ul.radio-list{
+		li{
+			float: left;
+			padding-right: 1em;
+		}
+		label{
+			float: none;
+			width: auto;
+		}
+	}
+	&.contact-information-edit,
+	&.certifications-edit,
+	&.licensure-edit,
+	&.security-edit{//labels above inputs
+		section{
+			@include clearfix;
+			padding-bottom: 2em;
+		}        
+		dd{
+			margin: 0; 
+			padding: 0 0 1em 0;
+		}
+		ul{
+			padding-bottom: 0;
+		}
+		label{
+			display: block;
+		}		
+	}
+	&.address-edit,
+	&.work-setting-edit,
+	&.npi-edit,
+	&.password-edit,
+	&.certifications-edit,
+	&.licensure-edit,
+	&.specialties-edit,
+	&.professionaltime-edit,
+	&.promocodes-edit{//sets a width on the label to make nice, neat columns.
+		label{
+			display: block;
+			float: left;
+			width: 180px;
+			font-weight: 700;
+		}
+		dt,
+		dd{
+			margin: 0; 
+			padding: 0;
+		}
+		select#board-certified{
+			max-width: 65%;
+		}
+	}
+	&.contact-information-edit{
+		.first-name,
+		.middle-name,
+		.last-name{
+			float: left;
+			width: 33%;
+			padding-right: 1%;
+			.validation-error{
+				display: block;
+			}
+		}
+		.suffix{
+			clear: both;
+		}
+		.email,
+		.email-type,
+		.alt-email,
+		.alt-email-type{
+			float: left;
+			width: 50%;
+			label{
+				font-weight: 400;
+			}
+			.validation-error{
+				display: block;
+			}
+		}
+		.alt-email{
+			clear: left;
+		}
+		.phone-numbers{
+			clear: left;
+			.form-row{
+				margin-bottom: .5em;
+			}
+			.phone-prefix{
+				min-width: 71px;
+			}
+			select,
+			input[type="text"],
+			label{
+				margin-right: .5em;
+			}
+		}
+	}    
+	 &.photo-edit{
+		label{
+			display: block;
+			float: left;
+			font-weight: 700;
+			margin-right: 1em;
+		}
+	}    
+	&.professionaltime-edit{
+		.highlight-total{
+			color: #f00;
+		}
+	}
+	&.member-directory-edit{
+		dl{
+			@include clearfix;
+		}
+		dt,
+		dd,
+		li{
+			float: left;
+			margin: 0 .4em .4em 0;
+		}
+		dt{//sets a width on the label to make nice, neat columns.
+			clear: left;
+			width: 180px;
+		}
+	}
+	&.specialties-edit{
+		label{
+			display: block;
+			float: left;
+			width: 80px;
+		}
+	}
+	&.address-edit{
+		.address-1{
+			label{
+				display: inline;
+			}
+		}
+		.address-2,
+		.address-3{
+			label{
+				color: #fff;
+			}
+		}
+		.address-type{
+			label,
+			input{
+				width: auto;
+				float: left;
+				margin-right: .5em;
+			}
+			h2{
+				float: left;
+				width: 180px;
+			}
+		}
+	}
+	&.clinical-topics-edit{
+		.collapse-box{
+			position: relative;
+		}
+		.collapse-box-content{
+			padding-right: 0;
+			li{
+				position: relative;
+			}
+		}
+		.icon-definitions{
+			float: right;
+			li{
+				float: left;
+				width: 85px;
+				text-align: center;
+			}
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		ul{
+			clear: both;
+		}
+		.options,
+		.used-for-flags{
+			position: absolute;
+			top: 0;
+			right: 1.4em;
+			margin: 0;
+			padding: 0 !important;
+			li{
+				width: 20px;
+				float: right;
+				margin-left: 10px;
+			}
+			img{
+				display: inline;
+			}
+			label{
+				float: left;
+				margin-left: 1em;
+			}
+			b{
+				position: absolute;
+				display: block;
+				overflow: hidden;
+				text-indent: -40em;
+			}
+		}
+		.collapse-box-heading{
+			.options{
+				top: 1em;
+			}
+		}
+
+	}
+	&.tags-edit{
+		.tag-table{
+			width: 100%;
+			border: 2px solid #fff;
+			border-collapse: collapse;
+			th,
+			td{
+				border: 2px solid #fff;
+				vertical-align: top;
+				padding: .5em;
+			}
+			td{
+				background: $collapse-header-color;
+			}
+			.save-cancel{
+				margin: 0;
+			}
+		}
+	}
+	&.tags-assign{
+		.tags-input{
+			width: 200px;
+			height: 24px;
+			max-width: 90%;
+			margin-right: 4px;
+		}
+		.added-tags-list{
+			.alert{
+				font-weight: 700;
+				margin-left: 1em;
+			}
+		}
+		#itemSaveSuccessfull{
+			h1{
+				position: relative;
+			}
+			.success-checkmark{
+				position: absolute;
+				left: -30px;
+				top: 2px;
+			}
+		}
+	}
+	.contact-preferences{
+		.column-listing{
+			@include box-sizing(border-box);
+			width: 50%;
+			float: left;
+		}
+		li{
+			padding: 0 0 1em 2em;
+			position: relative;
+			@include clearfix;
+		}
+		input[type="checkbox"] + label span{
+			float: left;
+			position: absolute;
+			left: 0;
+		}
+		label{
+			float: left;
+			font-weight: 400;
+		}
+	}
+	&#modalOnlineTourIntercept{
+		text-align:center;
+		.mobile-logo-svg-tour {
+			height:59px; 
+			width:173px;
+		}
+		.tour-devices {
+			padding-left:15%;
+			cursor:pointer;
+		}
+		h2 {
+			font-size:3.2em;
+			margin-bottom:5px;
+		}
+		h3 {
+			font-size:1.5em;
+		}
+		.modal-header, .modal-body {
+			padding: 0;
+		}
+		.modal-body{
+			p{
+				margin-top: 0;
+				font-size: 1.2em;
+			}
+		}
+		.modal-footer{
+			padding: 10px 0 0 0;
+			p{
+				margin: 0;
+			}
+		}
+	}
+}
+.view-cme-link,
+.view-moc-link{
+	clear: both;
+	margin-top: 2em;
+	float: left;
+}
+#all-newsletter-subscriptions{
+	ul{
+		margin-left: 2em;
+		.checkbox{
+			margin-bottom: 0;
+		}
+		p{
+			margin: 0 0 0 2em;
+		}
+	}    
+}
+#clinical-topics-list{//My Profile, personalization options, topic listing
+	width: 100%;
+	th,
+	td{
+		padding: .5em;
+	}
+	td{
+		text-align: center;
+		label{
+			display: block;
+			background: none;//override checkbox styling
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			margin: 0 auto;
+			height: 33px;
+			width: 33px;
+		}
+	}
+	thead{
+		.content-recommendation-flag,
+		.notifications-flag{
+			text-align: center;
+		}
+		img{
+			height: 33px;
+			width: 33px;
+			margin: 0 auto;
+		}
+	}
+	tbody{
+		th{
+			padding-left: 1em;
+		}
+	}
+	.topic-name{
+		width: 70%;
+	}
+	.content-recommendation-flag{
+		width: 15%;
+	}
+	.notifications-flag{
+		width: 15%;
+	}
+	.topic-parent{
+		th,
+		td{
+			background-color: $collapse-header-color;
+		}
+		th{
+			font-size: 1.2em;
+		}
+	}
+	.topic-child{
+		th{
+			font-weight: normal;
+		}
+	}
+}
+.myacc-landing{
+	#main-content{
+		dl{
+			@include clearfix;
+			&.alternating-color{
+				dt,
+				dd{
+					padding: 1em;
+				}            
+				dd.odd{
+					background-color: $collapse-header-color;
+				}
+			}
+		}
+		dd,
+		dt{
+			float: left;
+			padding: .5em;
+			margin: 0;
+			@include box-sizing(border-box);
+		}
+		dt{
+			clear: both;
+			padding-right: 1em;
+			font-weight: 600;
+			.required{
+				display: block;
+				float: left;
+				width: 10px;
+				margin-left: -10px;
+			}
+		}
+		.configure-notifications,
+		.demographics,
+		.account-preferences{
+			> dl{
+				dt,dd{
+					float: left;
+					span{
+						display: block;
+						margin: 0 2em 1em 0;
+					}
+				}
+				> dt{
+					clear: left;
+					width: 25%;
+				}
+				> dd{
+					width: 75%;
+				}
+				dl{
+					margin: 0;
+					dt,dd{
+						padding-bottom: 1em;
+					}
+				}
+				p{
+					margin-top: 0;
+				}
+			}
+			.button-as-link{
+				float: right !important;
+			}
+			table{
+				float: left;
+			}
+		}
+		.configure-notifications{
+			dl dl{
+				dt{
+					padding-bottom: 0;
+				}
+				dd{
+					width: 100%;
+					clear: both;
+				}
+			}
+		}
+		.clinical-topics-information{
+			.save-cancel{
+				padding-bottom: 0;
+			}
+			.used-for-flags{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				margin: 0;
+				padding: 0;
+				li{
+				   width: 20px;
+				   float: right;
+				   margin-left: 10px;
+				}
+				img{
+					display: inline;
+				}
+			}
+			.panel-title{
+				.used-for-flags{
+					right: 25px;
+				}
+			}
+			.collapse-box-heading{
+				.used-for-flags{
+					display: none;
+				}
+			}
+			.clinical-topics-list{
+				li{
+					position: relative;//to contain used-for flags
+				}
+			}
+		}
+		#all-newsletter-subscriptions{
+			ul{
+				margin-left: 2em;
+				.checkbox{
+					margin-bottom: 0;
+				}
+				p{
+					margin: 0 0 0 2em;
+				}
+			}    
+		}
+		.membership-renewal-expired{
+			color: #c00;
+			font-weight: 700;
+			& + .membership-renewal dd{
+				color: #c00;
+			}
+		}
+		.membership-renewal{
+			dl{
+				@include clearfix;
+				margin-bottom: 1em;
+			}
+			dd,
+			dt{
+				float: left;
+				margin: 0 1em 0 0;
+			}
+		}
+		.sections-and-councils,
+		.committee-participation{
+			h2{
+				font-size: 1em;
+				font-weight: 700;
+			}
+		}
+		.icon-definitions{
+			dd,
+			dt{
+				margin: 0;
+				padding: 0 .6em .4em 0;
+				float: left;
+			}
+			dd{
+				font-weight: 700;
+			}
+		}
+	}
+	.collapse-box{
+		h1.collapse-box-heading{
+			background: darken($collapse-header-color,10%);
+			font-size: 1.2em;
+		}
+	}
+}
+// for the clinical topics page
+.landing-topics-list { 
+	margin: 1em 0; 
+	.column { 
+		@include colcount(2);
+	}
+	&.three-col-listing{
+		.column { 
+			@include colcount(3);
+			&:nth-of-type(2n+3) {
+				clear: none;
+			}
+		}
+	}
+}
+.layout-landingpage{
+	.dart-ad{
+		float: right;
+	}
+	#sidebar .dart-ad{
+		float: none;
+	}
+}
+.comment-block {
+	
+}
+%pixel-border-box{
+	border: 1px $box-rule-color solid;
+	padding: .5em 1em;
+	margin-bottom: 1em;
+	position: relative;
+	@include box-sizing(border-box);
+	@include clearfix;
+	#main-content &{
+		//padding: 0 1em;//if adding this back, check coveo facets (latest in card).
+	}
+	h1 {
+		font-size: 1.8em;
+		margin-top: 0;
+	}
+}
+//  sidebar
+.recommended-for-you{
+	#sidebar &{
+		@extend .sidebar-box;
+		padding: .5em 1em 1em;
+	}
+}
+
+.find-guideline{
+	#sidebar &{
+		@extend .sidebar-box;
+		padding: .5em 1em 1em;
+	}
+	input[type=text]{
+		width:84%;
+		padding: .6em;
+		font-size: inherit;
+		font-family: inherit;
+	}
+	.button-standard{
+		position: relative;
+		top: 1px;
+		padding: .5em .75em;
+	}
+	.coveo-query-box-clear{
+		display: none !important;
+	}
+}
+.sidebar-box {
+	@extend %pixel-border-box;
+	&.promo-space{
+		padding: 0;
+		border: none;
+	}
+	&.view-by-theme,
+	&.view-by-doctype,
+	&.view-by-contenttype,
+	&.popular-tags,
+	&.content-types,
+	&.view-by-topic,
+	&.view-by-mediatype,
+	&.view-by-filetype,
+	&.view-by-meeting-type,
+	&.view-by-credit-type{
+		ul{
+			@extend %no-bullets;
+		}
+		li{
+			margin-bottom: .5em;
+		}
+	}
+	&.content-types{
+		label img{
+			float: left;
+			margin-right: 0.4em;
+		}
+	}
+	&.date-ranger{
+		@include clearfix;
+		ol{
+			@extend %no-bullets;
+		}
+		li{
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.coveo-first-loading-animation{
+		display: none !important;//kill the loading animation for sidebar widget.
+	}
+}
+%feature-outer-wrap{
+	padding-top: 1em;
+	overflow: hidden;
+	clear: both;
+}
+%feature-inner-wrap{
+	@include clearfix;
+	.featured-tease{
+		float: left;
+		width: 33.3%;
+		padding-bottom: 2px;
+		@include box-sizing(border-box);
+		h1{
+			margin-right: 0;
+			font-family: $font-stack-headings;
+			font-size: 1.3em;
+		}
+	}
+	.main-image{
+		width: 100%;
+		float: none;
+		padding: 0 .5em;
+		margin-bottom: 1em;
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.featured-content{
+		padding: 0 .5em;
+		h2{
+			margin: 0 0 .5em 0;
+		}
+		.article-type{
+			font-size: 0.9em;
+		}
+	}
+}
+#featured-content-outerwrap{
+	@extend %feature-outer-wrap;
+}
+#featured-sponsors-outerwrap{
+	@extend %feature-outer-wrap;
+}
+#featured-content-innerwrap{
+	@extend %feature-inner-wrap;
+}
+#featured-sponsors-innerwrap{
+	@extend %feature-inner-wrap;
+	.featured-tease{
+		width: auto;
+	}
+	.sponsor-header{
+		font-size: 1em;
+		float: none;
+		margin-bottom: 1em;
+	}
+	.main-image{
+		img{
+			border: none;
+		}
+	}
+}
+#featured-content-controls{
+	display: none;
+}
+.featured-article{ban
+	header{
+		img{
+			float: left;
+			margin-right: .7em;
+		}
+		h2{
+			font-size: 1.3em;
+			line-height: 1;
+		}
+	}
+}
+#sidebar{
+	.featured-person,
+	.featured-article{
+		@extend .sidebar-box;
+		.profile-icon{
+			float: left;
+			margin: 0 1em 1em 0;
+			width: 40%;			
+			img{
+				max-width: 100%;
+				border: 1px solid $box-rule-color;
+			}
+		}
+	}
+}
+
+.upcoming-meetings{
+	@extend .sidebar-box;
+	img { 
+		border: none; 
+	}
+	.meeting{
+		padding: 0 0 1em 0;
+		margin-bottom: 1em;
+		border-bottom: 1px $horizontal-rule-color solid;
+		h1{
+			font-size: 1em;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+//facet toggles, can be in coveo results or otherwise
+#filter-toggle{
+	display: none;
+}
+
+//Override coveo baked styles
+.coveo-clickable-link-inside-result, 
+.coveo-clickable-field-value-inside-result span.coveo-clickable, 
+.coveo-modalBox.coveo-quick-view > .coveo-wrapper 
+.coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue span.coveo-clickable, 
+.coveo-debug > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue span.coveo-clickable, 
+.CoveoResult .CoveoFieldValue span.coveo-clickable, 
+.coveo-clickable-field-value-inside-result a.coveo-clickable, 
+.coveo-modalBox.coveo-quick-view > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue a.coveo-clickable, 
+.coveo-debug > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue a.coveo-clickable, 
+.CoveoResult a, 
+.CoveoResult .coveo-selectable-link, 
+.CoveoResultLink:link, 
+.CoveoSearchInterface .CoveoResult.coveo-email-result .coveo-excerpt .CoveoResultLink:link:hover, 
+.CoveoSearchInterface .CoveoResult.coveo-lithium-result .coveo-excerpt .CoveoResultLink:link:hover {
+	color: $link-color;
+}
+.CoveoResultLink:link, 
+.CoveoSearchInterface .CoveoResult.coveo-email-result .coveo-excerpt .CoveoResultLink:link:hover, 
+.CoveoSearchInterface .CoveoResult.coveo-lithium-result .coveo-excerpt .CoveoResultLink:link:hover{
+	color: $link-color;
+}
+.coveo-clickable-link-inside-result:hover, 
+.coveo-clickable-field-value-inside-result span.coveo-clickable:hover, 
+.coveo-modalBox.coveo-quick-view > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue span.coveo-clickable:hover, 
+.coveo-debug > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue span.coveo-clickable:hover, 
+.CoveoResult .CoveoFieldValue span.coveo-clickable:hover, 
+.coveo-clickable-field-value-inside-result a.coveo-clickable:hover, 
+.coveo-modalBox.coveo-quick-view > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue a.coveo-clickable:hover, 
+.coveo-debug > .coveo-wrapper .coveo-quick-view-header .CoveoFieldTable .CoveoFieldValue a.coveo-clickable:hover, 
+.CoveoResult a:hover, 
+.CoveoResult .coveo-selectable-link:hover{
+	color: $hover-color;
+}
+
+/* ACCORG-1967 (change default checkbox behavior) */
+.coveo-sprites-facet-checkmark_unselected, 
+.CoveoFacet .coveo-value .coveo-checkbox > span, 
+.CoveoFacet .coveo-value:hover .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value:hover .coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value .coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value:hover .coveo-checkbox span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-checkbox > span, 
+.coveo-omnibox .coveo-omnibox-facet-value li .coveo-checkbox > span, 
+.coveo-omnibox .coveo-omnibox-facet-value li:hover .coveo-checkbox > span, 
+.CoveoHierarchicalFacet .coveo-value .coveo-checkbox > span,
+.CoveoHierarchicalFacet .coveo-value:hover .coveo-checkbox > span {//default checkbox state
+  background-position: 1200px 1200px;
+}
+/* need this to override the hover above */
+.coveo-sprites-facet-checkmark_selected, 
+.CoveoFacet .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoFacet .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value.coveo-selected div.coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value.coveo-selected:hover div.coveo-checkbox span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-selected div.coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-selected:hover div.coveo-checkbox span, 
+.coveo-omnibox .coveo-omnibox-facet-value li.coveo-selected .coveo-checkbox > span, 
+.coveo-omnibox .coveo-omnibox-facet-value li.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoHierarchicalFacet .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoHierarchicalFacet .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoHierarchicalFacet ul.coveo-values .coveo-value.coveo-has-childs.coveo-has-childs-selected.coveo-selected .coveo-checkbox > span {
+  background-position: -1099px 0;
+ }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2) {
+.coveo-sprites-facet-checkmark_selected, 
+.CoveoFacet .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoFacet .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoFacetRange .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value.coveo-selected div.coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-value.coveo-selected:hover div.coveo-checkbox span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-selected div.coveo-checkbox > span, 
+.coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .coveo-search-results .coveo-selected:hover div.coveo-checkbox span, 
+.coveo-omnibox .coveo-omnibox-facet-value li.coveo-selected .coveo-checkbox > span, 
+.coveo-omnibox .coveo-omnibox-facet-value li.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoHierarchicalFacet .coveo-value.coveo-selected .coveo-checkbox > span, 
+.CoveoHierarchicalFacet .coveo-value.coveo-selected:hover .coveo-checkbox > span, 
+.CoveoHierarchicalFacet ul.coveo-values .coveo-value.coveo-has-childs.coveo-has-childs-selected.coveo-selected .coveo-checkbox > span {
+    background-position: -766px -32px;
+ }
+}
+/* end ACCORG-1967 */
+
+.coveo-checkbox-for-facet-value, 
+.coveo-facet-value .coveo-checkbox, 
+.CoveoFacet .coveo-value .coveo-checkbox, 
+.CoveoFacetRange .coveo-value .coveo-checkbox, 
+.coveo-omnibox .coveo-omnibox-facet-value li .coveo-checkbox{
+	@include box-shadow(0px 0px 1px #000);
+}
+/* ACCORG-2908 */
+.CoveoOmniBox.CoveoQueryBox.coveo-no-results {
+  background-color: #ffd0d0;
+}
+/* end ACCORG-2908 */
+
+/* ACCORGIIA-41 (temp fix) */
+.CoveoFacet .coveo-search .coveo-wait-animation, .coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .CoveoFacet .coveo-search .coveo-wait-animation {
+  background-position: -295px -105px;
+  width: 10px;
+  height: 10px;
+  text-indent: 10px; 
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2) {
+.CoveoFacet .coveo-search .coveo-wait-animation, .coveo-modalBox.coveo-mobile-facet-search > .coveo-wrapper > .coveo-body > .CoveoFacet .coveo-search .coveo-wait-animation {
+    background-position: -330px -88px;
+    width: 10px;
+    height: 10px;
+    text-indent: 10px; 
+ }
+}
+/* end ACCORGIIA-41 */
+
+/* any coveo search box */
+.coveo-search input {
+  border: 0 none;
+}
+
+.CoveoSort{
+	color: $link-color;
+	&:hover{
+		color: $hover-color;
+	}
+	#sidebar #searchMeetings &{
+		padding: 0;
+	}
+}
+.CoveoSearchButton{
+	background: $main-menu-bg-color;
+	border-color: $main-menu-bg-color;
+}
+//my library topic autocomplete
+.ui-autocomplete{
+	@include box-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+	.ui-menu-item{
+		padding: 6px;
+		color: #0065cb;
+		font-family: $content-font-stack;
+		font-size: 0.9em;
+		cursor: pointer;
+		&.ui-state-focus{
+			border: none;
+			background: #d7ebff;
+			color: #0065cb;
+		}
+	}    
+}
+
+.CoveoSearchInterface {
+	font-size: 1em;
+	font-family: $content-font-stack;
+	background: transparent;//fix rounded border issue ACCORG-1453
+	.coveo-search-section{
+		float: none;
+		.coveo-searchBox-column{
+			padding: 0;
+			height: auto;
+		}
+	}
+	.tab-content &{
+		.CoveoSort{
+			display: none;
+		}
+	}
+	.coveo-logo{
+		background-image:none !important;
+		background-position: 50% 50%;
+		width: 200px;
+		height: 50px;
+		text-align: center;
+		img{
+			margin: 0 auto;
+		}
+	}
+	.coveo-results-section{
+		.coveo-facet-column{
+			background: transparent;
+			padding-top: 0;
+			padding-left: 0;
+			border: none;
+            width: 34.1%; /* ACCORG-3902 */
+            margin-bottom: 0px; /* NEW COVEO LAYOUT */       
+            padding-bottom: 0px; /* NEW COVEO LAYOUT */       
+            .coveo-topSpace, .coveo-bottomSpace { 
+                display: none; 
+            }
+
+		}
+		.coveo-results-column{         
+			padding-top: 0;
+            width: 65.9%; /* ACCORG-3902 */
+            margin-bottom: 0px; /* NEW COVEO LAYOUT */       
+            padding-bottom: 0px; /* NEW COVEO LAYOUT */       
+			.sidebar-box &{
+				width: 100%;
+				padding-top: 0;
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.coveo-results-header{
+				@extend .pagination-controller;
+				margin-top: 0 !important;
+				background: #fff;
+			}
+		}
+		.CoveoResultList{
+			.sidebar-box &{
+				padding-top: 0;
+			}
+		}
+	}
+	&.intabs,
+	&.tab-content{
+		.coveo-results-section{
+			.coveo-results-column{
+				width: 100%;
+				padding-right: 0;
+				padding-left: 0;
+				#image-gallery-holder{
+					padding: 0 1em;
+				}
+				.gallery-item{
+					//margin-top: 0; ACCORG-2383
+				}
+			}  
+			.coveo-results-header{
+				display: none;
+			}
+		}
+	}
+	/*
+	.coveo-sprites-facet-checkmark_unselected, 
+	.coveo-checkbox-for-facet-value > span, 
+	.coveo-facet-value .coveo-checkbox > span, 
+	.CoveoFacet .coveo-value .coveo-checkbox > span, 
+	.CoveoFacetRange .coveo-value .coveo-checkbox > span, 
+	.coveo-omnibox .coveo-omnibox-facet-value li .coveo-checkbox > span{
+		background-image: none;//ACCORG-1881
+	}
+	*/
+	.coveo-omnibox{
+		min-width: 200px;
+		.coveo-omnibox-header .coveo-text{
+			padding: 10px 5px;
+		}
+	}
+	.coveo-top-field-suggestion-header{
+		padding-left: 5px;
+	}
+	.coveo-top-field-suggestion-row{
+		padding-left: 10px;
+	}
+	.CoveoFacet,
+	.CoveoFacetRange,
+	.CustomFacet{
+		@extend %pixel-border-box;
+		padding: 1em;
+		margin-top: 0;
+		label{
+			margin-bottom: 0;//override bootstrap
+		}
+		.coveo-icon{
+			display: none !important;
+		}
+		.coveo-selectable{
+			&:hover{
+				background-color: transparent;
+			}
+		}
+		.coveo-value{
+			margin-bottom: .5em;
+			label{
+				white-space: normal;
+				.coveo-label{
+					margin-right: 30px;
+					padding-left: 25px;
+					position: relative;
+				}
+			} 
+			.coveo-checkbox{
+				position: absolute;
+				left: 0;
+				top: 2px;
+			}
+			.coveo-caption{
+				display: inline;
+				font-size: 1em;
+				overflow: visible;
+				white-space: normal;
+				text-overflow: clip;
+				vertical-align: middle;
+				line-height: 1;
+			}
+			.coveo-count{
+				display: inline;
+			}
+			.coveo-exclude{
+				display: none !important;
+			}
+		}
+		.coveo-no-state:hover .coveo-checkbox > span{
+			//background-image: none !important;
+		}
+		.coveo-values{
+			margin: 0;
+		}
+		.coveo-header{
+			padding: 0;
+			.coveo-title{
+				@extend h2;
+				margin-bottom: .5em;
+				.help-holder{
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	.CoveoQueryBox{
+		font-size: inherit;
+		@include border-radius(0);
+	}
+	.CoveoResult{
+		margin: 0 0 2.0em 0;
+		border-bottom: 0;
+		.content-block{
+			margin-bottom: 0;
+		}
+		.coveo-excerpt{
+			margin: 0;
+			padding-top: 0;
+			font-size: 1em;
+		}
+        .document-type,
+		.topics-list,
+		.keywords-list{
+			margin: 0;
+		}
+		.coveo-icon {
+			display: inline;
+			float: none;
+			margin: 1px 4px 3px 0;
+			&.objecttype{
+				height: auto;
+				width: auto;
+				text-indent: 20px;
+			}
+		}
+		.coveo-title{
+			overflow: visible;
+			white-space: normal;
+			.CoveoResultLink{
+				text-overflow: clip;
+				display: inline;
+				overflow: visible;
+			}
+		}
+		.article-tools {
+			padding-top:8px;
+		} 
+	} 
+	.CoveoPager {//colors only copied from coveo css. Most are the same as they were but here for ease, if neccesary.
+		ul {
+			li > a {
+				color: $body-copy-color;
+				background: $collapse-header-color;
+				border-left: 1px solid $box-rule-color;
+				border-top: 1px solid $box-rule-color;
+				border-bottom: 1px solid $box-rule-color;
+			}
+			li:first-child > a {
+				border-top-left-radius: 3px;
+				border-bottom-left-radius: 3px;
+			}
+			li:last-child > a {
+				border-top-right-radius: 3px;
+				border-bottom-right-radius: 3px;
+				border-right: 1px solid $box-rule-color;
+			}
+			li:hover > a {
+				color: #666666;
+				background: #fff;
+				border-left: 1px solid $box-rule-color;
+				border-top: 1px solid $box-rule-color;
+				border-bottom: 1px solid $box-rule-color;
+			}
+			li:hover:first-child > a {
+				border-left: 1px solid $box-rule-color;
+			}
+			li:hover:last-child > a {
+				border-right: 1px solid $box-rule-color;
+			}
+			li.coveo-active > a {
+				color: #fff;
+				background: $main-menu-bg-color;
+				border-left: 1px solid $box-rule-color;
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+			}
+			li.coveo-active:first-child > a {
+				border-left: 1px solid #000;
+			}
+			li.coveo-active:last-child > a {
+				border-right: 1px solid #000;
+			}
+		}
+	}
+}
+.tab-content {
+    .CoveoSearchInterface {
+		.CoveoSort{
+			display: none;
+		}
+		.coveo-results-section{
+			.coveo-results-column{
+				width: 100%;
+				padding-right: 0;
+				padding-left: 0;
+			    #image-gallery-holder{
+				    padding: 0 1em;
+			    }
+			    .gallery-item{
+				    //margin-top: 0; ACCORG-2383
+			    }
+			}  
+			.coveo-results-header{
+				display: none;
+			}
+		}
+    }
+}
+
+.search-container{
+	//margin-top: 1em;//related to main-content padding and column layouts
+}
+#search-mg-holder{
+	@include clearfix;
+	input[type="text"]
+	,select{
+		width: 40%;
+	}
+}
+.section-updates{
+	.resources{
+		@extend %no-bullets;
+		li{
+			float: left;
+			width: 50%;
+		}
+	}
+}
+#login-registration{
+	padding: 1em;
+}
+#site-login,
+#forgot-password,
+#reset-password,
+#forgot-username{
+	.validation-summary-errors{
+		padding-top: 1em;
+		color: #c00;
+		ul{
+			display: none;
+		}
+	}
+	.editor-field{
+		padding-bottom: .5em;
+		input{
+			width: 300px;
+			max-width: 100%;
+		}
+	}
+	.editor-label{
+		padding-top: .5em;
+		margin-bottom: 0;
+        font-size: 1.2em;
+	}
+	.username-info{
+		margin-top: 0;
+        font-size: 1em;
+	}
+	.password-info{
+		margin-top: .5em;
+		width: 300px;
+		max-width: 100%;
+        font-size: 1em;
+		a{
+			float: left;
+		}
+	}
+	.view-password{
+		float: right;
+		label.checkbox{
+			margin-top: 0;
+		}
+	}
+	.remember-me{
+		clear: both;
+		padding-top: 1em;
+        font-size: 1em;
+	}
+}
+#security-questions{
+	padding: 1em 0;
+	h2{
+		font-size: 1.2em;
+		margin: 1em 0 0 0;
+	}
+	.save-cancel{
+		padding-top: 1em;
+		a{
+			padding-left: 2em;
+		}
+	}
+}
+.main-content-padding{//views that may be included elsewhere and cannot have #main-content within
+	padding: 1em;
+}
+#forgot-password,
+#forgot-username,
+#reset-password,
+#security-questions,
+#login-duplicate-check,
+#pre-registration,
+#site-registration,
+#user-agreement{
+	@extend .main-content-padding;
+	.validation-summary-errors{
+		padding: 0 0 1em 0;
+	}
+	.field-validation-error{
+	}
+}
+#pre-registration{
+	#user-options{
+		@extend %no-bullets;
+	}
+}
+#site-registration{
+	div{
+		@include clearfix;
+	}
+	.col{
+		float: left;
+		width: 50%;
+		padding: 0 2em 2em 0
+	}
+	input[type='text'],
+	select{
+		width: 300px;
+	}
+   .block-wrapper{
+		padding-bottom: 2em;
+		margin-bottom: 2em;
+		border-bottom: 1px $horizontal-rule-color solid;
+	}
+	.editor-label{
+		padding-top: 1em;
+		margin-bottom: 0;
+	}
+	.field-validation-error{
+		display: block;
+	}
+	.input-description{
+		margin: 0;
+		padding: 0;
+		color: grey;
+	}
+}
+.modal-paywall{
+	overflow: auto;
+	.modal-backdrop{
+		display: none;//allow for clicks through to the page
+	}
+	.main-content-inner{
+		position: relative;
+	}
+	#footer-wrap{
+		z-index: 1;
+	}
+	#paywall-overlay{
+		position: absolute;
+		top: 170px;
+		left: 0;
+		right: 0;
+		bottom: auto;
+		padding: 1em;
+		background: #fff;
+		border: 1px $button-color solid;
+		border-top: 4px $button-color solid;
+		overflow: hidden;
+		@include box-shadow(0 -20px 30px rgba(255, 255, 255, .9));
+		@include clearfix;
+		#main-content{
+			height: auto;
+			min-height: 0;
+			padding: 1em 0 0 0;
+			margin: 0;
+		}
+		.paywall-notmember-msg{
+			padding: 1em;
+		}
+		.paywall-login-form{
+			width: 65%;
+			float: left;
+			border-right: 2px $main-menu-bg-color solid;
+		}
+		.paywall-message{
+			width: 35%;
+			float: left;
+			padding: 0 1em;
+			position: absolute;
+			top: 1em;
+			left: 65%;
+			right: 0;
+			bottom: 0;
+		}
+		h1{
+			margin-bottom: 0;
+		}
+		p{
+			margin-bottom: 0;
+		}
+		label,
+		input{
+			display: block;
+		}
+		#site-login{
+			padding: 1em 0;
+			.view-password,
+			.password-info{
+				margin-top: 0;
+				a{
+					display: block;
+					float: left;
+					clear: none;
+					width: 50%;
+					display: block;
+					padding: 0;
+				}
+			}
+			.remember-me{
+				padding: 1em 0;
+			}
+			#show-password{
+				float: right;
+				width: auto;
+			}
+		} 
+		.close{
+			position: absolute;
+			top: -2px;//height of top border
+			right: 0;
+			padding: 0 3px;
+			background: $button-color;
+			color: #fff;
+			@include opacity(1);
+			font-weight: 400;
+			text-shadow: none;
+			&:hover{
+				background: $button-color;
+			}
+		}
+	}
+}
+.gallery-mask-active {
+	#main-content{
+		z-index: 1000;
+	}
+}
+#image-gallery-holder{//modals here use bootstrap
+	.gallery-item{
+		width: 25%;
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 1em 1em 0;
+		border: none;
+		word-wrap: break-word;
+		.feature-media &{
+			width: 50%;
+		}
+		img{
+			margin-bottom: .5em;
+			cursor: pointer;
+		}
+		a{
+			text-decoration: none;
+			display: block;
+		}
+		.show-larger-trigger{
+			color: $body-copy-color;
+			cursor: pointer;
+			color: $link-color;
+			.feature-media &{
+				font-family: Raleway, helvetica, arial, sans-serif;
+				font-size: 1.2em;
+				font-weight: bold;
+				margin: 1em 0 .5em 0;
+				a{
+					color: $body-copy-color;
+				}
+			}
+		}
+	}
+	.gallery-thumbnail{
+		height: 110px;
+		width: 110px;
+		.feature-media &{
+			height: 200px;
+			width: 200px;
+		}
+	}
+	.gallery-item-larger{
+		h1{
+			font-weight: 700;
+		}
+		h2{
+			margin-bottom: 0;
+			font-weight: 700;
+			font-size: 1em;
+		}
+		p{
+			margin-top: 0;
+		}
+		.main-image{
+			float: left;
+			width: 40%;
+			padding-right: 1em;
+		}
+		.article-toolbar{
+			clear: both;
+			.share-tools{
+				width: 56%;
+			}
+			a{
+				float: left;
+			}
+		}
+		.gallery-buttons{
+			@extend %side-by-side-buttons;
+			padding-top: 2em;
+			.close-modal{
+				padding: .5em 0 0 1em;
+			}
+		}
+	}
+}
+.modal-open{//when modal is open, do some stuff so that it can stay on top
+	#main-container,
+	#main-content{
+		position: static;
+	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: 0;
+	}
+}
+.media-detail{//full view having clicked a media item to view more/full size
+	padding-top: 1em;
+	.media-details{
+		@include clearfix;
+		.slideshow-icon{
+			display: block;
+		}
+	}
+}
+.responsive-video-wrapper {
+	width: 100%;
+	max-width: 400px;
+	.mf-player-container {
+		position: relative;
+		height: 0;
+		padding-bottom: 75%;//4:3 aspect ratio
+		// padding-bottom: 56.25%;//16:9 aspect ratio
+	}
+	.BrightcoveExperience {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.fetch-more{
+	float: right;
+	border: none;
+	background: transparent;
+	color: $button-color;
+	&:hover{
+		background: transparent;
+	}
+	&:after{
+		content: ' \25bc';
+	}
+	&.active{
+		&:after{
+			content: ' \25b2'
+		}
+	}
+}
+#more-results{
+	width: 100%;
+	font-weight: 700;
+	padding: .8em;
+}
+#fakeKeywordPopup, #fakeKeywordPopup2 {
+	border: 1px $box-rule-color solid;
+	border-top: 0;
+	padding: .33em;
+	width: 217px;
+	position: absolute;
+	background-color: #fff;
+	z-index: 200;
+}
+.fake-drop-down {
+	background-color: #dcdcdc;
+	position: relative;
+	padding: .25em 2em .25em 1.5em;
+}
+.fake-drop-down-arrow {
+	background-image: url(../images/icon-drop-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #666;
+	height: 23px;
+	width: 23px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.fake-drop-down-2 {
+	background-color: #e6e6e6;
+	position: relative;
+	display: inline-block;
+	padding: .25em 4em .25em 1em;
+	background-image: url(../images/icon-drop-down-fake-2.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	a {
+		color: $body-copy-color;
+		font-size: .75em;
+	}
+	.fake-drop-down-2-content {
+		display: none;
+		position: absolute;
+		background-color: #fff;
+		border: 1px solid $box-rule-color;
+		border-top: 0;
+		left: 0;
+		top: 1.7em;
+		width: 206px;
+		padding: .5rem 0 .5rem 1em;
+		line-height: 1.6em;
+		font-size: .75em;
+	}
+	&:hover .fake-drop-down-2-content{
+		display: block;
+	}
+}
+.cme-wrapper { 
+	padding: 1em; 
+}
+.cme-table {
+	width: 100%;
+	margin: 0 auto;
+	line-height: 1em;
+	caption {
+		font-size: .75em;
+		text-align: left;
+		padding-bottom: 1em;
+	}
+	.underline td { 
+		border-bottom: 1px solid #666; 
+	}
+}
+.suggested-materials {
+	@extend %pixel-border-box;
+	img { 
+		border: 1px solid $box-rule-color;
+	}
+}
+//pagination
+.pagination-controller{
+	@include clearfix;
+	padding:1em;
+	margin: 1em 0;
+	border-top: 1px solid $box-rule-color;
+	border-bottom: 1px solid $box-rule-color;
+	position:relative;
+	.content-block-listing &{
+		margin: 0;//listing already has margins
+	}
+	div{
+		float: left;
+		@include box-sizing(border-box);
+		padding-right: 1em;
+	}
+	.page-count{
+		width: 25%;
+	}
+	.per-page{
+		width: 20%;
+	}
+	.date-added{
+		//width: 20%;
+	}
+	.by-date{
+		//width: 50%;
+	}
+}
+//breadcrumb & footer styles
+#breadcrumbs {
+	background-color: #174177;
+	padding: .8em 1em;
+	color: #eee;
+	max-width: $site-width;
+	margin: 0 auto;
+	b {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	a { 
+		cursor: pointer;
+		color: #eee; 
+		text-decoration: underline;
+	}
+	.collapse-button {
+		position: absolute;
+		right: .5em;
+		top: .5em;
+		background-color: $link-color;
+		height: 1.25em;
+		line-height: 1.25em;
+		width: 1.5em;
+		@include border-radius(.325em);
+		text-align: center;
+		display:none;
+		.btninner {
+			color: #fff;
+			font-weight: bold;
+		}
+	}
+}
+.my-sections {
+    list-style-type: none;
+    -webkit-padding-start: 20px;
+    padding-left:0px
+}
+#footer-wrap{
+	position: relative;
+	z-index: -1;
+	clear: both;
+	background-color: $link-color; 
+}
+#footer{
+	max-width: $site-width;
+	margin: 0 auto;
+	background-color: $body-copy-color;
+	line-height: 1.6em;
+	padding: 1.5em 1em 2em;
+	@include box-sizing(border-box);
+	@include clearfix;
+	.column{
+		@include colcount(4);
+		padding: 0 1em;
+		@include box-sizing(border-box);
+	}
+	.acc-social{
+		@include clearfix;
+		li{
+			float: left;
+			width: 25%;
+		}
+	}
+	ul {
+		margin: 0 0 1em 0;
+		padding: 0;
+		clear: left;
+	}
+	li {
+		margin-bottom: 0;
+		list-style: none;
+	}
+	h2 {
+		font-size: 1.3em;
+		font-weight: normal;
+		font-family: $font-stack-headings;
+		margin-bottom: 1em;
+		a { 
+			color: #fff; 
+		}
+		& + ul{
+			margin-top: -1em;
+		}
+	}
+	p {
+		color: #eee;
+		line-height:1.5;
+	}
+	a {
+		text-decoration: none;
+		color: #eee;
+	}
+	.acc-properties{
+		li{
+			padding-top: 1em;
+		}
+		a{
+			font-size: 1.4em;
+			font-weight: bold;
+		}	
+	}
+	.address,
+	.contact-numbers{
+		color: #fff;
+		dt{
+			margin: 0;
+			padding: 0;
+			font-weight: 600;
+		}
+		dd{
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.contact-numbers{
+		margin-bottom: 1em;
+		@include clearfix;
+		dd,dt{
+			float: left;
+		}
+		dt{
+			clear: left;
+			padding-right: .4em;
+		}
+	}
+}
+.footer-bottom-links {
+	text-align: left;
+	padding:0;
+	margin: 0 0 .25rem 0;
+	@include clearfix;
+	li{
+		float: left;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	a { 
+		padding-right: 1em; 
+	}
+}
+#subfooter {
+	max-width: $site-width;
+	margin: 1em auto;
+	@include box-sizing(border-box);
+	line-height: 1.6em;
+	padding: 1em 2em;
+	position: relative;
+	background-color: transparent;
+	color: #fff;
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+.Error
+{
+	color:red;
+}
+.Federated-logo { 
+	float:left;
+	img {
+		max-width :100%;
+	}
+}
+
+@-moz-document url-prefix() {
+    .collapse-box.associated-documents-collapse .trigger {
+      top:-2px;
+    }
+}
+
+
