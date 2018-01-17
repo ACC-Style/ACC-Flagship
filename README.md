@@ -21,5 +21,4 @@ As you travel down the structure of the main document the included stylesheets s
 http://acc.org/
 
 #### Style Guide w/ HTML Examples
-http://stage.tools.acc.org/ACC/index.html
-"# ACCBase" 
+http://acc-style.github.io/ACCBase/htmlsource/styleguide/
