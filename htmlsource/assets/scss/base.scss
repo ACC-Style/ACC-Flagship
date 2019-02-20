@@ -1,6 +1,6 @@
 // !! END OF BOOTSTRAP
-@import "compass";
-@import "compass/reset";
+// @import "../compass";
+// @import "compass/reset";
 @import "helpers/color-functions";
 @import "helpers/variables";
 @import "helpers/mixins";
@@ -11,10 +11,10 @@
 @import "vendor/modular-scale";
 @import "base/modular-scale-typography";
 
-$font-size-normal:      ms(0);
-$font-size-medium:      ms(2);
-$font-size-large:       ms(3);
-$site-width:            960px;
+$font-size-normal: ms(0);
+$font-size-medium: ms(2);
+$font-size-large: ms(3);
+$site-width: 960px;
 
 // Include Bootstrap Components for Ease of Development
 // Core variables and mixins
@@ -67,12 +67,10 @@ $site-width:            960px;
 @import "modules/bootstrap/utilities";
 @import "modules/bootstrap/responsive-utilities";
 
-
 /**
 *	<h1>The Flasgship ACC.ORG</h1>
 **/
 @import "bootstrap-kitchensink";
-
 
 //@import "CoveoSearchInterface";
 /**
@@ -123,10 +121,9 @@ $site-width:            960px;
 @import "content-block-nav";
 @import "full-article-clinical-trial";
 
-
 /**
 *	<h2>Coveo</h2>
-*/ 
+*/
 @import "elements/searchbar";
 @import "coveo-results-column";
 @import "coveo-facet-column";
@@ -136,5 +133,3 @@ $site-width:            960px;
 @import "question";
 @import "site-login";
 @import "qii-search";
-
-

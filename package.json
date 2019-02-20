@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "compass": "^0.1.1",
     "grunt": "^0.4.5",
     "grunt-auto-install": "^0.3.0",
     "grunt-autoprefixer": "^2.2.0",
@@ -26,9 +27,12 @@
     "grunt-sass-convert": "^0.2.0",
     "grunt-styledown": "0.0.3",
     "liquid": "^1.2.1",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "sc5-styleguide": "^2.2.0"
   },
   "dependencies": {
+    "gulp-sass": "^4.0.2",
+    "npm": "^6.8.0",
     "sass-convert": "^0.5.0"
   },
   "author": "",

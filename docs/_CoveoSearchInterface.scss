@@ -1,0 +1,40 @@
+//  Coveo Search Interface
+//
+// :default			- Default
+//
+//  markup:
+// <div class="coveo-search-section clearfix">
+//     <div class="coveo-searchBox-column">
+//         <div class="CoveoSearchBox">
+//             <a class="CoveoSearchButton" href="javascript:"><span class="coveo-icon">Search</span></a>
+//         <div>
+//         <input type="text" autocapitalize="off" autocorrect="off" class="CoveoQueryBox" form="coveo-dummy-form" placeholder="">
+//             <div class="coveo-omnibox"></div>
+//                 <span class="coveo-query-box-clear" style="">
+//                     <span class="coveo-icon"></span>
+//                 </span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// <div class="coveo-results-header">
+//     <div class="coveo-summary-section">
+//         <span class="CoveoQuerySummary" style="display: inline;" ><span>Results
+//             <span class="coveo-highlight">1</span>-<span class="coveo-highlight" >10</span>
+//                 of <span class="coveo-highlight">71,591</span></span></span>
+//     </div>
+//     <div class="coveo-sort-section">
+//         <span class="CoveoSort coveo-selected" data-sort-criteria="relevancy">Relevance</span>
+//         <span class="CoveoSort">Date</span>
+//     </div>
+// </div>
+//
+//
+// sg-wrapper:
+//	<div class='object-wrapper'>
+//		<sg-wrapper-content/>
+//	</div>
+//
+//
+//
+// Styleguide 1.500.0

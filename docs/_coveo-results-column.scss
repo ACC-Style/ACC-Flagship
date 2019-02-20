@@ -1,0 +1,306 @@
+
+/**
+*	Coveo Results Column:
+*	`coveo-results-column` - ...
+*							   
+*		@example
+*		<div class="coveo-results-column">
+*							<div class="coveo-search-section">
+*							</div>
+*							<div class="coveo-results-header">
+*								<div class="coveo-summary-section">
+*										<span class="CoveoQuerySummary display-inline">Results <span class="coveo-highlight">1</span>-<span class="coveo-highlight">12</span> of <span class="coveo-highlight">22,490</span></span>
+*															</div>
+*		
+*									<div class="coveo-sort-section">
+*										<span class="CoveoSort" data-sort-criteria="@fcontenttitle86069 ascending">Alphabetical</span>
+*										<span class="CoveoSort coveo-selected" data-sort-criteria="@foriginalz32xpostedz32xdate86069 descending">Release Date</span>
+*									</div>
+*							</div>
+*							<div class="CoveoHiddenQuery display-none"></div>
+*		
+*		
+*								<div class="CoveoErrorReport display-none"><div class="coveo-error-title"><h3>Oops! Something went wrong on the server.</h3><h4>If the problem persists contact the administrator.</h4></div><div class="coveo-options"><span class="coveo-previous"> Go Back </span><span class="coveo-clear">Reset</span><span class="coveo-retry">Retry</span></div><div class="coveo-error-message"></div></div>
+*		
+*								<div id="image-gallery-holder" class="CoveoResultList" data-wait-animation="fade" data-enable-infinite-scroll="False" data-infinite-scroll-page-size="12" data-more-results-button-selector="#more-results">
+*		
+*									<script class="result-template" type="text/x-underscore-template">
+*		
+*										<article class="gallery-item">
+*		
+*											
+*		
+*											{{ if (raw.ftemplatename86069 == "BrightcoveVideo") { }}
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id={{=raw.fmediaitemid86069}}">
+*												<img class="gallery-thumbnail" src="{{=raw.fthumbnailurl86069}}" class='show-larger-trigger' />
+*											</a>
+*											{{ } else if (raw.fthumbnailimageurl86069) { }}
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id={{=raw.fmediaitemid86069}}">
+*												<img class="gallery-thumbnail" src="{{=raw.fthumbnailimageurl86069}}" class='show-larger-trigger' />
+*											</a>
+*											{{ } else if ('/~/media/Non-Clinical/Images/System Images/Default/Listing.jpg') { }}
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id={{=raw.fmediaitemid86069}}">
+*												<img class="gallery-thumbnail" src="/~/media/Non-Clinical/Images/System Images/Default/Listing.jpg" height="110" width="110" class='show-larger-trigger' />
+*											</a>
+*											{{ } }}
+*		
+*											{{ if (raw.ftemplatename86069 == "BrightcoveVideo") { }}
+*											<p class="media-type">Video</p>
+*											{{ } else { }}
+*											<p class="media-type">{{=raw.fmediaz32xtype86069}}</p>
+*											{{ } }}
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id={{=raw.fmediaitemid86069}}">
+*												<h1 class="show-larger-trigger">
+*													{{=raw.fcontenttitle86069}}
+*												</h1>
+*											</a>
+*										</article>
+*									</script>
+*								<div class="">
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/5eb9ef">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title A
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/fa249b">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title B
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/379366">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title C
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/a730c0">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title D
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/a730c0">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title E
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/edc8e8">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title F
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/23474e">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title G
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/32874b">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title H
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/265471">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title I
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/abe416">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title J
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/ba0d1d">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title K
+*												</h1>
+*											</a>
+*										</article>
+*										<article class="gallery-item CoveoResult">
+*		
+*											
+*		
+*											
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<img class="gallery-thumbnail" src="http://placehold.it/104.781x104.781/d75b22">
+*											</a>
+*											
+*		
+*											
+*											<p class="media-type">Image</p>
+*											
+*		
+*											<a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=9c62d73ab3af4b81b852fe43b662e7e3">
+*												<h1 class="show-larger-trigger">
+*													Article Title L
+*												</h1>
+*											</a>
+*										</article>
+*										
+*										</div></div>
+*							<button id="more-results">MORE</button>
+*						</div>
+*/
+

@@ -1,0 +1,108 @@
+/**
+*	Content Block Listing:
+*	`content-block-listing` - ...
+*								
+*		@example
+*		<div class="main-content-inner" role="main">
+*				
+*		<!-- home featured -->
+*		
+*		<section class="content-block-listing">
+*			<h1 class="content-block-heading">Recommended for You</h1>
+*			<div class="content-block tabgroup" id="recommended-for-you">
+*					<div class="tab-content unauthenticated active">
+*						<article class="article-tease">
+*							<div class="main-image">
+*								<img src="http://placehold.it/110x110/0066CC" height="110" width="110">
+*							</div>
+*							<div class="article-content">
+*								<h1>Looking for content tailored to your interests?</h1>
+*								<p><a class="button" href="/login?returnUrl=http://www.acc.org/education-and-meetings">Log in Now</a></p>
+*								<p>Don't have an ACC.org account? <a href="/preregistration">Create one here</a>.</p>
+*							</div>
+*						</article>
+*					</div>
+*			</div>
+*		</section>
+*		
+*		<table class="content-block-listing-table" width="100%" border="0" cellspacing="0" cellpadding="0">
+*			<tbody>
+*				<tr>
+*					<td>
+*		
+*		<table class="content-block-standard-font-size" width="100%" border="0" cellspacing="0" cellpadding="0">
+*			<tbody>
+*				<tr>
+*					<td>
+*					
+*		<h1 class="block-heading">Browse Our Online Learning Catalog or Review Upcoming Meetings</h1>
+*		
+*		<p class="content-block-standard-font-size">View a comprehensive list of  educational opportunities or upcoming meetings by clicking the buttons below.</p>
+*					
+*					<div class="content-block-link-div">
+*					<a class="no-text-decor" href="/Education-and-Meetings/Education-Catalog"><input type="Button" id="test" onmousedown="this.className='down';" value="View the Online Learning Catalog" onclick="this.value='View the Online Learning Catalog'"></a>            
+*					</div>
+*					<div class="content-block-link-div">
+*					<a class="no-text-decor" href="/Education-and-Meetings/Meetings"><input type="Button" id="test" onmousedown="this.className='down';" value="View Upcoming Meetings" onclick="this.value='View Upcoming Meetings'"></a>
+*					</div>
+*					</td>
+*				</tr>
+*			</tbody>
+*		</table>
+*		
+*		</td></tr></tbody></table>
+*		
+*		
+*		
+*		
+*		
+*		<table class="content-block-listing-table" width="100%" border="0" cellspacing="0" cellpadding="0">
+*			<tbody>
+*				<tr>
+*					<td>
+*		
+*		<table class="content-block-standard-font-size" width="100%" border="0" cellspacing="0" cellpadding="0">
+*			<tbody>
+*				<tr>
+*					<td>
+*					
+*		<h1 class="block-heading">Explore the Image and Slide Gallery</h1>
+*		
+*		<p class="content-block-listing-paragraph">The American College of Cardiology Multimedia Gallery contains more than 1,000 images, and downloadable PowerPoint slide-sets.</p>
+*		
+*		
+*		<table class="content-block-standard-font-size" width="100%" border="0" cellspacing="0" cellpadding="0">
+*			<tbody>
+*				<tr>
+*					<td class="content-block-standard-font-size">
+*					<div class="content-block-standard-font-size content-block-gallery-image-div" >
+*		<table class="content-block-standard-font-size" width="100px"><tbody><tr><td><a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=d5925a04ab6f4e02ae7fa11b321e7166"><img class="content-block-gallery-image" width="200" height="200" src="http://placehold.it/200x200/00FF00" alt="Hemodynamic Pressure Signals During FFR Figure 3a"></a></td></tr><tr>
+*		  <td class="content-block-standard-font-size content-block-gallery-image-cell"><p class="content-block-standard-font-size">Image</p></td></tr><tr><td class="content-block-gallery-image-link"><a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=d5925a04ab6f4e02ae7fa11b321e7166">Hemodynamic Pressure Signals During FFR Figure 3a</a></td></tr></tbody></table>
+*					
+*		
+*					
+*					</div>
+*					<div class="content-block-standard-font-size content-block-gallery-image-div">
+*		<table class="content-block-standard-font-size" width="100px"><tbody><tr><td class="content-block-standard-font-size"><a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=6bc456a5966446e9869d401fd6f71de8"><img class="content-block-gallery-image" width="201" height="200" src="http://placehold.it/200x201/FF00FF" alt="Hemodynamic Pressure Signals During FFR Figure 3b"></a></td></tr><tr>
+*		  <td class="content-block-standard-font-size content-block-gallery-image-cell"><p class="content-block-standard-font-size">Image</p></td></tr><tr><td class="content-block-gallery-image-link"><a href="/education-and-meetings/image-and-slide-gallery/media-detail?id=6bc456a5966446e9869d401fd6f71de8">Hemodynamic Pressure Signals During FFR Figure 3b</a></td></tr></tbody></table>
+*					</div>
+*					</td>
+*				</tr>
+*			</tbody>
+*		</table>
+*		
+*		
+*		
+*					
+*					<div class="content-block-link-div">
+*					<a class="no-text-decor" href="/Education-and-Meetings/Image-and-Slide-Gallery"><input type="Button" id="test" onmousedown="this.className='down';" value="Browse the Image and Slide Gallery" onclick="this.value='Browse the Image and Slide Gallery'"></a>
+*					</div>
+*		
+*					</td>
+*				</tr>
+*			</tbody>
+*		</table>
+*		
+*		</td></tr></tbody></table>
+*			</div>
+*/

@@ -1,162 +1,54 @@
 /**  IE fixes for its miss understanding of media querries. **/
-/* line 3, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .column, .row .columns {
-  padding-right: 0;
-  padding-left: 0;
-}
+.row .column, .row .columns { padding-right: 0; padding-left: 0; }
 
-/* line 4, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-1, .row .small-1 {
-  position: relative;
-  width: 8.33333%;
-}
+.row .large-1, .row .small-1 { position: relative; width: 8.33333%; }
 
-/* line 8, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-2, .row .small-2 {
-  position: relative;
-  width: 16.66667%;
-}
+.row .large-2, .row .small-2 { position: relative; width: 16.66667%; }
 
-/* line 12, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-3, .row .small-3 {
-  position: relative;
-  width: 25%;
-}
+.row .large-3, .row .small-3 { position: relative; width: 25%; }
 
-/* line 16, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-4, .row .small-4 {
-  position: relative;
-  width: 33.33333%;
-}
+.row .large-4, .row .small-4 { position: relative; width: 33.33333%; }
 
-/* line 20, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-5, .row .small-5 {
-  position: relative;
-  width: 41.66667%;
-}
+.row .large-5, .row .small-5 { position: relative; width: 41.66667%; }
 
-/* line 24, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-6, .row .small-6 {
-  position: relative;
-  width: 50%;
-}
+.row .large-6, .row .small-6 { position: relative; width: 50%; }
 
-/* line 28, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-7, .row .small-7 {
-  position: relative;
-  width: 58.33333%;
-}
+.row .large-7, .row .small-7 { position: relative; width: 58.33333%; }
 
-/* line 32, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-8, .row .small-8 {
-  position: relative;
-  width: 66.66667%;
-}
+.row .large-8, .row .small-8 { position: relative; width: 66.66667%; }
 
-/* line 36, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-9, .row .small-9 {
-  position: relative;
-  width: 75%;
-}
+.row .large-9, .row .small-9 { position: relative; width: 75%; }
 
-/* line 40, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-10, .row .small-10 {
-  position: relative;
-  width: 83.33333%;
-}
+.row .large-10, .row .small-10 { position: relative; width: 83.33333%; }
 
-/* line 44, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-11, .row .small-11 {
-  position: relative;
-  width: 91.66667%;
-}
+.row .large-11, .row .small-11 { position: relative; width: 91.66667%; }
 
-/* line 48, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-12, .row .small-12 {
-  position: relative;
-  width: 100%;
-}
+.row .large-12, .row .small-12 { position: relative; width: 100%; }
 
-/* line 51, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.columns input {
-  padding: .25em 5%;
-  width: 90%;
-}
+.columns input { padding: .25em 5%; width: 90%; }
 
-/* line 52, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large- {
-  position: relative;
-  width: 8.33333%;
-}
+.row .large- { position: relative; width: 8.33333%; }
 
-/* line 56, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-2 {
-  position: relative;
-  width: 16.66667%;
-}
+.row .large-2 { position: relative; width: 16.66667%; }
 
-/* line 60, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-3 {
-  position: relative;
-  width: 25%;
-}
+.row .large-3 { position: relative; width: 25%; }
 
-/* line 64, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-4 {
-  position: relative;
-  width: 33.33333%;
-}
+.row .large-4 { position: relative; width: 33.33333%; }
 
-/* line 68, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-5 {
-  position: relative;
-  width: 41.66667%;
-}
+.row .large-5 { position: relative; width: 41.66667%; }
 
-/* line 72, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-6 {
-  position: relative;
-  width: 50%;
-}
+.row .large-6 { position: relative; width: 50%; }
 
-/* line 76, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-7 {
-  position: relative;
-  width: 58.33333%;
-}
+.row .large-7 { position: relative; width: 58.33333%; }
 
-/* line 80, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-8 {
-  position: relative;
-  width: 66.66667%;
-}
+.row .large-8 { position: relative; width: 66.66667%; }
 
-/* line 84, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-9 {
-  position: relative;
-  width: 75%;
-}
+.row .large-9 { position: relative; width: 75%; }
 
-/* line 88, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-1 {
-  position: relative;
-  width: 83.33333%;
-}
+.row .large-1 { position: relative; width: 83.33333%; }
 
-/* line 92, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-1 {
-  position: relative;
-  width: 91.66667%;
-}
+.row .large-1 { position: relative; width: 91.66667%; }
 
-/* line 96, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-.row .large-1 {
-  position: relative;
-  width: 100%;
-}
+.row .large-1 { position: relative; width: 100%; }
 
-/* line 100, ../../../scss/singlepage-applications/fit-training-director/IE_FIX.scss */
-body .training-directors .fitlist li.alert-icon {
-  margin-top: 1px;
-  height: 3em;
-}
+body .training-directors .fitlist li.alert-icon { margin-top: 1px; height: 3em; }

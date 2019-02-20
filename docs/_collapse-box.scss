@@ -1,0 +1,28 @@
+/**
+*	Collapse Box:
+*	`collapse-box` - Link that expands to display more links and collapses.
+*
+*		@example
+*		<article class="collapse-box">
+*                <h1 class="collapse-box-heading"><button class="trigger"></button><a href="#" class="collapse-box-link expander">Collapsed Box Header</a></h1>
+*                    <div class="collapse-box-content">
+*                        <ul>
+*                                <li><a href="#">Sub-link 1</a></li>
+*                                <li><a href="#">Sub-link 2</a></li>
+*                                <li><a href="#">Sub-link 3</a></li>
+*                        </ul>
+*                    </div>
+*       </article>
+*		<article class="collapse-box">
+*                <h1 class="collapse-box-heading active"><button class="trigger"></button><a href="#" class="collapse-box-link expander">Un-Collapsed Box Header</a></h1>
+*                    <div class="collapse-box-content active">
+*						<p>Bacon ipsum dolor amet ball tip t-bone strip steak jerky alcatra. Ham shank strip steak andouille venison. Chicken tongue flank jerky cupim t-bone filet mignon, kevin rump. Bacon chuck pork loin ham, drumstick alcatra sirloin landjaeger chicken jowl shank swine filet mignon shoulder turducken. Pork loin ham rump kielbasa corned beef, kevin capicola jowl chicken frankfurter.</p>
+*                        <ul>
+*                                <li><a href="#">Sub-link 1</a></li>
+*                                <li><a href="#">Sub-link 2</a></li>
+*                                <li><a href="#">Sub-link 3</a></li>
+*                        </ul>
+*                    </div>
+*            </article>
+*/
+

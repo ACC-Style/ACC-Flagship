@@ -1,0 +1,560 @@
+#nav-primary-holder{//styles for #nav-primary and #nav-utility (when it is moved inside #nav-primary-holder via JS)
+	position: relative;
+	top: 1.5em;
+	clear: both;
+	width: 100%;
+	line-height: 2.4;
+	padding: 0 0 0 0;
+	margin: 0;
+	border: 0;
+	background-color: $main-menu-bg-color;
+	@include clearfix;    
+	a,
+	.no-link{//no click-n-drag highlighting on nav items
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	li{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+	}
+	#nav-utility{
+		display: none;
+	}
+	.header-link{
+		float: left;
+		position: relative;
+		padding: 0 .9em;
+		margin: 0;
+		background-color: $main-menu-bg-color;
+		border-top: 6px solid $main-menu-bg-color;
+		//border-right: 1px solid #1c4d76; //makes top color bar mismatch
+		text-align: center;
+		padding-bottom: .4em;
+		button{
+			display: none;//only for tablet and lower
+		}	
+		a,
+		.no-link {
+			color: #fff;
+			text-decoration: none;
+			font-family: $font-stack-headings;
+			font-size: 1.3em;
+			&:hover { 
+				color: $hover-color; 
+			}
+			&.arrow-down {
+				background-image: url(../images/icon-drop-arrow.png);
+				background-repeat: no-repeat;
+				background-position: right center;
+				padding-right: 1.33rem;
+			}
+		}	
+		&.bfHover .dropdown,
+		&.active .dropdown{ 
+			display: block;
+		}
+		.set-one{
+			@extend .columns-5050;
+		}
+		.set-two{
+			@extend .columns-5050;
+			border-left: 1px $horizontal-rule-color solid;
+		}
+	}
+	.dropdown{
+		display: none;
+	}
+	.dropdown {
+		position: absolute;
+		z-index: 1;
+		background: #fff;
+		border: 1px solid $box-rule-color;
+		border-top: none;
+		padding: 1em 0em;
+		margin: 0;
+		line-height: 1.5;
+		margin-left: -9px;
+		text-align: left;
+		@include clearfix;
+		-webkit-backface-visibility: hidden;
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			font-size: 1.25em;
+			font-family: $font-stack;
+			color: $link-color;
+			padding: 0 1em;
+			display: block;
+			position: relative;
+			border: 1px #fff solid;
+			&:hover {
+				background: $hover-color;
+				border: 1px #fff solid;
+				color: #fff;
+			}
+		}
+		.nav-level-1{
+			li > a{
+				margin-top: .5em;
+			}
+		}
+		.nav-level-2 {
+			li > a{
+				font-size: 1em;
+				margin-top: .2em;
+				padding-left: 2em;
+			}				
+		}
+		.with-image {
+			a:hover{
+				background: transparent;
+			}            
+			img{
+				margin: 0;
+			}
+		}
+	}
+	#nav-utility{//only kicks in at tablet and below
+		.header-link{
+			padding-left: 0;//4em to equal space created by "+/-" toggles
+			line-height: .8;
+		}
+		a{
+			//font-weight: 300;
+		}
+	}
+	/* sizes of each block & dropdowns total size of all =< 960px */
+	.header-home { 
+		float: left;
+		width: 35px; 
+		border-right: 0;
+		&.current { 
+			background: $current-nav-color;  
+			border-top-color: $current-nav-color;
+			&:hover > a,
+			> a:hover{
+				color: #fff;
+			}
+		}
+		&:hover{
+			background: #fff;
+			border-top: 6px solid $hover-color;
+			a { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		a {
+			background-image: url(../images/icon-home.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 28px;
+			display: inline-block;
+			background-position: 50% 75%;
+			overflow: hidden;
+			text-indent: -99em;
+		}
+		&:hover a{ 
+			background-image: url(../images/icon-home-active.png); 
+		}
+	}
+	.header-clinical { 
+		.dropdown {
+			width: 760px;
+			left: 8px;
+			top: 43px;
+		}
+	}
+	.header-latest { 
+		.dropdown {
+			width: 257px;
+			left: 8px;
+			top: 43px;
+		}
+	}
+	.header-education { 
+		.dropdown {
+			width: 538px;
+			left: -51px;
+			top: 43px;
+		}
+	}
+	.header-tools { 
+		.dropdown {
+			width: 620px;
+			left:-206px;
+			top: 43px;
+		}
+	}
+	%myacc-bg-normal-state{
+		background-color: $myacc-color;
+		border-color:$myacc-color;
+		border-right: none;
+	}
+	%myacc-bg-active-state{
+		display: block;
+		background-color: #FFF;
+		border-top: 2px $myacc-color solid;
+		padding-top: 4px;
+	}
+	.header-myacc {
+		@extend %myacc-bg-normal-state;
+		cursor: pointer;
+		&.arrow-down{
+			background-image: url(../images/icon-drop-arrow.png);
+			background-position: 80px 40%;
+			background-repeat: no-repeat;
+			padding-right: 36px;
+			&.current{
+				background-image: url(../images/icon-drop-arrow-active.png);
+				background-position: 80px 48%;
+			}
+		}
+		a:hover,
+		.no-link:hover{
+			color: #fff;
+		}
+		&:hover{//must defeat hover inherited from other primary nav items
+			@extend %myacc-bg-normal-state;
+			background-image: url(../images/icon-drop-arrow.png);
+			background-repeat: no-repeat;
+			background-position: 80px 40%;
+			> a{
+				color: #fff;
+			}
+		}
+		.dropdown {
+			display: none;
+		}
+		.myacc-active &{//myacc menu item triggers on click, this is what happens when it does
+			background-color: #fff;
+			background-image: url(../images/icon-drop-arrow-active.png);
+			background-position: 80px 49%;
+			.dropdown{
+				display: block;
+				width: 297px;
+				right: -1px;//line up with right pixel border of parent
+				top: 47px;
+				ul{
+					margin-left: 0;
+				}
+			}
+			a,
+			.no-link { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		&.current,
+		.myacc-active &{
+			@extend %myacc-bg-active-state;
+			border-left: none;
+			margin-left: -2px;
+			a,
+			.no-link {//no-link is on the My ACC label to replicate link appearance
+				color: $body-copy-color; 
+			}
+			a:hover{//applies only to subnav items
+				color: #fff;
+			}
+		}
+	}
+	//****************************  header-myacc-noti ****************************
+	.header-myacc-noti{
+		@extend %myacc-bg-normal-state;
+		padding-top: 5px;
+		padding-bottom: 0;
+		&.current {
+			@extend %myacc-bg-active-state;
+		}
+		.no-link  {
+			background-image: url(../images/icon-notification.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 27px;
+			display: inline-block;
+			background-position: 50% 50%;
+			cursor: pointer;
+			b{//alert 
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				height: 16px;
+				width: 16px;
+				line-height: 1.8;
+				font-size: .6em;
+				text-align: center;
+				background: $notification-color;
+				@include border-radius(10px);
+				&.display-none{
+					display: none;
+				}
+			}
+		}
+		&.clear-alert{
+			b{
+				display: none;
+			}
+		}
+		a:hover,
+		a:hover .darktext{
+			color: #fff;
+		}
+		&:hover{//must defeat hover inherited from other primary nav items
+			@extend %myacc-bg-normal-state;
+			background-image: url(../images/icon-drop-arrow.png);
+			background-repeat: no-repeat;
+			background-position: 80px 40%;
+			> a{
+				color: #fff;
+			}
+			b{//alert 
+				background: darken($notification-color,10%);
+				color: #fff;
+			}
+		}        
+		.dropdown{
+			display: none;
+			.noti-drop-icon,
+			.alert-drop-icon,
+			.system-drop-icon,
+			.content-drop-icon{//divs
+				padding: 0 1em 1.5em 2.25em;	
+				background-repeat: no-repeat;
+				background-position: 6px 4px;
+				font-size: 1.15em;
+				a{
+					font-size: 1em;
+					&:hover{
+						display: inline;
+						background: #fff;
+						color: $myacc-color;
+						text-decoration: underline;
+					}
+				}
+			}
+			.noti-drop-icon{
+				background-image: url(../images/icon-clock.png);
+			}
+			.alert-drop-icon {
+				background-image: url(../images/icon-notification-active.png);
+			}
+			.system-drop-icon{
+				background-image: url(../images/icon-system.png);
+			}
+			.content-drop-icon {
+				background-image: url(../images/icon-content.png);
+			}
+			a{
+				display: inline;
+				padding: 0;
+			}
+			.nav-level-2 li > a{
+				padding-left: 2.8em;//more padding than the MyACC logout link because of the space needed for the notification icons
+			}
+		}
+		.notification-active &{
+			background: #fff;
+			display: block;
+			border-top: 2px solid $myacc-color;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			overflow: visible;
+			.no-link  {
+				background-image: url(../images/icon-notification-active.png);
+				background-repeat: no-repeat;
+				background-position: center bottom;
+			}
+			.dropdown {
+				display: block;
+				width: 297px;
+				right: -1px;
+				top: 47px;
+				font-size: .95em;
+			}
+		}
+		&.current .no-link { 
+			background-image: url(../images/icon-notification-active.png); 
+		}
+	}
+	//****************************  header-myacc-cart ****************************
+	.header-myacc-cart{
+		@extend %myacc-bg-normal-state;
+		&.current { 
+			@extend %myacc-bg-active-state;
+			border-right: 2px $myacc-color solid;
+			margin-left: -2px;
+			a.iconit { 
+				background-image: url(../images/icon-cart-active.png); 
+			}
+		}
+		a.iconit {
+			background-image: url(../images/icon-cart.png);
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 26px;
+			display: inline-block;
+			background-position: center bottom;
+		}
+		b{
+			margin: 0 !important;
+			position: absolute;
+			top: 0;
+			right: 2px !important;
+			left: auto !important;
+			display: block;
+			height: 16px;
+			width: 16px;
+			line-height: 1.8;
+			font-size: .6em;
+			text-align: center;
+			background: $notification-color;
+			@include border-radius(10px);
+			overflow: hidden;
+		}
+		&:hover b{
+			background: darken($notification-color,10%);
+			color: #fff;
+			//width: auto;
+		}
+	}
+	.myacc-link:hover {
+		background-color: $myacc-color;
+		border: none;
+		a.arrow-down {
+			color: #fff;
+			background: none;
+			border-right: none;
+		}
+	}
+	//primary nav tooltips (home, notifications, cart)
+	.tooltip{
+		z-index: 10000;
+	}
+}
+#nav-primary{
+	float: left;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	&:hover,
+	&.nav-active,
+	.nav-active &{
+		overflow: visible;
+	}
+	.header-link{
+		&.bfHover{
+			background: #fff;
+			border-top: 6px solid $hover-color;
+			> a { 
+				color: $main-menu-bg-color; 
+			}
+		}
+		&.current { 
+			background: $current-nav-color;  
+			border-top-color: $current-nav-color;
+			&:hover > a,
+			> a:hover{
+				color: #fff;
+			}
+		}
+	}
+}
+
+/**
+*	Navigation Bar:
+*	`nav-primary-holder` - The primary navigation bar. Hovering over menu items displays their dropdown content. Decreasing screen width collapses menu items into a single menu.
+*
+*		@example
+*		<div id="nav-primary-holder">
+*		    <div id="myacc-holder">
+*		        <div class="logged-out">
+*		            <div id="header-personal">
+*		                <p><a href="/preregistration">Create an Account</a> &nbsp; or</p>
+*		            </div>
+*		            <div class="header-link header-myacc">
+*		                <p>
+*		                    <a href="/login?returnUrl=http://www.acc.org/">
+*		                        <img src="/Images/icon-login-myaccnav.png"> Log in to MyACC
+*		                    </a>
+*		                </p>
+*		            </div>
+*		        </div><!-- logged-out -->
+*			</div><!-- myacc-holder -->
+*		<div id="header-mobile-trigger">Menu</div>
+*		    <div class="header-link header-home nav-tooltip" data-placement="top" data-toggle="tooltip" data-original-title="Home"><a href="/">Home</a></div>
+*		    <div id="nav-utility-handheld"></div>
+*		    <ul id="nav-primary" role="navigation">
+*		            <li class="header-link header-clinical"><span class="toggler"></span>
+*		                <a href="/clinical-topics?w_nav=MN">Menu Item 1</a>
+*		                <div class="dropdown">
+*		                            <div class="set-one">
+*		                                <ul class="nav-level-1">
+*		                                            <li>
+*		                                                <a href="/clinical-topics/acute-coronary-syndromes?w_nav=MN">Dropdown Item 1</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/anticoagulation-management?w_nav=MN" title="Anticoagulation Management">Dropdown Item 2</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/arrhythmias-and-clinical-ep?w_nav=MN">Dropdown Item 3</a>
+*		                                            </li>
+*		                                </ul>
+*		                            </div>
+*		                            <div class="set-two">
+*		                                <ul class="nav-level-1">
+*		                                            <li>
+*		                                                <a href="/clinical-topics/stable-ischemic-heart-disease?w_nav=MN" title="Stable Ischemic Heart Disease">Dropdown Item 1</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/valvular-heart-disease?w_nav=MN">Dropdown Item 2</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/vascular-medicine?w_nav=MN">Dropdown Item 3</a>
+*		                                            </li>
+*		                                </ul>
+*		                            </div>
+*		                </div>
+*		            </li>
+*		            <li class="header-link header-latest"><span class="toggler"></span>
+*		                <a href="/latest-in-cardiology?w_nav=MN">Menu Item 2</a>
+*		                <div class="dropdown">
+*		                            <div class="set-one">
+*		                                <ul class="nav-level-1">
+*		                                            <li>
+*		                                                <a href="/clinical-topics/acute-coronary-syndromes?w_nav=MN">Dropdown Item 1</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/anticoagulation-management?w_nav=MN" title="Anticoagulation Management">Dropdown Item 2</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/arrhythmias-and-clinical-ep?w_nav=MN">Dropdown Item 3</a>
+*		                                            </li>
+*		                                </ul>
+*		                            </div>
+*		                            <div class="set-two">
+*		                                <ul class="nav-level-1">
+*		                                            <li>
+*		                                                <a href="/clinical-topics/stable-ischemic-heart-disease?w_nav=MN" title="Stable Ischemic Heart Disease">Dropdown Item 1</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/valvular-heart-disease?w_nav=MN">Dropdown Item 2</a>
+*		                                            </li>
+*		                                            <li>
+*		                                                <a href="/clinical-topics/vascular-medicine?w_nav=MN">Dropdown Item 3</a>
+*		                                            </li>
+*		                                </ul>
+*		                        	</div>
+*		                </div>
+*		            </li>
+*		    </ul>
+*		</div>
+*/

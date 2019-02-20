@@ -1,0 +1,83 @@
+/**
+*   Site login:
+*   `site-login` - ...
+*                               
+*       @example
+*       <div id="main-content">
+*           <div class="main-content-inner" role="main">
+*			<article id="site-login" ng-module="Login">
+*           <script src="/Scripts/login/login.js"></script>
+*           <div ng-controller="LoginController" ng-model="LoginModel" class="ng-scope ng-pristine ng-valid">
+*               <script type="text/ng-template" id="userAgreement.html">
+*                   
+*                   <h1>Registered User Agreement</h1>
+*                   <div style="height:200px;overflow:scroll;">
+*                       <p>Registered user agreement</p>
+*                   </div>
+*                   <ul class="save-cancel">
+*                       <li><button type="button" class="save" ng-click="ok()" ng-disabled="LoginUASpinner" ng-enter="ok()">I Agree</button></li>
+*                       <li><button type="button" class="cancel" ng-click="cancel()">Cancel</button></li>
+*                       <li><img src="/Images/spinner.gif" ng-show="LoginUASpinner" /></li>
+*                   </ul>
+*               </script>
+*               
+*               <form action="/login?returnUrl=http://www.acc.org/latest-in-cardiology?w_nav=MN" method="post" name="formLogin" id="formLogin" autocomplete="off" class="ng-pristine ng-valid">
+*                   
+*       
+*                   <p>Not registered? <a href="/preregistration?returnUrl=http://www.acc.org/latest-in-cardiology?w_nav=MN">Click here</a> to create an account!</p>
+*       
+*                   <div id="Message" class="validation-error ng-binding ng-pristine ng-valid" ng-model="LoginModel"></div>
+*                   <input id="FederatedUrl" name="FederatedUrl" type="hidden" value="/preregistration?returnUrl=http://www.acc.org/latest-in-cardiology?w_nav=MN">
+*                   
+*                   <input name="__RequestVerificationToken" type="hidden" value="FrPpfyMjhiH0-KtOAMo7yd0hPqyHWbCOR8c12cLhdzXW0tLHX8MzWs-947F3WW8Zhg4Gv89nJkXLQ19u4HPxKRGbfk41">
+*       
+*                   <div style="display:none;">
+*                       <p class="validation-error">That email address is associated with multiple ACC accounts.  Please call the ACC Resource Center to consolidate your acc.org accounts:</p>
+*                       <ul>
+*                           <li>1-800-253-4636 ext. 5603 (Toll Free US &amp; Canada)</li>
+*                           <li>202-375-6000 ext. 5603 (Outside US &amp; Canada)</li>
+*                       </ul>
+*                   </div>
+*                   <div class="editor-label">
+*                       <label for="UserName">Email or Username</label>
+*                   </div>
+*                   <div class="editor-field">
+*                       <input autocapitalize="no" autocorrect="no" class="input-username ng-pristine ng-valid" data-val="true" data-val-required="The Email or Username field is required." *  id="UserName" name="UserName" ng-init="UserName=''" ng-model="UserName" placeholder="username" tabindex="1" type="text" value="">
+*                       <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+*                   </div>
+*                   <p class="username-info">
+*                       <a href="/ForgotUsername">I forgot my username</a>
+*                   </p>
+*       
+*                   <div class="editor-label">
+*                       <label for="Password">Password</label>
+*                   </div>
+*                   <div class="editor-field">
+*                       <input class="input-password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="password" tabindex="2" *   type="password">
+*                       <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+*                   </div>
+*                   <input id="returnUrl" name="returnUrl" type="hidden" value="http://www.acc.org/latest-in-cardiology?w_nav=MN">
+*       
+*       
+*                   <p class="password-info">
+*                       <a href="/ForgotPassword">I forgot my password</a>
+*                       <span class="view-password">
+*                           <input type="checkbox" id="show-passwords-checkbox"><label class="checkbox" id="show-password">View my password</label><br>
+*                       </span>
+*                   </p>
+*       
+*                   <p class="remember-me">
+*                       <input data-val="true" data-val-required="The Keep me logged in on this computer field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true"><input *    name="RememberMe" type="hidden" value="false">
+*                       <label for="RememberMe">Keep me logged in on this computer</label>
+*                   </p>
+*                   <button onclick="return false;" ng-click="Login()" ng-disabled="buttonDisabled">Log In</button>
+*                   
+*               </form>
+*           </div>
+*       </article>
+*           </div>
+*       </div>
+*
+*/
+
+
